@@ -1,32 +1,32 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 * {
-  margin: 0;
-  padding: 0;
-  font: inherit;
+	margin: 0;
+	padding: 0;
+	font: inherit;
 }
 html {
-  font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 body {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 img,
 picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 input,
 button,
 textarea,
 select {
-  outline: none;
+	outline: none;
 }
 p,
 h1,
@@ -35,11 +35,23 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 .container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+.text-heading {
+	font-size: 44px;
+	font-weight: 700;
+	line-height: calc(57.2 / 44);
+	color: black;
+}
+.text-desc {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: calc(32.4 / 18);
+	color: #afadb5;
 }
