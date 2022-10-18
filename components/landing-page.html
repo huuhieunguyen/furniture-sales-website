@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
     <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/swiper.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
@@ -16,7 +17,7 @@
 
 </head>
 
-<body>
+<body class="bg-[#F9F9F9]">
     <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
         <div class="container py-[25px] flex items-center justify-between">
             <div class="flex items-center justify-center gap-x-2 cursor-pointer">
@@ -49,7 +50,85 @@
             </div>
         </div>
     </header>
-    <main class="container">
+    <main class="container ">
+        <div class="introduce-with-search mt-20">
+            <div class="text-heading mb-10 text-center text-[64px] relative">
+                Tinh tế - Sang trọng <br>
+                Chất lượng
+                <img srcset="../assets/img/stars-plus-wink.png 2x" class="inline-block" alt="">
+            </div>
+            <div class="text-desc text-center mb-16">
+                BiSys - Nơi tô điểm thế giới bên trong ngôi nhà của bạn !
+            </div>
+            <div class="relative">
+                <img src="../assets/img/introduce3.png" class="w-full relative" alt="">
+                <div
+                    class="absolute top-[0] left-1/2 transform -translate-x-1/2 -translate-y-1/2 search-wrap text-center shadow-[0px 4px 80px rgba(175, 173, 181, 0.2)]">
+                    <div class="relative">
+                        <img srcset="../assets/img/arrow-spiral-down.png 2x" class="absolute top-[-270px] left-[-200px]"
+                            alt="">
+                        <div class="absolute top-[50%] left-[20px] translate-y-[-50%] ">
+                            <img srcset="../assets/img/search-icon.png 2x" alt="">
+                        </div>
+                        <div class="absolute top-[50%] right-[15px] translate-y-[-50%]">
+                            <button class="button-primary">Tìm kiếm</button>
+                        </div>
+                        <input type="text"
+                            class="h-[84px] w-[810px] pl-[70px] pr-20 rounded-lg z-0 text-[18px] focus:outline-none"
+                            placeholder="Nhập từ khóa tìm kiếm...">
+                    </div>
+                </div>
+            </div>
+            <div class="introduce-list grid-cols-3 grid gap-x-4">
+                <div class="introduce-item bg-[#fff] ">
+                    <div class="p-6  rounded-lg">
+                        <div class="mb-1">
+                            <img srcset="../assets/img/various-product-icon.png 2x" alt="">
+                        </div>
+                        <p class="text-desc text-justify font-bold text-[24px] mb-2 text-[#151411]">
+                            Sản phẩm đa dạng
+                        </p>
+                        <p class="text-desc text-justify">
+                            Hơn 100 sản phẩm với thiết kế, kiểu dáng độc đáo - giải pháp cho mọi ngóc ngách
+                        </p>
+
+                    </div>
+                </div>
+                <div class="introduce-item bg-[#fff] ">
+                    <div class="p-6  rounded-lg">
+                        <div class="mb-1">
+                            <img srcset="../assets/img/fast-icon.png 2x" alt="">
+                        </div>
+                        <p class="text-desc text-justify font-bold text-[24px] mb-2 text-[#151411]">
+                            Giao hàng nhanh chóng
+                        </p>
+                        <p class="text-desc text-justify">
+                            Đội ngũ vận chuyển chuyên nghiệp. Cam kết sản phẩm sẽ đến tay người dùng trong 3-5 ngày kể
+                            từ khi đặt hàng
+                        </p>
+
+                    </div>
+                </div>
+                <div class="introduce-item bg-[#fff] ">
+                    <div class="p-6  rounded-lg">
+                        <div class="mb-1">
+                            <img srcset="../assets/img/comfortable-money-icon.png 2x" alt="">
+                        </div>
+                        <p class="text-desc text-justify font-bold text-[24px] mb-2 text-[#151411]">
+                            Phù hợp với túi tiền
+                        </p>
+                        <p class="text-desc text-justify">
+                            Cung cấp sản phẩm chất lượng thuộc nhiều phân khúc giá khác nhau và nhiều ưu đãi trong quá
+                            trình mua sắm
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div>
         <div class="category mt-20">
             <div class="text-heading text-center">Danh mục</div>
             <div class="category-list mt-[45px] grid grid-cols-3 gap-x-10">
@@ -166,7 +245,7 @@
             <div class="text-desc text-center mb-[50px]">
                 Dẫn đầu xu hướng năm 2022
             </div>
-            <div class="swiper mySwiper">
+            <div class="swiper mySwiper1">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="rounded overflow-hidden ">
@@ -261,11 +340,11 @@
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="my-custom-pagination-div"></div>
             </div>
         </div>
         <div class="introduce mt-40 grid grid-cols-2 gap-[50px]">
-            <div class="introduce-left flex flex-col">
+            <div class="flex flex-col">
                 <div class="introduce-list">
                     <div class="introduce-item mb-[31px]">
                         <div class="text-heading mb-[22px]">
@@ -280,7 +359,7 @@
                 <img src="../assets/img/introduce1.png" alt="">
 
             </div>
-            <div class="introduce-right flex flex-col">
+            <div class="flex flex-col">
                 <div class="introduce-list flex-1 grid grid-cols-3">
                     <div class="introduce-item">
                         <div class="text-heading">
@@ -320,89 +399,160 @@
             <div class="text-desc text-center mb-[50px]">
                 Sự hài lòng của bạn là ưu tiên hàng đầu và quan trong nhất của chúng tôi
             </div>
-            <div class="rating-list grid grid-cols-3 gap-x-2">
-                <div class="rating-item ">
-                    <div class="p-6 bg-gray-100 rounded-lg">
-                        <div class="mb-5">
-                            <img srcset="../assets/img/quote-up.png 2x" alt="">
-                        </div>
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="rating-item ">
+                            <div class="p-6 bg-gray-100 rounded-lg">
+                                <div class="mb-5">
+                                    <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                </div>
 
-                        <p class="text-desc text-justify">
-                            Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,
-                            adipiscing mauris non.
-                        </p>
-                        <div class="rating justify-between flex items-center">
-                            <div class="customer-info flex items-center">
-                                <img src="../assets/img/avatar-customer.png" alt="">
-                                <h3 class="text-[20px] font-bold ml-3">
-                                    Janne Cooper
-                                </h3>
+                                <p class="text-desc text-justify">
+                                    Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
+                                    nisi,
+                                    adipiscing mauris non.
+                                </p>
+                                <div class="rating justify-between flex items-center">
+                                    <div class="customer-info flex items-center">
+                                        <img src="../assets/img/avatar-customer.png" alt="">
+                                        <h3 class="text-[20px] font-bold ml-3">
+                                            Janne Cooper
+                                        </h3>
+                                    </div>
+                                    <div class="point-star flex items-center">
+                                        <img srcset="../assets/img/star.png 2x" alt="">
+                                        <h3 class="text-[18px] font-bold ml-1">
+                                            4.5
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="point-star flex items-center">
-                                <img srcset="../assets/img/star.png 2x" alt="">
-                                <h3 class="text-[18px] font-bold ml-1">
-                                    4.5
-                                </h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rating-item ">
+                            <div class="p-6 bg-gray-100 rounded-lg">
+                                <div class="mb-5">
+                                    <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                </div>
+
+                                <p class="text-desc text-justify">
+                                    Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
+                                    nisi,
+                                    adipiscing mauris non.
+                                </p>
+                                <div class="rating justify-between flex items-center">
+                                    <div class="customer-info flex items-center">
+                                        <img src="../assets/img/avatar-customer.png" alt="">
+                                        <h3 class="text-[20px] font-bold ml-3">
+                                            Janne Cooper
+                                        </h3>
+                                    </div>
+                                    <div class="point-star flex items-center">
+                                        <img srcset="../assets/img/star.png 2x" alt="">
+                                        <h3 class="text-[18px] font-bold ml-1">
+                                            4.5
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rating-item ">
+                            <div class="p-6 bg-gray-100 rounded-lg">
+                                <div class="mb-5">
+                                    <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                </div>
+
+                                <p class="text-desc text-justify">
+                                    Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
+                                    nisi,
+                                    adipiscing mauris non.
+                                </p>
+                                <div class="rating justify-between flex items-center">
+                                    <div class="customer-info flex items-center">
+                                        <img src="../assets/img/avatar-customer.png" alt="">
+                                        <h3 class="text-[20px] font-bold ml-3">
+                                            Janne Cooper
+                                        </h3>
+                                    </div>
+                                    <div class="point-star flex items-center">
+                                        <img srcset="../assets/img/star.png 2x" alt="">
+                                        <h3 class="text-[18px] font-bold ml-1">
+                                            4.5
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rating-item ">
+                            <div class="p-6 bg-gray-100 rounded-lg">
+                                <div class="mb-5">
+                                    <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                </div>
+
+                                <p class="text-desc text-justify">
+                                    Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
+                                    nisi,
+                                    adipiscing mauris non.
+                                </p>
+                                <div class="rating justify-between flex items-center">
+                                    <div class="customer-info flex items-center">
+                                        <img src="../assets/img/avatar-customer.png" alt="">
+                                        <h3 class="text-[20px] font-bold ml-3">
+                                            Janne Cooper
+                                        </h3>
+                                    </div>
+                                    <div class="point-star flex items-center">
+                                        <img srcset="../assets/img/star.png 2x" alt="">
+                                        <h3 class="text-[18px] font-bold ml-1">
+                                            4.5
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="rating-item ">
+                            <div class="p-6 bg-gray-100 rounded-lg">
+                                <div class="mb-5">
+                                    <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                </div>
+
+                                <p class="text-desc text-justify">
+                                    Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
+                                    nisi,
+                                    adipiscing mauris non.
+                                </p>
+                                <div class="rating justify-between flex items-center">
+                                    <div class="customer-info flex items-center">
+                                        <img src="../assets/img/avatar-customer.png" alt="">
+                                        <h3 class="text-[20px] font-bold ml-3">
+                                            Janne Cooper
+                                        </h3>
+                                    </div>
+                                    <div class="point-star flex items-center">
+                                        <img srcset="../assets/img/star.png 2x" alt="">
+                                        <h3 class="text-[18px] font-bold ml-1">
+                                            4.5
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="rating-item">
-                    <div class="p-6 bg-gray-100 rounded-lg">
-                        <div class="mb-5">
-                            <img srcset="../assets/img/quote-up.png 2x" alt="">
-                        </div>
-
-                        <p class="text-desc text-justify">
-                            Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,
-                            adipiscing mauris non.
-                        </p>
-                        <div class="rating justify-between flex items-center">
-                            <div class="customer-info flex items-center">
-                                <img src="../assets/img/avatar-customer.png" alt="">
-                                <h3 class="text-[20px] font-bold ml-3">
-                                    Janne Cooper
-                                </h3>
-                            </div>
-                            <div class="point-star flex items-center">
-                                <img srcset="../assets/img/star.png 2x" alt="">
-                                <h3 class="text-[18px] font-bold ml-1">
-                                    4.5
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rating-item ">
-                    <div class="p-6 bg-gray-100 rounded-lg">
-                        <div class="mb-5">
-                            <img srcset="../assets/img/quote-up.png 2x" alt="">
-                        </div>
-
-                        <p class="text-desc text-justify">
-                            Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,
-                            adipiscing mauris non.
-                        </p>
-                        <div class="rating justify-between flex items-center">
-                            <div class="customer-info flex items-center">
-                                <img src="../assets/img/avatar-customer.png" alt="">
-                                <h3 class="text-[20px] font-bold ml-3">
-                                    Janne Cooper
-                                </h3>
-                            </div>
-                            <div class="point-star flex items-center">
-                                <img srcset="../assets/img/star.png 2x" alt="">
-                                <h3 class="text-[18px] font-bold ml-1">
-                                    4.5
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="my-custom-pagination-div"></div>
             </div>
+
         </div>
     </main>
-    <footer class="mt-[100px] container bg-white py-[60px] border-t border-t-[#ECE4DE] mb-20">
+    <footer class="mt-[100px] container  py-[60px] border-t border-t-[#ECE4DE] mb-20">
         <div class="flex items-center justify-center gap-y-[23px] flex-col">
             <div class="flex items-center justify-center gap-x-2 cursor-pointer">
                 <img srcset="/assets/img/logo.png 2x" alt="logo" />
