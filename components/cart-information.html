@@ -13,6 +13,19 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+  
+      /* Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+    </style>
   </head>
   <body>
     <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
@@ -52,42 +65,212 @@
         <div class="flex flex-col items-center pt-[135px] gap-y-[50px]">
             <h1 class="font-bold text-[64px] "> Giỏ hàng</h1>
             <div class="table-cart-list items-center justify-center">
-              <table class="border-collapse border border-black w-[1240px] h-[921px]">
+              <table class="border-collapse border border-black w-full">
                 <thead>
-                  <tr class="">
-                    <th colspan="3" class="flex items-center pl-[61px] gap-x-[13px] py-[41px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                      </svg>
+
+                  <tr class="border border-black ">
+                    <th class="flex items-center pl-[61px] gap-x-[13px] py-[41px] pr-[315px]">
+                      <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
                       <span class="font-light text-[25px]">Sản phẩm</span>
                     </th>                          
-                    <th class="font-light text-[25px]">Đơn giá</th>
-                    <th class="font-light text-[25px]">Số lượng</th>
-                    <th class="font-light text-[25px]">Số tiền</th>
-                    <th class="font-light text-[25px]">Thao tác</th>
+                    <th class="font-light text-[25px] py-[41px] ">Đơn giá</th>
+                    <th class="font-light text-[25px] py-[41px] ">Số lượng</th>
+                    <th class="font-light text-[25px] py-[41px] ">Số tiền</th>
+                    <th class="font-light text-[25px] py-[41px] ">Thao tác</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  <tr>
-                    <td class="pl-[61px]">
+                  <!-- row 1 -->
+                  <tr class="border border-black">
+                    <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
                       <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                      <img src="/assets/img/cart-info-1.png" alt="">
+                      <div class="flex flex-col font-light text-[20px] py-[6px]">
+                        <span>GH0001</span>
+                        <span>Ghế cao cấp màu gỗ</span>
+                        <span>Việt Nam</span>
+                      </div>
                     </td>
                     <td>
-                      dddd
+                      <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
                     </td>
-                    <td class="flex flex-col font-light text-[20px]">
-                      <span class="font-lights text-[20px]">GH0001</span>
-                      <span>Ghế cao cấp màu gỗ</span>
-                      <span>Việt Nam</span>
+                    <td>
+                      <div class="py-[41px] px-[45px]">
+                        <span class="flex  text-[22px]">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                                clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0"
+                            id="Quantity">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path
+                                d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
                     </td>
-                    <td></td>
+                    <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+                    <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
                   </tr>
 
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
-                  <tr></tr>
+                  <!-- row 2 -->
+                  <tr class="border border-black">
+                    <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                      <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                      <img src="/assets/img/cart-info-1.png" alt="">
+                      <div class="flex flex-col font-light text-[20px] py-[6px]">
+                        <span>GH0001</span>
+                        <span>Ghế cao cấp màu gỗ</span>
+                        <span>Việt Nam</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+                    </td>
+                    <td>
+                      <div class="py-[41px] px-[45px]">
+                        <span class="flex  text-[22px]">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                                clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0"
+                            id="Quantity">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path
+                                d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+                    <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+                  </tr>
+
+                  <!-- row 3 -->
+                  <tr class="border border-black">
+                    <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                      <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                      <img src="/assets/img/cart-info-1.png" alt="">
+                      <div class="flex flex-col font-light text-[20px] py-[6px]">
+                        <span>GH0001</span>
+                        <span>Ghế cao cấp màu gỗ</span>
+                        <span>Việt Nam</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+                    </td>
+                    <td>
+                      <div class="py-[41px] px-[45px]">
+                        <span class="flex  text-[22px]">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                                clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0"
+                            id="Quantity">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path
+                                d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+                    <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+                  </tr>
+
+                  <!-- row 4 -->
+                  <tr class="border border-black">
+                    <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                      <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                      <img src="/assets/img/cart-info-1.png" alt="">
+                      <div class="flex flex-col font-light text-[20px] py-[6px]">
+                        <span>GH0001</span>
+                        <span>Ghế cao cấp màu gỗ</span>
+                        <span>Việt Nam</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+                    </td>
+                    <td>
+                      <div class="py-[41px] px-[45px]">
+                        <span class="flex  text-[22px]">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                                clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0"
+                            id="Quantity">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path
+                                d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+                    <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+                  </tr>
+
+                  <!-- row 5 -->
+                  <tr class="border border-black">
+                    <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                      <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                      <img src="/assets/img/cart-info-1.png" alt="">
+                      <div class="flex flex-col font-light text-[20px] py-[6px]">
+                        <span>GH0001</span>
+                        <span>Ghế cao cấp màu gỗ</span>
+                        <span>Việt Nam</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+                    </td>
+                    <td>
+                      <div class="py-[41px] px-[45px]">
+                        <span class="flex  text-[22px]">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                                clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0"
+                            id="Quantity">
+                          <button class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                              <path
+                                d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                            </svg>
+                          </button>
+                        </span>
+                      </div>
+                    </td>
+                    <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+                    <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+                  </tr>
+                  
                 </tbody>
               </table>
             </div> 
