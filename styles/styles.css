@@ -52,11 +52,14 @@ h6 {
 	line-height: calc(32.4 / 18);
 	color: #afadb5;
 }
+.text-desc.text-desc__yellow {
+	color: #ffb23f;
+}
 .button-primary {
 	color: white;
 	font-weight: bold;
 	font-size: 18px;
-	padding: 18px 39px;
+	padding: 12px 39px;
 	background-color: #518581;
 	border-radius: 0.25rem;
 	display: inline-block;
@@ -71,17 +74,17 @@ h6 {
 }
 
 .fadeUp {
-  animation: fadeUp 0.5s ease-in;
-  transition: all 0.5s ease-in;
+	animation: fadeUp 0.5s ease-in;
+	transition: all 0.5s ease-in;
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0.5;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	from {
+		opacity: 0.5;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
