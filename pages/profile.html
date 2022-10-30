@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
+        <div class="container py-[25px] flex items-center justify-between">
+            <div class="flex items-center justify-center gap-x-2 cursor-pointer">
+                <img srcset="/assets/img/logo.png 2x" alt="#" />
+                <span class="font-medium text-[18px]">
+                    BiSys - Yêu ngôi nhà của bạn
+                </span>
+
+            </div>
+            <div class="flex items-center justify-center gap-x-[60px] font-medium text-[18px] cursor-pointer">
+                <span>Sản phẩm</span>
+                <span>Về chúng tôi</span>
+                <span>Tin tức</span>
+                <span>Liên hệ</span>
+            </div>
+            <div class="flex items-center justify-center gap-x-6 text-[18px] cursor-pointer">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    </svg>
+                </span>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </header>
+    <main class="container my-16">
+        <div class="text-heading text-center">
+            Hồ sơ của tôi
+        </div>
+        <div class="text-desc text-desc__yellow text-center my-7">
+            Chỉnh sửa hồ sơ tài khoản
+        </div>
+        <form class="w-full grid gap-x-6 grid-cols-3">
+            <div class="info col-span-2">
+                <div class="flex items-center mb-6">
+                    <div class="min-w-[250px]">
+                        <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="username">
+                            Tên đăng nhập
+                        </label>
+                    </div>
+                    <div class="w-full">
+                        <input
+                            class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                            id="username" type="text" value="Thanhlam6178">
+                    </div>
+                </div>
+                <div class="flex items-center mb-6">
+                    <div class="min-w-[250px]">
+                        <label class="block text-gray-500 font-bold text-right mb-1  pr-4" for="full-name">
+                            Họ và tên
+                        </label>
+                    </div>
+                    <div class="w-full">
+                        <input
+                            class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                            id="full-name" type="text" value="Nguyễn Võ Thanh Lâm">
+                    </div>
+                </div>
+                <div class="flex items-center mb-6">
+                    <div class="min-w-[250px]">
+                        <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="email">
+                            Email
+                        </label>
+                    </div>
+                    <div class="w-full">
+                        <input
+                            class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                            id="email" type="email" value="20521519@gm.uit.edu.vn">
+                    </div>
+                </div>
+                <div class="flex items-center mb-6">
+                    <div class="min-w-[250px]">
+                        <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="phone">
+                            Điện thoại
+                        </label>
+                    </div>
+                    <div>
+                        <input
+                            class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                            id="phone" type="number" value="0942121213">
+                    </div>
+                </div>
+                <div class="flex items-center mb-6">
+                    <div class="min-w-[250px]">
+                        <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="address">
+                            Địa chỉ
+                        </label>
+                    </div>
+                    <div class="w-full grid grid-cols-3 gap-x-2">
+                        <select class="block w-full bg-white border px-4 py-2 pr-8 rounded  w">
+                            <option>Tỉnh/Thành</option>
+                            <option>Bình Dương</option>
+                            <option>Tp Hồ Chí Minh</option>
+                        </select>
+                        <select class="block w-full bg-white border px-4 py-2 pr-8 rounded  w">
+                            <option>Quận/huyện</option>
+                            <option>Quận 1</option>
+                            <option>Quận 2</option>
+                        </select>
+                        <select class="block w-full bg-white border px-4 py-2 pr-8 rounded  w">
+                            <option>Xã/phường</option>
+                            <option>Phường 1</option>
+                            <option>Phường 2</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="flex items-center mb-6">
+                    <div class="min-w-[250px]">
+                        <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="address-detail">
+                            Địa chỉ cụ thể
+                        </label>
+                    </div>
+                    <div class="w-full">
+                        <input
+                            class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                            id="address-detail" type="text" value="Ký túc xá khu A">
+                    </div>
+                </div>
+            </div>
+            <div class="image border-left text-center">
+                <div class="mt-2">
+                    <img src="../assets/img/banlamviec.png" class="w-[295px] h-[295px] m-auto rounded-[50%] shadow">
+                </div>
+
+                <label class="inline-block mt-3 px-4 py-2 bg-white border border-gray-300 rounded cursor-pointer"
+                    for="file_input">Đổi
+                    ảnh</label>
+                <input class="hidden" id="file_input" type="file">
+            </div>
+            <div class="flex items-center">
+                <div class="w-[250px]">
+                </div>
+                <a class="button-primary">
+                    Lưu
+                </a>
+            </div>
+        </form>
+    </main>
+    <footer class="container bg-white py-[60px] border-t border-t-[#ECE4DE]">
+        <div class="flex items-center justify-center gap-y-[23px] flex-col">
+            <div class="flex items-center justify-center gap-x-2 cursor-pointer">
+                <img srcset="/assets/img/logo.png 2x" alt="logo" />
+                <span class="font-medium text-[18px]">
+                    BiSys - Yêu ngôi nhà của bạn
+                </span>
+            </div>
+            <div class="flex items-center justify-center gap-x-[41px] cursor-pointer">
+                <img src="/assets/icons/facebook.png" alt="facebook" />
+                <img src="/assets/icons/instagram.png" alt="instagram" />
+                <img src="/assets/icons/twitter.png" alt="twitter" />
+            </div>
+            <span class="font-medium text-2xl">Hãy theo dõi chúng tôi để cập nhật tin mới nhất !</span>
+        </div>
+    </footer>
+</body>
+
+</html>
