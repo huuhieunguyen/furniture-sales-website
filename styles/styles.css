@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 * {
   margin: 0;
@@ -10,7 +10,7 @@
   font-size: 18px;
 }
 html {
-  font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 :root {
   --main-color: #518581;
@@ -18,21 +18,21 @@ html {
   --text-gray: #AFADB5;
 }
 body {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 img,
 picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 input,
 button,
 textarea,
 select {
-  outline: none;
+	outline: none;
 }
 p,
 h1,
@@ -41,29 +41,74 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
-
+:root {
+	--green-color: #518581;
+}
+.text-heading {
+	font-size: 44px;
+	font-weight: 700;
+	line-height: calc(57.2 / 44);
+	color: black;
+}
+.text-desc {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: calc(32.4 / 18);
+	color: #afadb5;
+}
+.text-desc.text-desc__yellow {
+	color: #ffb23f;
+}
+.button-primary {
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 12px 39px;
+	background-color: #518581;
+	border-radius: 0.25rem;
+	display: inline-block;
+	text-decoration: none;
+}
 .container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+	width: 100%;
+	max-width: 1440px !important;
+	margin: 0 auto;
+	padding-left: 100px;
+	padding-right: 100px;
 }
 
 .fadeUp {
-  animation: fadeUp 0.5s ease-in;
-  transition: all 0.5s ease-in;
+	animation: fadeUp 0.5s ease-in;
+	transition: all 0.5s ease-in;
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0.5;
-    transform: translateY(50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	from {
+		opacity: 0.5;
+		transform: translateY(50%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Button with Increment and Decrement Number */
+.wrapper span {
+	width: 100%;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 600;
+	cursor: pointer;
+	user-select: none;
+}
+.wrapper span.num {
+	font-size: 20px;
+	border-right: 2px solid rgba(0, 0, 0, 0.2);
+	border-left: 2px solid rgba(0, 0, 0, 0.2);
+	pointer-events: none;
 }
 
 .text-gray {
