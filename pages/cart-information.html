@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
+    <div class="container py-[25px] flex items-center justify-between">
+      <div class="flex items-center justify-center gap-x-2 cursor-pointer">
+        <img srcset="/assets/img/logo.png 2x" alt="#" />
+        <span class="font-medium text-[18px]">
+          BiSys - Yêu ngôi nhà của bạn
+        </span>
+      </div>
+      <div class="flex items-center justify-center gap-x-[60px] font-medium text-[18px] cursor-pointer">
+        <span>Sản phẩm</span>
+        <span>Về chúng tôi</span>
+        <span>Tin tức</span>
+        <span>Liên hệ</span>
+      </div>
+      <div class="flex items-center justify-center gap-x-6 text-[18px] cursor-pointer">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+        </span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="flex flex-col items-center pt-[135px] gap-y-[50px]">
+      <h1 class="font-bold text-[64px] "> Giỏ hàng</h1>
+      <div class="table-cart-list items-center justify-center">
+        <table class="border-collapse border border-black w-full">
+
+          <!-- tiêu đề bảng -->
+          <thead>
+            <tr class="border border-black ">
+              <th class="flex items-center pl-[61px] gap-x-[13px] py-[41px] pr-[315px]">
+                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                <span class="font-light text-[25px]">Sản phẩm</span>
+              </th>
+              <th class="font-light text-[25px] py-[41px] ">Đơn giá</th>
+              <th class="font-light text-[25px] py-[41px] ">Số lượng</th>
+              <th class="font-light text-[25px] py-[41px] ">Số tiền</th>
+              <th class="font-light text-[25px] py-[41px] ">Thao tác</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- row 1 -->
+            <tr class="border border-black">
+              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                <img src="/assets/img/cart-info-1.png" alt="">
+                <div class="flex flex-col font-light text-[20px] py-[6px]">
+                  <span>GH0001</span>
+                  <span>Ghế cao cấp màu gỗ</span>
+                  <span>Việt Nam</span>
+                </div>
+              </td>
+              <td>
+                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+              </td>
+              <td>
+                <div class="py-[41px] px-[45px]">
+                  <span class="flex  text-[22px]">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                      </svg>
+                    </button>
+                  </span>
+                </div>
+              </td>
+              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+            </tr>
+
+            <!-- row 2 -->
+            <tr class="border border-black">
+              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                <img src="/assets/img/cart-info-1.png" alt="">
+                <div class="flex flex-col font-light text-[20px] py-[6px]">
+                  <span>GH0001</span>
+                  <span>Ghế cao cấp màu gỗ</span>
+                  <span>Việt Nam</span>
+                </div>
+              </td>
+              <td>
+                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+              </td>
+              <td>
+                <div class="py-[41px] px-[45px]">
+                  <span class="flex  text-[22px]">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                      </svg>
+                    </button>
+                  </span>
+                </div>
+              </td>
+              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+            </tr>
+
+            <!-- row 3 -->
+            <tr class="border border-black">
+              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                <img src="/assets/img/cart-info-1.png" alt="">
+                <div class="flex flex-col font-light text-[20px] py-[6px]">
+                  <span>GH0001</span>
+                  <span>Ghế cao cấp màu gỗ</span>
+                  <span>Việt Nam</span>
+                </div>
+              </td>
+              <td>
+                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+              </td>
+              <td>
+                <div class="py-[41px] px-[45px]">
+                  <span class="flex  text-[22px]">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                      </svg>
+                    </button>
+                  </span>
+                </div>
+              </td>
+              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+            </tr>
+
+            <!-- row 4 -->
+            <tr class="border border-black">
+              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                <img src="/assets/img/cart-info-1.png" alt="">
+                <div class="flex flex-col font-light text-[20px] py-[6px]">
+                  <span>GH0001</span>
+                  <span>Ghế cao cấp màu gỗ</span>
+                  <span>Việt Nam</span>
+                </div>
+              </td>
+              <td>
+                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+              </td>
+              <td>
+                <div class="py-[41px] px-[45px]">
+                  <span class="flex  text-[22px]">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                      </svg>
+                    </button>
+                  </span>
+                </div>
+              </td>
+              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+            </tr>
+
+            <!-- row 5 -->
+            <tr class="border border-black">
+              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
+                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
+                <img src="/assets/img/cart-info-1.png" alt="">
+                <div class="flex flex-col font-light text-[20px] py-[6px]">
+                  <span>GH0001</span>
+                  <span>Ghế cao cấp màu gỗ</span>
+                  <span>Việt Nam</span>
+                </div>
+              </td>
+              <td>
+                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
+              </td>
+              <td>
+                <div class="py-[41px] px-[45px]">
+                  <span class="flex  text-[22px]">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
+                    <button
+                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                      </svg>
+                    </button>
+                  </span>
+                </div>
+              </td>
+              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
+              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Payment -->
+    <div class="flex flex-col pl-[776px] pt-[70px] gap-y-[70px]">
+      <div class="flex text-[25px] gap-x-[60px]">
+        <span class="font-medium">Tổng thanh toán</span>
+        <span class="font-light">3.000.000đ</span>
+      </div>
+      <div class="pl-[120px]">
+        <button
+          class="rounded-[10px] hover:drop-shadow-[5px_5px_4px_rgba(0, 0, 0, 0.25)] text-white border bg-[#FFB23F] h-[74px] w-[324px]">
+          <span class="text-white font-black text-[30px]">
+            Thanh Toán
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gợi ý sản phẩm -->
+    <div class="pl-[30px] pt-[90px]">
+      <h1 class="font-bold text-[44px] text-[#518581]">Có thể bạn quan tâm</h1>
+    </div>
+    <div id="data-container" class="mt-[76px] grid grid-cols-3 gap-x-[33px] gap-y-[103px]"></div>
+  </div>
+
+  <footer class="container bg-white py-[60px] border-t border-t-[#ECE4DE] my-20 ">
+    <div class="flex items-center justify-center gap-y-[23px] flex-col">
+      <div class="flex items-center justify-center gap-x-2 cursor-pointer">
+        <img srcset="/assets/img/logo.png 2x" alt="logo" />
+        <span class="font-medium text-[18px]">
+          BiSys - Yêu ngôi nhà của bạn
+        </span>
+      </div>
+      <div class="flex items-center justify-center gap-x-[41px] cursor-pointer">
+        <img src="/assets/icons/facebook.png" alt="facebook" />
+        <img src="/assets/icons/instagram.png" alt="instagram" />
+        <img src="/assets/icons/twitter.png" alt="twitter" />
+      </div>
+      <span class="font-medium text-2xl">Hãy theo dõi chúng tôi để cập nhật tin mới nhất !</span>
+    </div>
+  </footer>
+
+  <script src="/javascripts/cart.js">
+
+  </script>
+</body>
+
+</html>

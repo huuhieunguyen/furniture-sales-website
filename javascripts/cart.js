@@ -4,54 +4,54 @@ const itemsPerPage = 9;
 // reference to keep track of current page
 let currentPage = 1;
 const cards = [
-    {
-      id: 1,
-      imgUrl: "./assets/img/ghelamviec.png",
-      title: "Ghế làm việc",
-      curPrice: "2.000.000đ",
-      oldPrice: "- 2.500.000đ",
-    },
-    {
-      id: 2,
-      imgUrl: "./assets/img/banlamviec.png",
-      title: "Bàn làm việc đơn giản",
-      curPrice: "500.000đ",
-      oldPrice: "",
-    },
-    {
-      id: 3,
-      imgUrl: "./assets/img/denngu.png",
-      title: "Đèn ngủ phong cách châu Âu",
-      curPrice: "900.000đ",
-      oldPrice: "",
-    },
-    {
-      id: 1,
-      imgUrl: "./assets/img/ghelamviec.png",
-      title: "Ghế làm việc",
-      curPrice: "2.000.000đ",
-      oldPrice: "- 2.500.000đ",
-    },
-    {
-      id: 2,
-      imgUrl: "./assets/img/banlamviec.png",
-      title: "Bàn làm việc đơn giản",
-      curPrice: "500.000đ",
-      oldPrice: "",
-    },
-    {
-      id: 3,
-      imgUrl: "./assets/img/denngu.png",
-      title: "Đèn ngủ phong cách châu Âu",
-      curPrice: "900.000đ",
-      oldPrice: "",
-    },
-  ];
-  const output = document.getElementById("data-container");
+	{
+		id: 1,
+		imgUrl: "/assets/img/ghelamviec.png",
+		title: "Ghế làm việc",
+		curPrice: "2.000.000đ",
+		oldPrice: "- 2.500.000đ",
+	},
+	{
+		id: 2,
+		imgUrl: "/assets/img/banlamviec.png",
+		title: "Bàn làm việc đơn giản",
+		curPrice: "500.000đ",
+		oldPrice: "",
+	},
+	{
+		id: 3,
+		imgUrl: "/assets/img/denngu.png",
+		title: "Đèn ngủ phong cách châu Âu",
+		curPrice: "900.000đ",
+		oldPrice: "",
+	},
+	{
+		id: 1,
+		imgUrl: "/assets/img/ghelamviec.png",
+		title: "Ghế làm việc",
+		curPrice: "2.000.000đ",
+		oldPrice: "- 2.500.000đ",
+	},
+	{
+		id: 2,
+		imgUrl: "/assets/img/banlamviec.png",
+		title: "Bàn làm việc đơn giản",
+		curPrice: "500.000đ",
+		oldPrice: "",
+	},
+	{
+		id: 3,
+		imgUrl: "/assets/img/denngu.png",
+		title: "Đèn ngủ phong cách châu Âu",
+		curPrice: "900.000đ",
+		oldPrice: "",
+	},
+];
+const output = document.getElementById("data-container");
 
-    for (let i = 0; i < cards.length; i++) {
-      // append the html to the output containing element
-      output.innerHTML += `
+for (let i = 0; i < cards.length; i++) {
+	// append the html to the output containing element
+	output.innerHTML += `
       <div class="flex items-center justify-start flex-col max-w-[286px] max-h-[469px]">
       <img src="${cards[i].imgUrl}" alt="${cards[i].title}" />
       <span class="text-[25px] font-light mt-2 text-center mb-auto">${cards[i].title}</span>
@@ -69,4 +69,4 @@ const cards = [
       </button>
     </div>
       `;
-    }
+}
