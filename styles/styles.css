@@ -73,6 +73,7 @@ h6 {
 }
 .container {
 	width: 100%;
+
 	max-width: 1440px !important;
 	margin: 0 auto;
 	padding-left: 100px;
