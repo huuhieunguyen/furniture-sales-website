@@ -1,0 +1,64 @@
+﻿@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "ThemDM";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+    @{
+    _AdminSideBarService.setActive("DanhMuc", "Index", "Admin");
+}
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        display: none;
+    }
+</style>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Thêm thông tin danh mục</h1>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    <!-- DataTales Example -->
+    <div class="container gap-3">
+        <div class="row mb-4">
+            <label class="col-2" for="Madm">Mã danh mục</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Madm"
+                   id="Madm" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Tendm">Tên danh mục</label>
+            <input class="col-4 form-control"
+                   type="text"
+                   name="Tendm"
+                   id="Tendm" />
+        </div>
+    </div>
+    <hr class="my-12" />
+
+    <!-- Return or Save info -->
+    <div class="d-grid d-flex justify-content-between">
+        <a asp-action="Index" class="btn btn-secondary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="text">Quay lại</span>
+        </a>
+        <a href="#" class="btn btn-success btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-check"></i>
+            </span>
+            <span class="text">Tạo mới</span>
+        </a>
+    </div>
+</div>

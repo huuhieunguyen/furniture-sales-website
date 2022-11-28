@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewData["Title"] = "SuaKM";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+    @{
+    _AdminSideBarService.setActive("KhuyenMai", "Index", "Admin");
+}
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        display: none;
+    }
+</style>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">
+            Chỉnh sửa thông tin khuyến mãi
+        </h1>
+        <a href="#" class="btn btn-danger btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-trash"></i>
+            </span>
+            <span class="text">Xóa thông tin</span>
+        </a>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    <!-- DataTales Example -->
+    <div class="container gap-3">
+        <div class="row mb-4">
+            <label class="col-2" for="Makm">Mã khuyến mãi</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Makm"
+                   id="Makm" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Tenkm">Tên khuyến mãi</label>
+            <input class="col-4 form-control"
+                   type="text"
+                   name="Tenkm"
+                   id="Tenkm" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Ngaybd">Ngày bắt đầu</label>
+            <input class="col-4 form-control"
+                   type="date"
+                   name="Ngaybd"
+                   id="Ngaybd" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Ngaykt">Ngày kết thúc</label>
+            <input class="col-4 form-control"
+                   type="date"
+                   name="Ngaykt"
+                   id="Ngaykt" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Phantram">Phần trăm</label>
+            <input class="col-4 form-control"
+                   type="number"
+                   inputmode="decimal"
+                   min="0"
+                   step=".01"
+                   name="Phantram"
+                   id="Phantram" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Masp">Mã sản phẩm</label>
+            <input class="col-4 form-control"
+                   type="text"
+                   name="Masp"
+                   id="Masp" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Tensp">Tên sản phẩm</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Tensp"
+                   id="Tensp" />
+        </div>
+    </div>
+    <hr class="my-12" />
+
+    <!-- Return or Save info -->
+    <div class="d-grid d-flex justify-content-between">
+        <a asp-action="Index" class="btn btn-secondary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="text">Quay lại</span>
+        </a>
+        <a href="#" class="btn btn-success btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-check"></i>
+            </span>
+            <span class="text">Lưu thông tin</span>
+        </a>
+    </div>
+</div>

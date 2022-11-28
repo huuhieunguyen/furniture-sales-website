@@ -1,0 +1,166 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<div class="container pt-[84px]">
+    <div class="flex grid grid-cols-2 gap-x-[50px]">
+        <div>
+            <!-- Đường dẫn -->
+            <div class="flex gap-x-2 pb-[13px]">
+                <span class="pt-[5px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-[26px]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    </svg>
+                </span>
+                <p class="text-[24px]">
+                    <span class="text-gray-500">Trang chủ / Sản phẩm /</span> Thông tin sản phẩm
+                </p>
+            </div>
+            <!-- Ảnh sản phẩm -->
+            <div>
+                <img src="/assets/img/brown-chair.png" alt="">
+            </div>
+        </div>
+
+        <div class="pt-[45px] gap-y-3">
+            <p class="font-bold text-[44px]">Ghế làm việc</p>
+            <p class="font-medium text-gray-500 text-[18px] pt-[10px]">Sự kết hợp của gỗ và len</p>
+            <p class="leading-[180%] text-[18px] pt-[10px]">
+                <span class="font-medium text-[#AD7E5C]">Mã sản phẩm</span> :
+                <span class="font-light">H6503</span>
+                <br> <span class="font-medium text-[#AD7E5C]">Thương hiệu</span> : <span class="font-light">Bentley</span>
+                <br> <span class="font-medium text-[#AD7E5C]">Tình trạng</span> : <span class="font-light">
+                    Còn trong
+                    kho
+                </span>
+                <br>
+                <br> <span class="text-gray-500  pt-[10px] text-[18px] w-[590px] h-[96px]">
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Quam tortor quisque purus aliquet arcu magna. Purus ultrices nibh nunc orci
+                    cras nunc facilisi tristique. Dolor ultrices ...
+                </span> <span class="text-[#518581] text-[18px] font-medium">Đọc thêm</span>
+            </p>
+            <!-- Giá sản phẩm -->
+            <div class="gap-x-3 pt-[19px]">
+                <p>
+                    <span class="font-bold text-[44px] ">2.000.000đ</span>
+                    <span class="text-[44px] text-gray-500">-</span>
+                    <span class="font-normal text-[38px] text-gray-400 italic line-through align-bottom">2.500.000đ</span>
+                </p>
+            </div>
+            <!-- Số lượng -->
+            <div class="flex gap-x-[50px] pt-[27px]">
+                <span>
+                    <p class="font-normal text-[30px] text-gray-400">Số lượng</p>
+                </span>
+                <!-- Button số lượng -->
+                <div class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
+                    <span class="minus">-</span>
+                    <span class="num">01</span>
+                    <span class="plus">+</span>
+                </div>
+
+            </div>
+
+            <div class="flex grid grid-cols-2 gap-x-[20px] pt-[24px]">
+                <div>
+                    <button class="bg-[#518581] w-[285px] h-[58px] border">
+                        <span class="font-bold text-[18px] text-[#F9F9F9]">Mua ngay</span>
+                    </button>
+                </div>
+                <div>
+                    <button class="w-[285px] h-[58px] border">
+                        <span class="font-bold text-[18px]">Thêm vào giỏ hàng</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="pt-[50px] pb-[100px]">
+        <p class="font-bold text-[32px] text-[#151411]">Sản phẩm tương tự</p>
+        <div class="pt-[30px]">
+            <div class="product-list grid grid-cols-3 gap-x-8">
+                <div class="product-item rounded overflow-hidden">
+                    <div class="aspect-square bg-no-repeat bg-center bg-cover"
+                         style="background-image: url('../assets/img/brown-chair.png');"></div>
+                    <div class=" pt-[12px]">
+                        <p class="text-desc font-bold">
+                            Sofa
+                        </p>
+                        <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
+                        <p class="text-desc">
+                            Using kapuk randu material
+                        </p>
+                        <div class="text-[24px] font-bold mb-2 mt-[18px]">$58.39</div>
+                    </div>
+
+                </div>
+                <div class="product-item rounded overflow-hidden">
+                    <div class="aspect-square bg-no-repeat bg-center bg-cover"
+                         style="background-image: url('../assets/img/brown-chair.png');"></div>
+                    <div class=" pt-[12px]">
+                        <p class="text-desc font-bold">
+                            Sofa
+                        </p>
+                        <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
+                        <p class="text-desc">
+                            Using kapuk randu material
+                        </p>
+                        <div class="text-[24px] font-bold mb-2 mt-[18px]">$58.39</div>
+                    </div>
+                </div>
+                <div class="product-item rounded overflow-hidden">
+                    <div class="aspect-square bg-no-repeat bg-center bg-cover"
+                         style="background-image: url('../assets/img/brown-chair.png');"></div>
+                    <div class=" pt-[12px]">
+                        <p class="text-desc font-bold">
+                            Sofa
+                        </p>
+                        <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
+                        <p class="text-desc">
+                            Using kapuk randu material
+                        </p>
+                        <div class="text-[24px] font-bold mb-2 mt-[18px]">$58.39</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const plus = document.querySelector(".plus"),
+        minus = document.querySelector(".minus"),
+        num = document.querySelector(".num");
+    let a = 1;
+    plus.addEventListener("click", () => {
+        a++;
+        a = a < 10 ? "0" + a : a;
+        num.innerText = a;
+    });
+
+    minus.addEventListener("click", () => {
+        if (a > 1) {
+            a--;
+            a = a < 10 ? "0" + a : a;
+            num.innerText = a;
+        }
+    });
+</script>

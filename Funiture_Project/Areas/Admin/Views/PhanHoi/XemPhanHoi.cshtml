@@ -1,0 +1,83 @@
+﻿@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "XemPhanHoi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+    @{
+    _AdminSideBarService.setActive("PhanHoi", "Index", "Admin");
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Phản hồi khách hàng</h1>
+        <a href="#" class="btn btn-danger btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-trash"></i>
+            </span>
+            <span class="text">Xóa thông tin</span>
+        </a>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    <!-- DataTales Example -->
+    <div class="container gap-3">
+        <div class="row mb-4">
+            <label class="col-2" for="Hoten">Họ tên khách hàng</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Hoten"
+                   id="Hoten" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="email">Email</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="email"
+                   name="email"
+                   id="email" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Sdt">Số điện thoại</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Sdt"
+                   id="Sdt" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Phanhoi">Phản hồi</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Phanhoi"
+                   id="Phanhoi" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Ngaygui">Ngày gửi</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="date"
+                   name="Ngaygui"
+                   id="Ngaygui" />
+        </div>
+    </div>
+    <hr class="my-12" />
+
+    <!-- Return or Save info -->
+    <div class="d-grid d-flex justify-content-between">
+        <a asp-action="Index" class="btn btn-secondary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="text">Quay lại</span>
+        </a>
+    </div>
+</div>

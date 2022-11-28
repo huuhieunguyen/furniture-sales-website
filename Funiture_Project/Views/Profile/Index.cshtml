@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="container my-16">
+    <div class="text-heading text-center">
+        Hồ sơ của tôi
+    </div>
+    <div class="text-desc text-desc__yellow text-center my-7">
+        Chỉnh sửa hồ sơ tài khoản
+    </div>
+    <form class="w-full grid gap-x-6 grid-cols-3">
+        <div class="info col-span-2">
+            <div class="flex items-center mb-6">
+                <div class="min-w-[250px]">
+                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="username">
+                        Tên đăng nhập
+                    </label>
+                </div>
+                <div class="w-full">
+                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                           id="username" type="text" value="Thanhlam6178">
+                </div>
+            </div>
+            <div class="flex items-center mb-6">
+                <div class="min-w-[250px]">
+                    <label class="block text-gray-500 font-bold text-right mb-1  pr-4" for="full-name">
+                        Họ và tên
+                    </label>
+                </div>
+                <div class="w-full">
+                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                           id="full-name" type="text" value="Nguyễn Võ Thanh Lâm">
+                </div>
+            </div>
+            <div class="flex items-center mb-6">
+                <div class="min-w-[250px]">
+                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="email">
+                        Email
+                    </label>
+                </div>
+                <div class="w-full">
+                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                           id="email" type="email" value="20521519@gm.uit.edu.vn">
+                </div>
+            </div>
+            <div class="flex items-center mb-6">
+                <div class="min-w-[250px]">
+                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="phone">
+                        Điện thoại
+                    </label>
+                </div>
+                <div>
+                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                           id="phone" type="number" value="0942121213">
+                </div>
+            </div>
+            <div class="flex items-center mb-6">
+                <div class="min-w-[250px]">
+                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="address">
+                        Địa chỉ
+                    </label>
+                </div>
+                <div class="w-full grid grid-cols-3 gap-x-2">
+                    <select class="block w-full bg-white border px-4 py-2 pr-8 rounded  w">
+                        <option>Tỉnh/Thành</option>
+                        <option>Bình Dương</option>
+                        <option>Tp Hồ Chí Minh</option>
+                    </select>
+                    <select class="block w-full bg-white border px-4 py-2 pr-8 rounded  w">
+                        <option>Quận/huyện</option>
+                        <option>Quận 1</option>
+                        <option>Quận 2</option>
+                    </select>
+                    <select class="block w-full bg-white border px-4 py-2 pr-8 rounded  w">
+                        <option>Xã/phường</option>
+                        <option>Phường 1</option>
+                        <option>Phường 2</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="flex items-center mb-6">
+                <div class="min-w-[250px]">
+                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="address-detail">
+                        Địa chỉ cụ thể
+                    </label>
+                </div>
+                <div class="w-full">
+                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
+                           id="address-detail" type="text" value="Ký túc xá khu A">
+                </div>
+            </div>
+        </div>
+        <div class="image border-left text-center">
+            <div class="mt-2">
+                <img src="../assets/img/banlamviec.png" class="w-[295px] h-[295px] m-auto rounded-[50%] shadow">
+            </div>
+
+            <label class="inline-block mt-3 px-4 py-2 bg-white border border-gray-300 rounded cursor-pointer"
+                   for="file_input">
+                Đổi
+                ảnh
+            </label>
+            <input class="hidden" id="file_input" type="file">
+        </div>
+        <div class="flex items-center">
+            <div class="w-[250px]">
+            </div>
+            <a class="button-primary">
+                Lưu
+            </a>
+        </div>
+    </form>
+</main>
+

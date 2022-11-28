@@ -1,0 +1,428 @@
+﻿@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("SanPham", "Index", "Admin");
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Thông tin sản phẩm</h1>
+        <a asp-action="ThemSP"
+           class="btn btn-primary btn-icon-split float-right">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+            
+            <span class="text">Thêm sản phẩm</span>
+        </a>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered"
+                       id="dataTable"
+                       width="100%"
+                       cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Mã DM</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Nước SX</th>
+                            <th>Đơn giá</th>
+                            <th>Tổng SL</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Mã DM</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Nước SX</th>
+                            <th>Đơn giá</th>
+                            <th>Tổng SL</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>2011/04/25</td>
+                            <td>TP.HCM</td>
+                            <td>9/10/2022</td>
+                            <td class="d-flex justify-content-center">
+                                <a asp-action="SuaSP">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>2011/07/25</td>
+                            <td>TP.HCM</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>2009/01/12</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>2012/03/29</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>2008/11/28</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>2012/12/02</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>007</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>2012/08/06</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>008</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>San Francisco</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>009</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>2009/09/15</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>010</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>2008/12/13</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>011</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>2008/12/19</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>012</td>
+                            <td>Support Lead</td>
+                            <td>Edinburgh</td>
+                            <td>2013/03/03</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>013</td>
+                            <td>Regional Director</td>
+                            <td>San Francisco</td>
+                            <td>2008/10/16</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>014</td>
+                            <td>Senior Marketing Designer</td>
+                            <td>London</td>
+                            <td>2012/12/18</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>015</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>2010/03/17</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>016</td>
+                            <td>Marketing Designer</td>
+                            <td>London</td>
+                            <td>2012/11/27</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>017</td>
+                            <td>Chief Financial Officer (CFO)</td>
+                            <td>New York</td>
+                            <td>2010/06/09</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>018</td>
+                            <td>Systems Administrator</td>
+                            <td>New York</td>
+                            <td>2009/04/10</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>019</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>2012/10/13</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>020</td>
+                            <td>Personnel Lead</td>
+                            <td>Edinburgh</td>
+                            <td>2012/09/26</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                </a>
+                                <a href="">
+                                    <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
