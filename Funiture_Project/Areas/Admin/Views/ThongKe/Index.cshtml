@@ -1,0 +1,11 @@
+﻿@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+<h1>Index</h1>
+
