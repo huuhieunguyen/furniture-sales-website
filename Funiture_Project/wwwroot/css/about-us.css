@@ -1,0 +1,14 @@
+@import "/styles/styles.css";
+
+.gray-color {
+    color: var(--text-gray)
+}
+
+.yellow-color {
+    color: var(--yellow)
+}
+
+.image-section-item img{
+    width: 100%;
+    overflow: hidden;
+}
