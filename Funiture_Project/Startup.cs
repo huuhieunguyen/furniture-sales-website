@@ -32,7 +32,8 @@ namespace Funiture_Project
         {
             /*Tao ket noi den Database*/
             var stringConnectdb = Configuration.GetConnectionString("dbFurniture");
-            services.AddDbContext<FunitureContext>(options => options.UseSqlServer(stringConnectdb));
+            services.AddDbContext<FurnitureContext>(options => options.UseSqlServer(stringConnectdb));
+
             /******Tao ket noi den Database******/
 
             /*services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All }));*/

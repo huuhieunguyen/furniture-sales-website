@@ -1,0 +1,178 @@
+﻿@model IEnumerable<Funiture_Project.Models.SanPham>
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Quản lý Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminProducts", "Index", "Admin");
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Thông tin sản phẩm</h1>
+        <a asp-action="Create"
+           class="btn btn-primary btn-icon-split float-right">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+
+            <span class="text">Thêm sản phẩm</span>
+        </a>
+    </div>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable"
+                       width="100%"
+                       cellspacing="0">
+                    @*Tieu de cot cho bang*@
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Mã DM</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Nước SX</th>
+                            <th>Thương hiệu</th>
+                            <th>Đơn giá</th>
+                            <th>Tổng SL</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+
+                    @*Tieu de chan bang*@
+                    <tfoot>
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Mã DM</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Nước SX</th>
+                            <th>Thương hiệu</th>
+                            <th>Đơn giá</th>
+                            <th>Tổng SL</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.MaSp</th>
+                                    <td>@item.MaDm</td>
+                                    <td>@item.TenSp</td>
+                                    <td>@item.Nsx</td>
+                                    <td>@item.ThuongHieu</td>
+                                    <td>@item.Gia</td>
+                                    <td>@item.TongSl</td>
+                                    <td class="d-flex justify-content-center">
+                                        <a asp-action="SuaSP">
+                                            <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                        </a>
+                                        <a href="">
+                                            <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!------------ DataTales Example ------------->
+</div>
+
+
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nsx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThuongHieu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TongSl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinhAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChiTiet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nsx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThuongHieu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongSl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinhAnh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChiTiet)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaSp">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaSp">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaSp">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+*@

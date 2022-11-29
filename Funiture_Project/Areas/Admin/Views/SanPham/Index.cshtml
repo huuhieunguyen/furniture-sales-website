@@ -1,7 +1,7 @@
 ﻿@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Quản lý Sản Phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 @section Sidebar{
@@ -28,8 +28,74 @@
     <hr class="my-12" />
 
     <div class="mt-10"></div>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable"
+                       width="100%"
+                       cellspacing="0">
+                    @*Tieu de cot cho bang*@
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Mã DM</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Nước SX</th>
+                            <th>Đơn giá</th>
+                            <th>Tổng SL</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+
+                    @*Tieu de chan bang*@
+                    <tfoot>
+                        <tr>
+                            <th>Mã SP</th>
+                            <th>Mã DM</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Nước SX</th>
+                            <th>Đơn giá</th>
+                            <th>Tổng SL</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach(var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">001</th>
+                                    <td>System Architect</td>
+                                    <td>Edinburgh</td>
+                                    <td>2011/04/25</td>
+                                    <td>TP.HCM</td>
+                                    <td>9/10/2022</td>
+                                    <td class="d-flex justify-content-center">
+                                        <a asp-action="SuaSP">
+                                            <img src="~/admin/img/bi_pencil-square.svg"
+                                                 alt="" />
+                                        </a>
+                                        <a href="">
+                                            <img src="~/admin/img/ep_delete-filled.svg"
+                                                 alt="" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+
+    <!------------ DataTales Example ------------->
+    @*<div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered"
@@ -423,6 +489,6 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div>*@
 </div>
 

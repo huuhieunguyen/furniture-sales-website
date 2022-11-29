@@ -19,5 +19,6 @@ namespace Funiture_Project.Models
         public string ThanhPho { get; set; }
         public DateTime? NgayTao { get; set; }
         public int? Quyen { get; set; }
+        public string GioiTinh { get; set; }
     }
 }

@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Funiture_Project.Models
 {
-    public partial class FunitureContext : DbContext
+    public partial class FurnitureContext : DbContext
     {
-        public FunitureContext()
+        public FurnitureContext()
         {
         }
 
-        public FunitureContext(DbContextOptions<FunitureContext> options)
+        public FurnitureContext(DbContextOptions<FurnitureContext> options)
             : base(options)
         {
         }
@@ -32,7 +32,7 @@ namespace Funiture_Project.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=HIEUHP; Database=Funiture; Integrated Security=true;");
+                optionsBuilder.UseSqlServer("Server=34.92.102.132;Database=Furniture;user id=sqlserver;password=Web123456789;TrustServerCertificate=True");
             }
         }
 
@@ -167,6 +167,10 @@ namespace Funiture_Project.Models
                 entity.Property(e => e.DiaChi).HasMaxLength(255);
 
                 entity.Property(e => e.Email).HasMaxLength(255);
+
+                entity.Property(e => e.GioiTinh)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.HoTen).HasMaxLength(255);
 
