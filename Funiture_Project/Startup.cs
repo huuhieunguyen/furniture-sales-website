@@ -35,7 +35,9 @@ namespace Funiture_Project
             services.AddDbContext<FunitureContext>(options => options.UseSqlServer(stringConnectdb));
             /******Tao ket noi den Database******/
 
-            services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All }));
+            /*services.AddSingleton<HtmlEncoder>(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All }));*/
+            /******Cach viet ngan gon hon******/
+            services.AddSingleton(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All }));
 
             /* Tao dong bo tuc thoi voi file .cshtml khi khoi chay */
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
