@@ -81,11 +81,11 @@
                                     <td>@item.Gia</td>
                                     <td>@item.TongSl</td>
                                     <td class="d-flex justify-content-center">
-                                        <a asp-action="SuaSP">
+                                        <a asp-action="Edit" asp-route-id="@item.MaSp">
                                             <img src="~/admin/img/bi_pencil-square.svg"
                                          alt="" />
                                         </a>
-                                        <a href="">
+                                        <a asp-action="Delete" asp-route-id="@item.MaSp">
                                             <img src="~/admin/img/ep_delete-filled.svg"
                                          alt="" />
                                         </a>
