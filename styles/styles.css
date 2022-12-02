@@ -73,7 +73,7 @@ h6 {
 }
 .container {
   width: 100%;
-  max-width: 1440px !important;
+  max-width: 2180px !important;
   margin: 0 auto;
   padding-left: 100px;
   padding-right: 100px;
@@ -136,6 +136,7 @@ h6 {
 
 .overlay {
   display: block;
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
@@ -143,7 +144,6 @@ h6 {
   bottom: 0;
   left: 0;
   opacity: 0;
-  /* transform: translateX(100%); */
   transition: all 0.3s ease-in;
   animation: opacity 0.3s ease-in;
   z-index: 10;
@@ -167,6 +167,7 @@ h6 {
 } */
 
 .nav__input:checked ~ .overlay {
+  visibility: visible;
   opacity: 1;
   /* transform: translateX(0); */
 }

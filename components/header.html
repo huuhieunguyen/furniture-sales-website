@@ -54,7 +54,7 @@
               />
             </svg>
           </span>
-          <span>
+          <span class="flex items-center justify-center gap-x-2 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -69,13 +69,17 @@
                 d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
               />
             </svg>
+
+            <span class="font-bold">User name</span>
           </span>
         </div>
       </div>
     </header>
 
     <!-- Mobile -->
-    <header class="lg:hidden bg-white shadow-[0px_1px_2px_rgba(0,_0,_0,_0.1)]">
+    <header
+      class="sticky top-0 lg:hidden bg-white shadow-[0px_1px_2px_rgba(0,_0,_0,_0.1)]"
+    >
       <div class="w-full mx-auto p-5 flex justify-between">
         <div class="flex items-center justify-start gap-x-2 cursor-pointer">
           <img srcset="/assets/img/logo.png 2.5x" alt="#" />
@@ -123,12 +127,12 @@
           </ul>
 
           <div class="absolute pl-[30px] bottom-10">
-            <button class="px-[16px] py-[8px] text-white bg-[#518581]">
+            <!-- <button class="px-[16px] py-[8px] text-white bg-[#518581]">
               Đăng nhập
-            </button>
+            </button> -->
             <!-- After login -->
-            <!-- <div
-              class="flex items-center justify-center gap-x-6 text-[18px] cursor-pointer"
+            <div
+              class="flex items-center justify-center gap-x-3 text-[18px] cursor-pointer"
             >
               <span>
                 <svg
@@ -146,7 +150,9 @@
                   />
                 </svg>
               </span>
-              <span>
+              <span
+                class="flex items-center justify-center gap-x-1 cursor-pointer"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -161,11 +167,15 @@
                     d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
                   />
                 </svg>
+                <span class="font-bold text-sm truncate max-w-[70px]"
+                  >User name</span
+                >
               </span>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
     </header>
+    <main class="h-[500vh]"></main>
   </body>
 </html>
