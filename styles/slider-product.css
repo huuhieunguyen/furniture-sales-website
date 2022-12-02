@@ -1,74 +1,133 @@
 /* Sliders */
-.swiper {
-  width: 100%;
-  height: 500px;
+@media screen and (min-width: 1024px) {
+  .swiper {
+    width: 100%;
+    height: 500px;
+  }
+
+  .swiper-slide {
+    font-size: 18px;
+    background: #fff;
+    color: white;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+
+    /* background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-button-next {
+    right: 40px !important;
+  }
+
+  .swiper-button-prev {
+    left: 40px !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 52px !important;
+    height: 52px !important;
+    padding: 5px;
+    background: rgba(21, 20, 17, 0.6);
+    backdrop-filter: blur(7.5px);
+    border-radius: 50px;
+    color: white !important;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 24px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white !important;
+  }
+
+  .slider-1,
+  .slider-3 {
+    background-image: url(/assets/img/slider-bg.png);
+  }
+  .slider-2,
+  .slider-4 {
+    background-image: url(/assets/img/login-bg.png);
+  }
 }
+@media screen and (max-width: 1023.98px) {
+  .swiper {
+    width: 100%;
+    height: 180px;
+  }
 
-.swiper-slide {
-  font-size: 18px;
-  background: #fff;
-  color: white;
+  .swiper-slide {
+    font-size: 12px;
+    background: #fff;
+    color: white;
 
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 
-  /* background image */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
+    /* background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-.swiper-button-next {
-  right: 40px !important;
-}
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+    visibility: hidden;
+  }
 
-.swiper-button-prev {
-  left: 40px !important;
-}
+  .swiper-pagination-bullet-active {
+    background: white !important;
+  }
 
-.swiper-button-next,
-.swiper-button-prev {
-  width: 52px !important;
-  height: 52px !important;
-  padding: 5px;
-  background: rgba(21, 20, 17, 0.6);
-  backdrop-filter: blur(7.5px);
-  border-radius: 50px;
-  color: white !important;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 24px !important;
-}
-
-.swiper-pagination-bullet-active {
-  background: white !important;
-}
-
-.slider-1,
-.slider-3 {
-  background-image: url(/assets/img/slider-bg.png);
-}
-.slider-2,
-.slider-4 {
-  background-image: url(/assets/img/login-bg.png);
+  .slider-1,
+  .slider-3 {
+    background-image: url(/assets/img/slider-bg.png);
+  }
+  .slider-2,
+  .slider-4 {
+    background-image: url(/assets/img/login-bg.png);
+  }
 }
