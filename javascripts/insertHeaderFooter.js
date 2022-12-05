@@ -1,6 +1,6 @@
 const header = `
 <header
-class="hidden lg:block sticky top-0 bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]"
+class="z-50 hidden lg:block sticky top-0 bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]"
 >
 <div class="container py-[25px] flex items-center justify-between">
   <div class="flex items-center justify-center gap-x-2 cursor-pointer">
@@ -59,7 +59,7 @@ class="hidden lg:block sticky top-0 bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0
 </header>
 
 <header
-class="sticky top-0 lg:hidden bg-white shadow-[0px_1px_2px_rgba(0,_0,_0,_0.1)]"
+class="z-50 sticky top-0 lg:hidden bg-white shadow-[0px_1px_2px_rgba(0,_0,_0,_0.1)]"
 >
 <div class="w-full mx-auto p-5 flex justify-between">
   <div class="flex items-center justify-start gap-x-2 cursor-pointer">
