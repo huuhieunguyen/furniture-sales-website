@@ -100,29 +100,19 @@
             <div class="menu-content">
                 <ul>
                     <li class="menu-item">
-                        <span>
-                            @Html.ActionLink("Trang chủ", "Index", "Home")
-                        </span>
+                        <a asp-action="Index" asp-controller="Home">Trang chủ</a>
                     </li>
                     <li class="menu-item">
-                        <span>
-                            @Html.ActionLink("Sản phẩm", "Index", "Product")
-                        </span>
+                        <a asp-action="Index" asp-controller="Product">Sản phẩm</a>
                     </li>
                     <li class="menu-item">
-                        <span>
-                            @Html.ActionLink("Về chúng tôi", "Index", "About")
-                        </span>
+                       <a asp-action="Index" asp-controller="About">Về chúng tôi</a>
                     </li>
                     <li class="menu-item">
-                        <span>
-                            @Html.ActionLink("Liên hệ", "Index", "Contact")
-                        </span>
+                        <a asp-action="Index" asp-controller="Contact">Liên hệ</a>
                     </li>
                     <li class="menu-item">
-                        <span>
-                            @Html.ActionLink("Admin", "Index", "NhanVien", new{ Area="Admin" }, null)
-                        </span>
+                        <a asp-action="Index" asp-controller="NhanVien" asp-area="Admin">Admin</a>
                     </li>
                 </ul>
 
