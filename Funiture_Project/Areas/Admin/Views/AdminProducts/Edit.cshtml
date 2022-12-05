@@ -28,9 +28,9 @@
         </h1>
 
         <!--------------- Button Xóa Sản Phẩm -------------------->
-        @{var item = Model.MaSp;}
+        @{var item = Model;}
 
-        <a asp-action="Delete" asp-route-id="@item" class="btn btn-danger btn-icon-split">
+        <a asp-action="Delete" asp-route-id="@item.MaSp" class="btn btn-danger btn-icon-split">
             <span class="icon text-white-50">
                 <i class="fas fa-trash"></i>
             </span>
@@ -46,7 +46,9 @@
         <!--**************************************-->
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaSp" />
 
+            <!--*********** Mã sản phẩm **************-->
             <div class="form-group row mb-4">
                 <label class="col-2 col-form-label" asp-for="MaSp">Mã sản phẩm</label>
                 <input class="col-4 form-control bg-white" asp-for="MaSp" disabled />
@@ -59,7 +61,7 @@
                 <span asp-validation-for="TenSp" class="text-danger"></span>
             </div>
 
-            <!--*********** Mã sản phẩm **************-->
+            <!--*********** Mã danh mục **************-->
             <div class="form-group row mb-4">
                 <label class="col-2 col-form-label" asp-for="MaDm">Mã danh mục</label>
                 <input class="col-4 form-control bg-white" asp-for="MaDm" />
@@ -124,12 +126,12 @@
                 </a>
 
                 <!------ Button Lưu ------>
-                <div class="form-group btn btn-success btn-icon-split">
+                <a class="form-group btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
                         <i class="fas fa-check"></i>
                     </span>
                     <input type="submit" value="Lưu thông tin" class="btn btn-success" />
-                </div>
+                </a>
             </div>
 
         </form>

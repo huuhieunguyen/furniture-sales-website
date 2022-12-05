@@ -67,7 +67,9 @@
             </div>
         </div>
     </header>
+
     @RenderBody()
+
     <footer class="mt-[100px] container  py-[60px] border-t border-t-[#ECE4DE] mb-20">
         <div class="flex items-center justify-center gap-y-[23px] flex-col">
             <div class="flex items-center justify-center gap-x-2 cursor-pointer">
@@ -85,6 +87,9 @@
         </div>
     </footer>
 
+
+    @await Component.InvokeAsync("Notyf")
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 

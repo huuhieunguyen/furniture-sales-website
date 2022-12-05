@@ -23,7 +23,9 @@ namespace Funiture_Project.Models
         public virtual DbSet<DanhMucSp> DanhMucSp { get; set; }
         public virtual DbSet<GioHang> GioHang { get; set; }
         public virtual DbSet<HoaDon> HoaDon { get; set; }
+        public virtual DbSet<KhachHang> KhachHang { get; set; }
         public virtual DbSet<KhuyenMai> KhuyenMai { get; set; }
+        public virtual DbSet<NhanVien> NhanVien { get; set; }
         public virtual DbSet<SanPham> SanPham { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
@@ -32,7 +34,7 @@ namespace Funiture_Project.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=34.92.102.132;Database=Furniture;user id=sqlserver;password=Web123456789;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer("Server=34.92.102.132;Database=Furniture;user id=sqlserver ;password=Web123456789;TrustServerCertificate=True;");
             }
         }
 
@@ -62,6 +64,7 @@ namespace Funiture_Project.Models
                     .HasMaxLength(255);
 
                 entity.Property(e => e.TenDm)
+                    .IsRequired()
                     .HasColumnName("TenDM")
                     .HasMaxLength(255);
             });
@@ -81,7 +84,9 @@ namespace Funiture_Project.Models
                     .HasColumnName("MaHD")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.DiaChi).HasMaxLength(255);
+                entity.Property(e => e.DiaChi)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
                 entity.Property(e => e.MaKh).HasColumnName("MaKH");
 
@@ -100,12 +105,49 @@ namespace Funiture_Project.Models
                 entity.Property(e => e.ThanhPho).HasMaxLength(255);
 
                 entity.Property(e => e.Ttdh)
+                    .IsRequired()
                     .HasColumnName("TTDH")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Tttt)
+                    .IsRequired()
                     .HasColumnName("TTTT")
                     .HasMaxLength(255);
+            });
+
+            modelBuilder.Entity<KhachHang>(entity =>
+            {
+                entity.HasKey(e => e.MaKh);
+
+                entity.Property(e => e.MaKh).HasColumnName("MaKH");
+
+                entity.Property(e => e.DiaChi).HasMaxLength(255);
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.GioiTinh)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.HoTen)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.NgayTao).HasColumnType("datetime");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.Sdt)
+                    .IsRequired()
+                    .HasColumnName("SDT")
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.ThanhPho).HasMaxLength(255);
             });
 
             modelBuilder.Entity<KhuyenMai>(entity =>
@@ -127,33 +169,77 @@ namespace Funiture_Project.Models
                 entity.Property(e => e.PhanTramKm).HasColumnName("PhanTramKM");
 
                 entity.Property(e => e.TenKm)
+                    .IsRequired()
                     .HasColumnName("TenKM")
                     .HasMaxLength(255);
+            });
+
+            modelBuilder.Entity<NhanVien>(entity =>
+            {
+                entity.HasKey(e => e.MaNv);
+
+                entity.Property(e => e.MaNv)
+                    .HasColumnName("MaNV")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.DiaChi).HasMaxLength(255);
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.GioiTinh)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.HoTenNv)
+                    .IsRequired()
+                    .HasColumnName("HoTenNV")
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.NgayTao).HasColumnType("datetime");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.Sdt)
+                    .IsRequired()
+                    .HasColumnName("SDT")
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.ThanhPho).HasMaxLength(255);
             });
 
             modelBuilder.Entity<SanPham>(entity =>
             {
                 entity.HasKey(e => e.MaSp);
 
-                entity.Property(e => e.MaSp)
-                    .HasColumnName("MaSP")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.MaSp).HasColumnName("MaSP");
 
-                entity.Property(e => e.HinhAnh).HasMaxLength(255);
+                entity.Property(e => e.HinhAnh)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
                 entity.Property(e => e.MaDm)
+                    .IsRequired()
                     .HasColumnName("MaDM")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Nsx)
+                    .IsRequired()
                     .HasColumnName("NSX")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.TenSp)
+                    .IsRequired()
                     .HasColumnName("TenSP")
                     .HasMaxLength(255);
 
-                entity.Property(e => e.ThuongHieu).HasMaxLength(255);
+                entity.Property(e => e.ThuongHieu)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
                 entity.Property(e => e.TongSl).HasColumnName("TongSL");
             });
@@ -162,29 +248,33 @@ namespace Funiture_Project.Models
             {
                 entity.HasKey(e => e.MaUser);
 
-                entity.Property(e => e.MaUser).ValueGeneratedNever();
-
                 entity.Property(e => e.DiaChi).HasMaxLength(255);
 
-                entity.Property(e => e.Email).HasMaxLength(255);
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
                 entity.Property(e => e.GioiTinh)
+                    .IsRequired()
                     .HasMaxLength(10)
                     .IsFixedLength();
 
-                entity.Property(e => e.HoTen).HasMaxLength(255);
+                entity.Property(e => e.HoTen)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
                 entity.Property(e => e.NgayTao).HasColumnType("datetime");
 
-                entity.Property(e => e.Password).HasMaxLength(255);
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
                 entity.Property(e => e.Sdt)
+                    .IsRequired()
                     .HasColumnName("SDT")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.ThanhPho).HasMaxLength(255);
-
-                entity.Property(e => e.Username).HasMaxLength(255);
             });
 
             OnModelCreatingPartial(modelBuilder);
