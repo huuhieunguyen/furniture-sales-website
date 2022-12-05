@@ -1,5 +1,4 @@
-﻿using Funiture_Project.DataDB;
-using Funiture_Project.Models;
+﻿using Funiture_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

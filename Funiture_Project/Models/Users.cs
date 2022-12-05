@@ -5,11 +5,11 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace Funiture_Project.DataDB
+namespace Funiture_Project.Models
 {
-    public partial class NhanVien
+    public partial class Users
     {
-        public int MaNv { get; set; }
+        public int MaUser { get; set; }
         public string HoTen { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }

@@ -1,5 +1,4 @@
-﻿using Funiture_Project.DataDB;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
@@ -27,14 +26,12 @@ namespace Funiture_Project.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         [Route("SignUp", Name = "DangKy")]
         public IActionResult SignUp()
         {
             return View();
         }
         [HttpPost]
-        [AllowAnonymous]
         [Route("SignUp", Name = "DangKy")]
         public IActionResult SignUp(RegisterVM taikhoan)
         {
