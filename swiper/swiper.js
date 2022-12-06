@@ -1,5 +1,5 @@
 var swiper1 = new Swiper(".mySwiper1", {
-	slidesPerView: 4,
+	slidesPerView: 1,
 	spaceBetween: 10,
 	slidesPerGroup: 1,
 	loop: true,
@@ -15,9 +15,20 @@ var swiper1 = new Swiper(".mySwiper1", {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
 	},
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+			spaceBetween: 10,
+		},
+		1024: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+		},
+	},
 });
 var swiper2 = new Swiper(".mySwiper2", {
-	slidesPerView: 3,
+	slidesPerView: 1,
+
 	spaceBetween: 30,
 	centeredSlides: true,
 	grabCursor: true,
@@ -31,8 +42,18 @@ var swiper2 = new Swiper(".mySwiper2", {
 		},
 	},
 	autoplay: {
-		delay: 2000,
+		delay: 1500,
 		disableOnInteraction: false,
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 1,
+			spaceBetween: 30,
+		},
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 30,
+		},
 	},
 });
 
