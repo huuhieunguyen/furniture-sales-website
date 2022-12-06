@@ -12,6 +12,7 @@
              class="object-fill w-full max-h-[860px] relative" />
         <!-- Đăng ký -->
         <form asp-action="SignUp" class="form-register" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]">
                 <span class="text-[44px] font-bold text-[#FFB23F]">Đăng ký</span>
                 <input asp-for="HoTen" type="text"
@@ -27,11 +28,11 @@
                        placeholder="Email"
                        class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
                 <div class="h-[60px] w-[516px] p-[14px] font-bold text-2xl">
-                    <label class="radio-inline font-bold text-2xl">
+                    <label class="radio-inline font-bold text-2xl mr-5">
                         @Html.RadioButtonFor(model => model.GioiTinh, "Nam", new {@name="GioiTinh"})
                         Nam
                     </label>
-                    <label class="radio-inline p-[100px] font-bold text-2xl">
+                    <label class="radio-inline font-bold text-2xl ml-5">
                         @Html.RadioButtonFor(model => model.GioiTinh, "Nữ", new {@name="GioiTinh"})
                         Nữ
                     </label>
@@ -80,5 +81,11 @@
     document.querySelector(".form-login").classList.remove("hidden");
     });
     </script>*@
+
 </main>
 
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
