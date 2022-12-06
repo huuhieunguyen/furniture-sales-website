@@ -1,36 +1,84 @@
 ﻿@model IEnumerable<Funiture_Project.Models.DanhMucSp>
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Quản lý danh mục sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenDm)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenDm)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MaDm">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MaDm">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MaDm">Delete</a>
-            </td>
-        </tr>
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
 }
-    </tbody>
-</table>
+@{
+    _AdminSideBarService.setActive("AdminCategories", "Index", "Admin");
+}
+
+<!-- Begin Page Content -->
+
+
+
+
+<!--*************************-->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Quản lý danh mục sản phẩm</h1>
+        <a asp-action="Create"
+           class="btn btn-primary btn-icon-split float-right">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+
+            <span class="text">Thêm danh mục</span>
+        </a>
+    </div>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable"
+                     width="100%"
+                     cellspacing="0">
+
+                    @*Tieu de cot cho bang*@
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Mã danh mục</th>
+                            <th>Tên danh mục</th>
+                            <th class="d-flex justify-content-center">Tác vụ</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.MaDm</th>
+                                    <td>@item.TenDm</td>
+                                    <td class="d-flex justify-content-center">
+                                        <a asp-action="Edit" asp-route-id="@item.MaDm">
+                                            <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.MaDm">
+                                            <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--************************************-->
+</div>

@@ -13,8 +13,8 @@ namespace Funiture_Project.Models
         public string TenSp { get; set; }
         public string Nsx { get; set; }
         public string ThuongHieu { get; set; }
-        public double? Gia { get; set; }
-        public int? TongSl { get; set; }
+        public double Gia { get; set; }
+        public int TongSl { get; set; }
         public string HinhAnh { get; set; }
         public string MaDm { get; set; }
         public string ChiTiet { get; set; }

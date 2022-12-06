@@ -34,7 +34,7 @@ namespace Funiture_Project.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=34.92.102.132;Database=Furniture;user id=sqlserver ;password=Web123456789;TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Server=34.92.102.132;Database=Furniture;user id=sqlserver ;password=Web123456789;TrustServerCertificate=True");
             }
         }
 
@@ -80,9 +80,7 @@ namespace Funiture_Project.Models
             {
                 entity.HasKey(e => e.MaHd);
 
-                entity.Property(e => e.MaHd)
-                    .HasColumnName("MaHD")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.MaHd).HasColumnName("MaHD");
 
                 entity.Property(e => e.DiaChi)
                     .IsRequired()
@@ -154,9 +152,7 @@ namespace Funiture_Project.Models
             {
                 entity.HasKey(e => e.MaKm);
 
-                entity.Property(e => e.MaKm)
-                    .HasColumnName("MaKM")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.MaKm).HasColumnName("MaKM");
 
                 entity.Property(e => e.NgayBd)
                     .HasColumnName("NgayBD")
@@ -178,9 +174,7 @@ namespace Funiture_Project.Models
             {
                 entity.HasKey(e => e.MaNv);
 
-                entity.Property(e => e.MaNv)
-                    .HasColumnName("MaNV")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.MaNv).HasColumnName("MaNV");
 
                 entity.Property(e => e.DiaChi).HasMaxLength(255);
 
@@ -193,9 +187,8 @@ namespace Funiture_Project.Models
                     .HasMaxLength(10)
                     .IsFixedLength();
 
-                entity.Property(e => e.HoTenNv)
+                entity.Property(e => e.HoTen)
                     .IsRequired()
-                    .HasColumnName("HoTenNV")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.NgayTao).HasColumnType("datetime");

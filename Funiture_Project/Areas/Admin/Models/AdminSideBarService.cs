@@ -71,17 +71,6 @@ namespace Funiture_Project.Areas.Admin.Models
 
             });
 
-            /*Items.Add(new SideBarItem()
-            {
-                Type = SideBarItemType.NavItem,
-                Controller = "SanPham",
-                Action = "Index",
-                Area = "Admin",
-                Title = "Quản lý sản phẩm",
-                AwesomeIcon = "fas fa-tags"
-
-            });*/
-
             Items.Add(new SideBarItem()
             {
                 Type = SideBarItemType.NavItem,

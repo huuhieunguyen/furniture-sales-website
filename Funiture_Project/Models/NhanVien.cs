@@ -10,7 +10,7 @@ namespace Funiture_Project.Models
     public partial class NhanVien
     {
         public int MaNv { get; set; }
-        public string HoTenNv { get; set; }
+        public string HoTen { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Sdt { get; set; }
