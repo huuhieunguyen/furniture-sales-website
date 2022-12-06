@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewData["Title"] = "XemKH";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+    @{
+    _AdminSideBarService.setActive("KhachHang", "Index", "Admin");
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Thông tin khách hàng</h1>
+        <a href="#" class="btn btn-danger btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-trash"></i>
+            </span>
+            <span class="text">Xóa thông tin</span>
+        </a>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    <!-- DataTales Example -->
+    <div class="container gap-3">
+        <div class="row mb-4">
+            <label class="col-2" for="Mauser">Mã User</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Mauser"
+                   id="Mauser" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Hoten">Họ tên</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Hoten"
+                   id="Hoten" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="email">Email</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="email"
+                   name="email"
+                   id="email" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Username">Username</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Username"
+                   id="Username" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Password">Password</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="password"
+                   name="Password"
+                   id="Password" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Sdt">Số điện thoại</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Sdt"
+                   id="Sdt" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Diachi">Địa chỉ</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Diachi"
+                   id="Diachi" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Thanhpho">Thành phố</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="text"
+                   name="Thanhpho"
+                   id="Thanhpho" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Ngaytao">Ngày tạo</label>
+            <input readonly
+                   class="col-4 form-control bg-white"
+                   type="date"
+                   name="Ngaytao"
+                   id="Ngaytao" />
+        </div>
+        <div class="row mb-4">
+            <label class="col-2" for="Quyen">Quyền</label>
+            <select class="form-control"
+                    id="inputGroupSelect01"
+                    style="width: auto">
+                <option selected>Chọn...</option>
+                <option value="1">Nhân viên</option>
+                <option value="2">Quản lý</option>
+            </select>
+        </div>
+    </div>
+    <hr class="my-12" />
+
+    <!-- Return or Save info -->
+    <div class="d-grid d-flex justify-content-between">
+        <a asp-action="Index" class="btn btn-secondary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="text">Quay lại</span>
+        </a>
+    </div>
+</div>

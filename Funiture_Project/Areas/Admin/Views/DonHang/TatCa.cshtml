@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewData["Title"] = "TatCa";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+    @{
+    _AdminSideBarService.setActive("DonHang", "Index", "Admin");
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Danh sách đơn hàng</h1>
+        <div class="list-group list-group-horizontal">
+            <a style="width: auto !important"
+               asp-action="DangCho"
+               class="list-group-item list-group-item-action"
+               aria-current="true">
+                Đang chờ
+            </a>
+            <a style="width: auto !important"
+               asp-action="DangGiao"
+               class="list-group-item list-group-item-action">Đang giao</a>
+            <a style="width: auto !important"
+               asp-action="DaGiao"
+               class="list-group-item list-group-item-action">Đã giao</a>
+            <a style="width: auto !important"
+               asp-action="BiHuy"
+               class="list-group-item list-group-item-action">Bị hủy</a>
+            <a style="width: auto !important"
+               href="#"
+               class="list-group-item list-group-item-action active">Tất cả</a>
+        </div>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered"
+                       id="dataTable"
+                       width="100%"
+                       cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã HĐ</th>
+                            <th>Khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Trạng thái đơn hàng</th>
+                            <th>Ngày hóa đơn</th>
+                            <th>Trị giá</th>
+                            <th>Nhân viên</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Mã HĐ</th>
+                            <th>Khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Trạng thái đơn hàng</th>
+                            <th>Ngày hóa đơn</th>
+                            <th>Trị giá</th>
+                            <th>Nhân viên</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>System Architect</td>
+                            <td>System Architect</td>
+                            <td>TP.HCM</td>
+                            <td>Edinburgh</td>
+                            <td>2011/04/25</td>
+                            <td>TP.HCM</td>
+                            <td>9/10/2022</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="SuaKM.html">
+                                    <img src="~/admin/img/bi_pencil-square.svg" alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Accountant</td>
+                            <td>System Architect</td>
+                            <td>TP.HCM</td>
+                            <td>Tokyo</td>
+                            <td>2011/07/25</td>
+                            <td>TP.HCM</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg" alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Junior Technical Author</td>
+                            <td>System Architect</td>
+                            <td>TP.HCM</td>
+                            <td>San Francisco</td>
+                            <td>2009/01/12</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg" alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>System Architect</td>
+                            <td>TP.HCM</td>
+                            <td>Edinburgh</td>
+                            <td>2012/03/29</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg" alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>Accountant</td>
+                            <td>System Architect</td>
+                            <td>TP.HCM</td>
+                            <td>Tokyo</td>
+                            <td>2008/11/28</td>
+                            <td>9/10/2022</td>
+                            <td>Nhân viên</td>
+                            <td class="d-flex justify-content-center">
+                                <a href="">
+                                    <img src="~/admin/img/bi_pencil-square.svg" alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

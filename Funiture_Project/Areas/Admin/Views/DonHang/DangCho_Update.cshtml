@@ -1,0 +1,161 @@
+﻿@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+@{
+    ViewData["Title"] = "DangCho_Update";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+    @{
+    _AdminSideBarService.setActive("DonHang", "DangCho", "Admin");
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Chi tiết đơn hàng</h1>
+        <a asp-action="DangCho" class="btn btn-secondary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="text">Quay lại</span>
+        </a>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+    <div class="d-flex">
+        <!-- DataTales Example -->
+        <div class="container gap-3">
+            <div class="modal-body row">
+                <div class="col-md-6">
+                    <div style="" class="row mb-4">
+                        <label class="col-5" for="MaHD">Mã hóa đơn</label>
+                        <input readonly
+                               class="col form-control bg-white"
+                               type="text"
+                               name="MaHD"
+                               id="MaHD" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="TenKH">Tên khách hàng</label>
+                        <input readonly
+                               class="col form-control bg-white"
+                               type="text"
+                               name="TenKH"
+                               id="TenKH" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="Sdt">Số điện thoại</label>
+                        <input class="col form-control bg-white"
+                               type="text"
+                               name="Sdt"
+                               id="Sdt" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="Diachi">Địa chỉ</label>
+                        <input class="col form-control bg-white"
+                               type="text"
+                               name="Diachi"
+                               id="Diachi" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="Thanhpho">Thành phố</label>
+                        <input class="col form-control bg-white"
+                               type="text"
+                               name="Thanhpho"
+                               id="Thanhpho" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="email">Email</label>
+                        <input class="col form-control bg-white"
+                               type="email"
+                               name="email"
+                               id="email" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="Ngdathang">Ngày đặt hàng</label>
+                        <input class="col form-control bg-white"
+                               type="date"
+                               name="Ngdathang"
+                               id="Ngdathang" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="Nggiaohang">Ngày giao hàng</label>
+                        <input class="col form-control bg-white"
+                               type="date"
+                               name="Nggiaohang"
+                               id="Nggiaohang" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="TTDH">Trạng thái đơn hàng</label>
+                        <input class="col form-control bg-white"
+                               type="text"
+                               name="TTDH"
+                               id="TTDH" />
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-5" for="TTTT">Trạng thái thanh toán</label>
+                        <input class="col form-control bg-white"
+                               type="text"
+                               name="TTTT"
+                               id="TTTT" />
+                    </div>
+                    <button style="width: 100%"
+                            type="button"
+                            class="col btn btn-warning btn-lg">
+                        Xác nhận đơn hàng
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <div class="border border-2 rounded p-3 mb-4">
+                        <div class="order-1-product mb-4">
+                            <div class="name-and-sumprice d-flex justify-content-between">
+                                <span class="h5 text-primary">Ghế làm việc cao cấp</span>
+                                <span>1.000.000đ</span>
+                            </div>
+                            <div class="price-per-product d-flex mb-2">
+                                <span class="mr-2">Đơn giá: </span>
+                                <span>1.000.000đ</span>
+                            </div>
+                            <div class="quantity d-flex mb-2">
+                                <span class="mr-2">Số lượng:</span>
+                                <span>1</span>
+                            </div>
+                        </div>
+
+                        <div class="order-1-product mb-4">
+                            <div class="name-and-sumprice d-flex justify-content-between">
+                                <span class="h5 text-primary">Bàn làm việc văn phòng</span>
+                                <span>2.600.000đ</span>
+                            </div>
+                            <div class="price-per-product d-flex mb-2">
+                                <span class="mr-2">Đơn giá: </span>
+                                <span id="od-price">1.300.000</span>
+                            </div>
+                            <div class="quantity d-flex mb-2">
+                                <span class="mr-2">Số lượng:</span>
+                                <span id="od-quantity">2</span>
+                            </div>
+                        </div>
+
+                        <div class="total-price p-3 mb-2 bg-dark text-white bg-gradient rounded">
+                            <div class="d-flex justify-content-between">
+                                <span class="h5">Tổng</span>
+                                <span id="od-total-price">3.600.000đ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cancel-button text-center">
+                        <button style="width: 93%"
+                                type="button"
+                                class="col btn btn-danger btn-lg">
+                            Hủy hóa đơn
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

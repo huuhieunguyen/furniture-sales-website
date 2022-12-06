@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model LoginViewModel;
+<main>
+    <div>
+        <img src="./assets/img/login-bg.png"
+             alt="login-background"
+             class="object-fill w-full max-h-[860px] relative" />
+        <!-- Đăng nhập -->
+        <form class="form-login" autocomplete="off" asp-controller="Login" asp-action="Index" method="post">
+            <div class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]">
+                <span class="text-[44px] font-bold text-[#FFB23F]">Đăng nhập</span>
+                <input asp-for="Email_Phone"
+                       type="text"
+                       required
+                       placeholder="Email or Phone"
+                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                <input asp-for="Password"
+                       type="password"
+                       required
+                       placeholder="Mật khẩu"
+                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                <label>
+                    <input 
+                        asp-for="KeepLoggedIn" 
+                        type="checkbox"
+                        class="w-[20px] h-[20px] m-[20px]" />
+                    <span class=" font-light text-2xl">Remember me </span>
+                </label>
+                
+                <button type="submit" class="bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl hover:bg-opacity-60">
+                    Đăng nhập
+                </button>
+                <p class="change-register text-xl cursor-pointer text-right">
+                    Nếu chưa có tài khoản, nhấn <strong>Đăng ký</strong>
+                </p>
+            </div>
+        </form>
+
+        <!-- Đăng ký -->
+        <form action="" class="form-register hidden" autocomplete="off">
+            <div class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]">
+                <span class="text-[44px] font-bold text-[#FFB23F]">Đăng ký</span>
+                <input type="text"
+                       name="name"
+                       placeholder="Tên đăng nhập"
+                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                <input type="password"
+                       name="password"
+                       placeholder="Mật khẩu"
+                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                <input type="password"
+                       name="confirmPassword"
+                       placeholder="Nhập lại mật khẩu"
+                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                <div class="flex items-center justify-end gap-x-[23px]">
+                    <button type="submit"
+                            class="bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[180px] p-[14px] font-bold text-2xl hover:bg-opacity-60">
+                        Đăng nhập
+                    </button>
+                    <button class="change-login bg-white text-[#AFADB5] rounded-lg shadow h-[60px] w-[180px] p-[14px] font-bold text-2xl hover:bg-opacity-60"
+                            type="button">
+                        Hủy
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        const changeRegister = document.querySelector(".change-register");
+        const changeLogin = document.querySelector(".change-login");
+
+        changeRegister.addEventListener("click", () => {
+          document.querySelector(".form-login").classList.add("hidden");
+          document.querySelector(".form-register").classList.remove("hidden");
+        });
+
+        //   document.querySelector(".form-login").addEventListener("submit", (e) => {
+        //     e.preventDefault();
+        //     console.log(
+        //       document.querySelector(".form-login").elements["name"].value,
+        //       document.querySelector(".form-login").elements["password"].value
+        //     );
+        //   });
+
+        changeLogin.addEventListener("click", () => {
+          document.querySelector(".form-register").classList.add("hidden");
+          document.querySelector(".form-login").classList.remove("hidden");
+        });
+    </script>
+</main>
