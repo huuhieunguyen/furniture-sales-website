@@ -20,75 +20,21 @@
     />
   </head>
   <body class="bg-[#F9F9F9]">
-    <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
-      <div class="container py-[25px] flex items-center justify-between">
-        <div class="flex items-center justify-center gap-x-2 cursor-pointer">
-          <img srcset="/assets/img/logo.png 2x" alt="#" />
-          <span class="font-medium text-[18px]">
-            BiSys - Yêu ngôi nhà của bạn
-          </span>
-        </div>
-        <div
-          class="flex items-center justify-center gap-x-[60px] font-medium text-[18px] cursor-pointer"
-        >
-          <span>Sản phẩm</span>
-          <span>Về chúng tôi</span>
-          <span>Tin tức</span>
-          <span>Liên hệ</span>
-        </div>
-        <div
-          class="flex items-center justify-center gap-x-6 text-[18px] cursor-pointer"
-        >
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-              />
-            </svg>
-          </span>
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              />
-            </svg>
-          </span>
-        </div>
-      </div>
-    </header>
-    <main class="container">
+    <main class="container p-5">
       <div
-        class="mt-[128px] mb-[50px] flex items-center justify-center flex-col gap-y-[40px]"
+        class="mt-[50px] lg:mt-[128px] mb-[50px] flex items-center justify-center flex-col gap-y-[40px]"
       >
-        <h1 class="text-[64px] font-bold">Thanh toán</h1>
+        <h1 class="text-[26px] lg:text-[64px] font-bold">Thanh toán</h1>
         <div
           class="flex items-center justify-center w-full flex-col gap-y-[20px]"
         >
           <div
-            class="w-full flex items-center justify-center w-full flex-col px-[46px] py-[18px] border border-[rgba(21,20,17,0.7)]"
+            class="w-full flex items-center justify-center w-full flex-col p-5 lg:px-[46px] lg:py-[18px] border border-[rgba(21,20,17,0.7)] lg:gap-y-5"
           >
             <span
-              class="w-full flex items-center justify-center text-[#FFB23F] font-medium"
+              class="w-full flex items-center justify-center gap-x-2 lg:gap-x-0 text-[#FFB23F] font-medium"
             >
-              <div class="w-[70px]">
+              <div class="w-[24px] lg:w-[70px]">
                 <svg
                   width="28"
                   height="37"
@@ -103,34 +49,34 @@
                 </svg>
               </div>
 
-              <p class="w-full text-[30px]">Địa chỉ nhận hàng</p>
+              <p class="w-full text-base lg:text-[30px]">Địa chỉ nhận hàng</p>
             </span>
-            <span class="w-full flex items-center justify-between gap-x-5">
-              <p class="text-[25px]">
-                <strong>Như Loan (+84) 906254967</strong>
+            <span
+              class="w-full flex items-center justify-between gap-x-3 lg:gap-x-5"
+            >
+              <p>
+                <strong class="text-sm lg:text-[25px]"
+                  >Như Loan (+84) 906254967</strong
+                >
               </p>
-              <p class="text-[25px]">
+              <p class="text-sm lg:text-[25px]">
                 10 CMT8, Phường 11, Quận Tân Bình, TP. Hồ Chí Minh
               </p>
-              <p class="text-[25px] text-[#518581] cursor-pointer">Thay đổi</p>
+              <p class="text-base lg:text-[25px] text-[#518581] cursor-pointer">
+                Thay đổi
+              </p>
             </span>
           </div>
           <div class="w-full">
             <!-- Title -->
-            <table style="border: 1px solid; width: 100%">
+            <table
+              style="border: 1px solid; width: 100%"
+              class="lg:table hidden"
+            >
               <tbody>
                 <tr style="height: 127px">
                   <td
-                    style="
-                      width: 50%;
-                      height: 127px;
-                      padding-left: 61px;
-                      font-size: 25px;
-                      display: flex;
-                      justify-content: start;
-                      align-items: center;
-                      column-gap: 13px;
-                    "
+                    class="w-[50%] h-[127px] lg:pl-[61px] text-sm lg:text-[25px] flex justify-start items-center gap-x-[13px]"
                   >
                     <div class="w-[31px]">
                       <svg
@@ -151,13 +97,22 @@
 
                     <span>Sản phẩm</span>
                   </td>
-                  <td style="width: 16%; height: 127px; font-size: 25px">
+                  <td
+                    style="width: 16%; height: 127px"
+                    class="text-sm lg:text-[25px]"
+                  >
                     Đơn giá
                   </td>
-                  <td style="width: 18%; height: 127px; font-size: 25px">
+                  <td
+                    style="width: 18%; height: 127px"
+                    class="text-sm lg:text-[25px]"
+                  >
                     Số lượng
                   </td>
-                  <td style="width: 16%; height: 127px; font-size: 25px">
+                  <td
+                    style="width: 16%; height: 127px"
+                    class="text-sm lg:text-[25px]"
+                  >
                     Thành tiền
                   </td>
                 </tr>
@@ -167,35 +122,31 @@
             <!-- Product 1 -->
             <table style="border: 1px solid; width: 100%">
               <tbody>
-                <tr style="height: 159px">
+                <tr class="lg:table-row flex flex-col h-full lg:h-[159px]">
                   <td
-                    style="
-                      width: 100%;
-                      height: 159px;
-                      padding-left: 61px;
-                      font-size: 20px;
-                      display: flex;
-                      justify-content: start;
-                      align-items: center;
-                      column-gap: 19px;
-                    "
+                    class="p-5 lg:p-0 w-full h-[159px] lg:pl-[61px] text-sm lg:text-[20px] flex justify-start items-center gap-x-[19px]"
                   >
                     <div class="w-[160px] object-cover">
-                      <img src="./assets/img/denngu.png" alt="" />
+                      <img src="/assets/img/denngu.png" alt="" />
                     </div>
 
                     <div
                       class="flex items-start justify-center flex-col gap-y-2 w-full"
                     >
                       <span>ĐE001</span>
-                      <span>Đèn ngủ phong cách Châu Âu</span>
-                      <strong>Anh</strong>
+                      <strong>Đèn ngủ phong cách Châu Âu</strong>
+                      <span>Anh</span>
                     </div>
                   </td>
-                  <td style="width: 16%; height: 159px; font-size: 20px">
+                  <td
+                    class="lg:w-[16%] lg:h-[159px] lg:text-[20px] text-xl font-medium text-right lg:text-left pr-5 lg:pr-0"
+                  >
                     900.000đ
                   </td>
-                  <td style="width: 18%; height: 159px; font-size: 25px">
+                  <td
+                    style="width: 18%; font-size: 25px"
+                    class="pl-5 lg:pl-0 lg:h-[159px]"
+                  >
                     <div
                       class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
                     >
@@ -204,7 +155,9 @@
                       <span class="plus">+</span>
                     </div>
                   </td>
-                  <td style="width: 16%; height: 159px; font-size: 25px">
+                  <td
+                    class="lg:w-[16%] lg:h-[159px] lg:text-[20px] text-xl font-medium text-right lg:text-left p-5 lg:p-0"
+                  >
                     1.800.000đ
                   </td>
                 </tr>
@@ -212,7 +165,7 @@
             </table>
 
             <!-- Product 2 -->
-            <table style="border: 1px solid; width: 100%">
+            <!-- <table style="border: 1px solid; width: 100%">
               <tbody>
                 <tr style="height: 159px">
                   <td
@@ -256,54 +209,38 @@
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table> -->
           </div>
         </div>
 
         <div class="w-full flex items-center justify-end gap-x-[47px]">
           <div class="flex items-end justify-center flex-col gap-y-[25px]">
-            <span class="text-[22px]">Tổng tiền hàng</span>
-            <span class="text-[22px]">Phí vận chuyển</span>
-            <span class="text-[25px]"><strong>Tổng thanh toán</strong></span>
+            <span class="text-base lg:text-[22px]">Tổng tiền hàng</span>
+            <span class="text-base lg:text-[22px]">Phí vận chuyển</span>
+            <span
+              ><strong class="text-xl lg:text-[25px]"
+                >Tổng thanh toán</strong
+              ></span
+            >
           </div>
           <div class="flex items-end justify-center flex-col gap-y-[25px]">
-            <span class="text-[22px]">3.000.000đ</span>
-            <span class="text-[22px]">50.000đ</span>
-            <span class="text-[25px]"><strong>3.050.000đ</strong></span>
+            <span class="text-base lg:text-[22px]">3.000.000đ</span>
+            <span class="text-base lg:text-[22px]">50.000đ</span>
+            <span
+              ><strong class="text-xl lg:text-[25px]">3.050.000đ</strong></span
+            >
           </div>
         </div>
 
-        <div class="w-full flex items-center justify-end">
+        <div class="w-full flex items-center lg:justify-end justify-center">
           <button
-            class="rounded-lg bg-[#FFB23F] py-5 px-[84px] shadow-[5px_5px_4px_rgba(0,_0,_0,_0.25)] font-bold text-[30px] text-white"
+            class="rounded-lg bg-[#FFB23F] lg:py-5 lg:px-[84px] py-3 px-10 shadow-[5px_5px_4px_rgba(0,_0,_0,_0.25)] font-bold text-xl lg:text-[30px] text-white"
           >
             Đặt hàng
           </button>
         </div>
       </div>
     </main>
-    <footer
-      class="mt-[100px] container py-[60px] border-t border-t-[#ECE4DE] mb-20"
-    >
-      <div class="flex items-center justify-center gap-y-[23px] flex-col">
-        <div class="flex items-center justify-center gap-x-2 cursor-pointer">
-          <img srcset="/assets/img/logo.png 2x" alt="logo" />
-          <span class="font-medium text-[18px]">
-            BiSys - Yêu ngôi nhà của bạn
-          </span>
-        </div>
-        <div
-          class="flex items-center justify-center gap-x-[41px] cursor-pointer"
-        >
-          <img src="/assets/icons/facebook.png" alt="facebook" />
-          <img src="/assets/icons/instagram.png" alt="instagram" />
-          <img src="/assets/icons/twitter.png" alt="twitter" />
-        </div>
-        <span class="font-medium text-2xl"
-          >Hãy theo dõi chúng tôi để cập nhật tin mới nhất !</span
-        >
-      </div>
-    </footer>
     <script>
       const plus = document.querySelector(".plus"),
         minus = document.querySelector(".minus"),
@@ -323,5 +260,6 @@
         }
       });
     </script>
+    <script src="/javascripts/insertHeaderFooter.js"></script>
   </body>
 </html>
