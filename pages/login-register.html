@@ -74,36 +74,40 @@
     <main>
       <div>
         <img
-          src="./assets/img/login-bg.png"
+          src="/assets/img/login-bg.png"
           alt="login-background"
-          class="object-fill w-full max-h-[860px] relative"
+          class="object-fill lg:max-w-full max-w-[150%] lg:w-full w-[133%] max-h-[860px] relative"
         />
         <!-- Đăng nhập -->
         <form action="" class="form-login" autocomplete="off">
           <div
-            class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]"
+            class="fadeUp absolute lg:top-[25%] top-[45%] right-[80px] lg:w-[618px] w-[450px] lg:lg:min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] lg:gap-y-[38px] gap-y-[20px]"
           >
-            <span class="text-[44px] font-bold text-[#FFB23F]">Đăng nhập</span>
+            <span class="lg:text-[44px] text-xl font-bold text-[#FFB23F]"
+              >Đăng nhập</span
+            >
             <input
               type="text"
               name="name"
               required
               placeholder="Tên đăng nhập"
-              class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl"
+              class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-[350px] p-[14px] font-bold lg:text-2xl text-sm"
             />
             <input
               type="password"
               name="password"
               required
               placeholder="Mật khẩu"
-              class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl"
+              class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-[350px] p-[14px] font-bold lg:text-2xl text-sm"
             />
             <button
-              class="bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl hover:bg-opacity-60"
+              class="bg-[#FFB23F] text-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-[350px] p-[14px] font-bold lg:text-2xl text-sm hover:bg-opacity-60"
             >
               Đăng nhập
             </button>
-            <p class="change-register text-xl cursor-pointer text-right">
+            <p
+              class="change-register lg:text-xl text-sm cursor-pointer text-right"
+            >
               Nếu chưa có tài khoản, nhấn <strong>Đăng ký</strong>
             </p>
           </div>
@@ -112,36 +116,38 @@
         <!-- Đăng ký -->
         <form action="" class="form-register hidden" autocomplete="off">
           <div
-            class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]"
+            class="fadeUp absolute lg:top-[25%] top-[45%] right-[80px] lg:w-[618px] w-[450px] lg:min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] lg:gap-y-[38px] gap-y-[20px]"
           >
-            <span class="text-[44px] font-bold text-[#FFB23F]">Đăng ký</span>
+            <span class="lg:text-[44px] text-xl font-bold text-[#FFB23F]"
+              >Đăng ký</span
+            >
             <input
               type="text"
               name="name"
               placeholder="Tên đăng nhập"
-              class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl"
+              class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-[350px] p-[14px] font-bold lg:text-2xl text-sm"
             />
             <input
               type="password"
               name="password"
               placeholder="Mật khẩu"
-              class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl"
+              class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-[350px] p-[14px] font-bold lg:text-2xl text-sm"
             />
             <input
               type="password"
               name="confirmPassword"
               placeholder="Nhập lại mật khẩu"
-              class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl"
+              class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-[350px] p-[14px] font-bold lg:text-2xl text-sm"
             />
             <div class="flex items-center justify-end gap-x-[23px]">
               <button
                 type="submit"
-                class="bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[180px] p-[14px] font-bold text-2xl hover:bg-opacity-60"
+                class="bg-[#FFB23F] text-white rounded-lg shadow lg:h-[60px] h-[50px] w-[180px] p-[14px] font-bold lg:text-2xl text-sm hover:bg-opacity-60"
               >
                 Đăng nhập
               </button>
               <button
-                class="change-login bg-white text-[#AFADB5] rounded-lg shadow h-[60px] w-[180px] p-[14px] font-bold text-2xl hover:bg-opacity-60"
+                class="change-login bg-white text-[#AFADB5] rounded-lg shadow lg:h-[60px] h-[50px] w-[180px] p-[14px] font-bold lg:text-2xl text-sm hover:bg-opacity-60"
                 type="button"
               >
                 Hủy

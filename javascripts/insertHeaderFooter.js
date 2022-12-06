@@ -1,6 +1,6 @@
 const header = `
 <header
-class="hidden lg:block sticky top-0 bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]"
+class="z-50 hidden lg:block sticky top-0 bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]"
 >
 <div class="container py-[25px] flex items-center justify-between">
   <div class="flex items-center justify-center gap-x-2 cursor-pointer">
