@@ -1,283 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Product Page</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/slider-product.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Product Page</title>
-  <link rel="stylesheet" href="/styles/styles.css" />
-  <link rel="stylesheet" href="/styles/slider-product.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-</head>
-
-<body>
-  <main>
-    <div class="mt-[50px] lg:mt-[128px] mb-[50px] flex items-center justify-center flex-col gap-y-[20px]">
-      <h1 class="text-[26px] lg:text-[64px] font-bold">Sản phẩm</h1>
-      <p class="text-sm lg:text-[18px] font-medium text-[#AFADB5] text-center lg:p-0 p-5">
-        Nội thất tinh xảo, với các chi tiết độc đáo mang lại phong cách hiện
-        đại và thanh lịch giúp không gian sống của bạn năng động và xinh xắn
-      </p>
-    </div>
-    <div class="swiper mySwiper ">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide slider-1">
-          <div class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col">
-            <span
-              class="font-medium text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]">Discount</span>
-            <h2 class="text-base lg:text-[44px] font-bold">
-              Ramadhan Sale Offer
-            </h2>
-            <p class="lg:text-[24px] text-[12px] font-medium">
-              Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
-            </p>
-          </div>
-        </div>
-        <div class="swiper-slide slider-2">
-          <div class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col">
-            <span
-              class="font-mediup text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]">Discount</span>
-            <h2 class="text-base lg:text-[44px] font-bold">
-              Ramadhan Sale Offer
-            </h2>
-            <p class="lg:text-[24px] text-[12px] font-medium">
-              Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
-            </p>
-          </div>
-        </div>
-        <div class="swiper-slide slider-3">
-          <div class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col">
-            <span
-              class="font-mediup text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]">Discount</span>
-            <h2 class="text-base lg:text-[44px] font-bold">
-              Ramadhan Sale Offer
-            </h2>
-            <p class="lg:text-[24px] text-[12px] font-medium">
-              Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
-            </p>
-          </div>
-        </div>
-        <div class="swiper-slide slider-4">
-          <div class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col">
-            <span
-              class="font-mediup text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]">Discount</span>
-            <h2 class="text-base lg:text-[44px] font-bold">
-              Ramadhan Sale Offer
-            </h2>
-            <p class="lg:text-[24px] text-[12px] font-medium">
-              Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
-            </p>
-          </div>
-        </div>
+  <body>
+    <main>
+      <div
+        class="mt-[50px] lg:mt-[128px] mb-[50px] flex items-center justify-center flex-col gap-y-[20px]"
+      >
+        <h1 class="text-[26px] lg:text-[64px] font-bold">Sản phẩm</h1>
+        <p
+          class="text-sm lg:text-[18px] font-medium text-[#AFADB5] text-center lg:p-0 p-5"
+        >
+          Nội thất tinh xảo, với các chi tiết độc đáo mang lại phong cách hiện
+          đại và thanh lịch giúp không gian sống của bạn năng động và xinh xắn
+        </p>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-    <div
-      class="container shadow-[0px_4px_120px_rgba(175,173,181,0.25)] w-full bg-white my-[30px] lg:mt-[40px] lg:mb-[50px] px-[30px] py-[15px] flex items-center justify-center">
-      <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg" class=" ">
-        <path
-          d="M15.9645 28C22.9601 28 28.6312 22.3289 28.6312 15.3333C28.6312 8.33769 22.9601 2.66663 15.9645 2.66663C8.96891 2.66663 3.29785 8.33769 3.29785 15.3333C3.29785 22.3289 8.96891 28 15.9645 28Z"
-          stroke="#AFADB5" strokeWidth="{2}" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M29.9645 29.3333L27.2979 26.6666" stroke="#AFADB5" strokeWidth="{2}" strokeLinecap="round"
-          strokeLinejoin="round" />
-      </svg>
-      <input type="text" class="px-[8px] lg:px-[18px] w-full h-[38px] lg:h-[66px] text-sm lg:text-base"
-        placeholder="Nhập từ khóa tìm kiếm" />
-      <button
-        class="text-white bg-[#518581] w-[169px] h-[38px] lg:h-[66px] lg:px-[33px] lg:py-[18px] px-[20px] py-[6px] text-sm lg:text-[18px] font-bold">
-        Tìm kiếm
-      </button>
-    </div>
-    <div class="hidden lg:flex products-wrap container items-baseline justify-center gap-x-[62px]">
-      <div class="products-category flex items-center justify-center flex-col max-w-[296px] gap-y-[9px] gap-y-[9px]">
-        <div class="heading-category flex items-center justify-center gap-x-[10px]">
-          <h1 class="font-bold text-[18px] lg:text-[44px]">Sản phẩm</h1>
-          <span
-            class="lg:w-[60px] lg:h-[30px] w-[41px] h-[26px] rounded-3xl font-bold text-[12px] lg:text-lg text-[#518581] px-4 py-[4.5px] bg-[#F9F9F9] flex items-center justify-center">184</span>
-        </div>
-        <span class="flex items-center justify-center gap-x-4">
-          <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg"
-            class="w-[31px] h-[31px]">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M14.1974 0.654419L26.5199 11.8919L25.1443 13.2675L23.1874 11.4928V24.1369L22.2186 25.1057H16.4061L15.4374 24.1369V17.3557H11.5624V24.1369L10.5936 25.1057H4.78114L3.81239 24.1369V11.5083L1.87489 13.2675L0.499268 11.8919L12.8024 0.654419H14.1974ZM5.74989 9.74711V23.1682H9.62489V16.3869L10.5936 15.4182H16.4061L17.3749 16.3869V23.1682H21.2499V9.73548L13.4999 2.70817L5.74989 9.74711Z"
-              fill="black" />
-          </svg>
-          <p class="text-center text-[24px] font-bold">
-            <span class="text-[#AFADB5]">Trang chủ /</span> Sản phẩm
-          </p>
-        </span>
-        <div class="flex items-center justify-center flex-col gap-y-[9px]">
-          <div class="text-center w-[296px] h-[54px] text-white bg-[#518581] py-3 font-bold text-2xl leading-none">
-            Danh mục
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slider-1">
+            <div
+              class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col"
+            >
+              <span
+                class="font-medium text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]"
+                >Discount</span
+              >
+              <h2 class="text-base lg:text-[44px] font-bold">
+                Ramadhan Sale Offer
+              </h2>
+              <p class="lg:text-[24px] text-[12px] font-medium">
+                Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
+              </p>
+            </div>
           </div>
-          <button
-            class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
-            Nội thất phòng ăn
-          </button>
-          <button
-            class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
-            Nội thất phòng ngủ
-          </button>
-          <button
-            class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
-            Nội thất phòng tắm
-          </button>
-          <button
-            class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
-            Nội thất văn phòng
-          </button>
-          <button
-            class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
-            Nội thất phòng khách
-          </button>
-          <button
-            class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
-            Đồ trang trí
-          </button>
+          <div class="swiper-slide slider-2">
+            <div
+              class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col"
+            >
+              <span
+                class="font-mediup text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]"
+                >Discount</span
+              >
+              <h2 class="text-base lg:text-[44px] font-bold">
+                Ramadhan Sale Offer
+              </h2>
+              <p class="lg:text-[24px] text-[12px] font-medium">
+                Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide slider-3">
+            <div
+              class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col"
+            >
+              <span
+                class="font-mediup text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]"
+                >Discount</span
+              >
+              <h2 class="text-base lg:text-[44px] font-bold">
+                Ramadhan Sale Offer
+              </h2>
+              <p class="lg:text-[24px] text-[12px] font-medium">
+                Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide slider-4">
+            <div
+              class="w-full h-full flex items-start justify-center ml-5 lg:ml-[132px] lg:gap-y-5 gap-y-3 flex-col"
+            >
+              <span
+                class="font-mediup text-[10px] lg:text-sm bg-[#518581] rounded-[16px] lg:px-[16px] lg:py-[8px] px-[10px] py-[6px]"
+                >Discount</span
+              >
+              <h2 class="text-base lg:text-[44px] font-bold">
+                Ramadhan Sale Offer
+              </h2>
+              <p class="lg:text-[24px] text-[12px] font-medium">
+                Giảm giá 40% cho đơn hàng đầu tiên trên BiSys
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center justify-center flex-col gap-y-[9px]">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div
+        class="container shadow-[0px_4px_120px_rgba(175,173,181,0.25)] w-full lg:w-[90%] bg-white my-[30px] lg:mt-[40px] lg:mb-[50px] px-[30px] py-[15px] flex items-center justify-center"
+      >
+        <svg
+          width="33"
+          height="32"
+          viewBox="0 0 33 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class=" "
+        >
+          <path
+            d="M15.9645 28C22.9601 28 28.6312 22.3289 28.6312 15.3333C28.6312 8.33769 22.9601 2.66663 15.9645 2.66663C8.96891 2.66663 3.29785 8.33769 3.29785 15.3333C3.29785 22.3289 8.96891 28 15.9645 28Z"
+            stroke="#AFADB5"
+            strokeWidth="{2}"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M29.9645 29.3333L27.2979 26.6666"
+            stroke="#AFADB5"
+            strokeWidth="{2}"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <input
+          type="text"
+          class="px-[8px] lg:px-[18px] w-full h-[38px] lg:h-[66px] text-sm lg:text-base"
+          placeholder="Nhập từ khóa tìm kiếm"
+        />
+        <button
+          class="text-white bg-[#518581] w-[169px] h-[38px] lg:h-[66px] lg:px-[33px] lg:py-[18px] px-[20px] py-[6px] text-sm lg:text-[18px] font-bold"
+        >
+          Tìm kiếm
+        </button>
+      </div>
+
+      <!-- Mobile products display -->
+        <div
+        class="lg:hidden heading-category flex items-center justify-start gap-x-[10px] p-5">
+          <h1 class="font-bold text-[18px]">Sản phẩm</h1>
+          <span
+          class="w-[41px] h-[26px] rounded-3xl font-bold text-[12px] text-[#518581] px-4 py-[4.5px] bg-[#F9F9F9] flex items-center justify-center">184</span>
+        </div>
+
+      <div
+        class="flex products-wrap container items-baseline justify-center lg:gap-x-[62px]"
+      >
+        <div
+          class="products-category flex items-center justify-center flex-col max-w-[296px] gap-y-[9px] gap-y-[9px]"
+        >
           <div
-            class="text-center w-[296px] h-[54px] text-white bg-[#518581] py-3 font-bold text-2xl leading-none flex items-center justify-center gap-x-[10px]">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M28.125 3.75V6.88125L18.75 15.8044V26.25H11.25V15.8044L1.875 6.87937V3.75H28.125ZM13.125 15V24.375H16.875V15L26.25 6.075V5.625H3.75V6.075L13.125 15Z"
-                fill="#F9F9F9" />
+            class="hidden lg:flex heading-category items-center justify-center gap-x-[10px]"
+          >
+            <h1 class="font-bold text-[18px] lg:text-[44px]">Sản phẩm</h1>
+            <span
+              class="lg:w-[60px] lg:h-[30px] w-[41px] h-[26px] rounded-3xl font-bold text-[12px] lg:text-lg text-[#518581] px-4 py-[4.5px] bg-[#F9F9F9] flex items-center justify-center"
+              >184</span
+            >
+          </div>
+          <span class="hidden lg:flex items-center justify-center gap-x-4">
+            <svg
+              width="27"
+              height="26"
+              viewBox="0 0 27 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[31px] h-[31px]"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.1974 0.654419L26.5199 11.8919L25.1443 13.2675L23.1874 11.4928V24.1369L22.2186 25.1057H16.4061L15.4374 24.1369V17.3557H11.5624V24.1369L10.5936 25.1057H4.78114L3.81239 24.1369V11.5083L1.87489 13.2675L0.499268 11.8919L12.8024 0.654419H14.1974ZM5.74989 9.74711V23.1682H9.62489V16.3869L10.5936 15.4182H16.4061L17.3749 16.3869V23.1682H21.2499V9.73548L13.4999 2.70817L5.74989 9.74711Z"
+                fill="black"
+              />
+            </svg>
+            <p class="text-center text-[24px] font-bold">
+              <span class="text-[#AFADB5]">Trang chủ /</span> Sản phẩm
+            </p>
+          </span>
+          <div class="hidden lg:flex items-center justify-center flex-col gap-y-[9px]">
+            <div
+              class="text-center w-[296px] h-[54px] text-white bg-[#518581] py-3 font-bold text-2xl leading-none"
+            >
+              Danh mục
+            </div>
+            <button
+              class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              Nội thất phòng ăn
+            </button>
+            <button
+              class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              Nội thất phòng ngủ
+            </button>
+            <button
+              class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              Nội thất phòng tắm
+            </button>
+            <button
+              class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              Nội thất văn phòng
+            </button>
+            <button
+              class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              Nội thất phòng khách
+            </button>
+            <button
+              class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              Đồ trang trí
+            </button>
+          </div>
+          <div class="hidden lg:flex items-center justify-center flex-col gap-y-[9px]">
+            <div
+              class="text-center w-[296px] h-[54px] text-white bg-[#518581] py-3 font-bold text-2xl leading-none flex items-center justify-center gap-x-[10px]"
+            >
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M28.125 3.75V6.88125L18.75 15.8044V26.25H11.25V15.8044L1.875 6.87937V3.75H28.125ZM13.125 15V24.375H16.875V15L26.25 6.075V5.625H3.75V6.075L13.125 15Z"
+                  fill="#F9F9F9"
+                />
+              </svg>
+
+              <span>Bộ lọc sản phẩm</span>
+            </div>
+            <div
+              class="h-full w-full bg-white font-medium text-2xl py-3 text-left text-[#FFB23F]"
+            >
+              Theo giá
+            </div>
+            <label for="5-10" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input type="checkbox" name="" id="5-10" class="w-8 h-8" />
+                <span>Từ 5 - 10 triệu</span>
+              </div>
+            </label>
+            <label for="10-20" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input type="checkbox" name="" id="10-20" class="w-8 h-8" />
+                <span>Từ 10 - 20 triệu</span>
+              </div>
+            </label>
+            <label for="over20" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input type="checkbox" name="" id="over20" class="w-8 h-8" />
+                <span>Trên 20 triệu</span>
+              </div>
+            </label>
+            <div
+              class="h-full w-full bg-white font-medium text-2xl py-3 text-left text-[#FFB23F]"
+            >
+              Theo thương hiệu
+            </div>
+            <label for="Savilamp" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input type="checkbox" name="" id="Savilamp" class="w-8 h-8" />
+                <span>Savilamp</span>
+              </div>
+            </label>
+            <label for="Francoferri" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input
+                  type="checkbox"
+                  name=""
+                  id="Francoferri"
+                  class="w-8 h-8"
+                />
+                <span>Francoferri</span>
+              </div>
+            </label>
+            <label for="Giorgio Collection" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input
+                  type="checkbox"
+                  name=""
+                  id="Giorgio Collection"
+                  class="w-8 h-8"
+                />
+                <span>Giorgio Collection</span>
+              </div>
+            </label>
+            <label for="Bentley" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input type="checkbox" name="" id="Bentley" class="w-8 h-8" />
+                <span>Bentley</span>
+              </div>
+            </label>
+            <label for="Pandana" class="w-full select-none">
+              <div
+                class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]"
+              >
+                <input type="checkbox" name="" id="Pandana" class="w-8 h-8" />
+                <span>Pandana</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="hidden lg:flex items-center justify-end gap-x-3 cursor-pointer">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 7H21"
+                stroke="#151411"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+              <path
+                d="M6 12H18"
+                stroke="#151411"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+              <path
+                d="M10 17H14"
+                stroke="#151411"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
             </svg>
 
-            <span>Bộ lọc sản phẩm</span>
+            <span class="text-[18px] font-medium">Sắp xếp theo</span>
           </div>
-          <div class="h-full w-full bg-white font-medium text-2xl py-3 text-left text-[#FFB23F]">
-            Theo giá
+
+          
+          <div
+            id="data-container"
+            class="lg:mt-[76px] grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:gap-x-[33px] lg:gap-y-[103px] gap-x-3 gap-y-6"
+          >
+            <!-- Product 1 -->
+            <div class="flex items-center justify-start flex-col max-w-[286px] max-h-[469px]">
+              <img src="/assets/img/ghelamviec.png" alt="Ghế làm việc" />
+              <span class="text-xl lg:text-[25px] font-light mt-2 text-center mb-auto">Ghế làm việc</span>
+              <span class="text-base lg:text-[25px] font-medium"
+                >2.000.000đ
+                <span class="text-sm lg:text-[22px] text-[#AFADB5] line-through"> - 2.500.000đ</span>
+                  </span
+                ></span
+              >
+              <button class="mt-3 px-[10px] lg:py-[14px] py-2 border border-[#000000] text-xl lg:text-[20px] font-light flex items-center justify-end gap-x-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 1.875C0 1.70924 0.065848 1.55027 0.183058 1.43306C0.300269 1.31585 0.45924 1.25 0.625 1.25H2.5C2.63941 1.25004 2.77481 1.29669 2.88466 1.38253C2.99452 1.46837 3.07251 1.58848 3.10625 1.72375L3.6125 3.75H18.125C18.2168 3.75008 18.3074 3.77038 18.3904 3.80944C18.4735 3.8485 18.5469 3.90537 18.6055 3.976C18.6641 4.04664 18.7064 4.12931 18.7294 4.21815C18.7524 4.30698 18.7556 4.3998 18.7388 4.49L16.8638 14.49C16.8369 14.6332 16.7609 14.7626 16.6489 14.8557C16.5368 14.9488 16.3957 14.9999 16.25 15H5C4.85429 14.9999 4.71321 14.9488 4.60114 14.8557C4.48907 14.7626 4.41306 14.6332 4.38625 14.49L2.5125 4.50875L2.0125 2.5H0.625C0.45924 2.5 0.300269 2.43415 0.183058 2.31694C0.065848 2.19973 0 2.04076 0 1.875ZM3.8775 5L5.51875 13.75H15.7312L17.3725 5H3.8775ZM6.25 15C5.58696 15 4.95107 15.2634 4.48223 15.7322C4.01339 16.2011 3.75 16.837 3.75 17.5C3.75 18.163 4.01339 18.7989 4.48223 19.2678C4.95107 19.7366 5.58696 20 6.25 20C6.91304 20 7.54893 19.7366 8.01777 19.2678C8.48661 18.7989 8.75 18.163 8.75 17.5C8.75 16.837 8.48661 16.2011 8.01777 15.7322C7.54893 15.2634 6.91304 15 6.25 15ZM15 15C14.337 15 13.7011 15.2634 13.2322 15.7322C12.7634 16.2011 12.5 16.837 12.5 17.5C12.5 18.163 12.7634 18.7989 13.2322 19.2678C13.7011 19.7366 14.337 20 15 20C15.663 20 16.2989 19.7366 16.7678 19.2678C17.2366 18.7989 17.5 18.163 17.5 17.5C17.5 16.837 17.2366 16.2011 16.7678 15.7322C16.2989 15.2634 15.663 15 15 15ZM6.25 16.25C6.58152 16.25 6.89946 16.3817 7.13388 16.6161C7.3683 16.8505 7.5 17.1685 7.5 17.5C7.5 17.8315 7.3683 18.1495 7.13388 18.3839C6.89946 18.6183 6.58152 18.75 6.25 18.75C5.91848 18.75 5.60054 18.6183 5.36612 18.3839C5.1317 18.1495 5 17.8315 5 17.5C5 17.1685 5.1317 16.8505 5.36612 16.6161C5.60054 16.3817 5.91848 16.25 6.25 16.25ZM15 16.25C15.3315 16.25 15.6495 16.3817 15.8839 16.6161C16.1183 16.8505 16.25 17.1685 16.25 17.5C16.25 17.8315 16.1183 18.1495 15.8839 18.3839C15.6495 18.6183 15.3315 18.75 15 18.75C14.6685 18.75 14.3505 18.6183 14.1161 18.3839C13.8817 18.1495 13.75 17.8315 13.75 17.5C13.75 17.1685 13.8817 16.8505 14.1161 16.6161C14.3505 16.3817 14.6685 16.25 15 16.25Z" fill="#151411"/>
+                  </svg>
+                <span>Mua ngay</span>
+              </button>
+            </div>
+            <!-- Product 2 -->
+            <div class="flex items-center justify-start flex-col max-w-[286px] max-h-[469px]">
+              <img src="/assets/img/ghelamviec.png" alt="Ghế làm việc" />
+              <span class="text-xl lg:text-[25px] font-light mt-2 text-center mb-auto">Ghế làm việc</span>
+              <span class="text-base lg:text-[25px] font-medium"
+                >2.000.000đ
+                <span class="text-sm lg:text-[22px] text-[#AFADB5] line-through"> - 2.500.000đ</span>
+                  </span
+                ></span
+              >
+              <button class="mt-3 px-[10px] lg:py-[14px] py-2 border border-[#000000] text-xl lg:text-[20px] font-light flex items-center justify-end gap-x-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 1.875C0 1.70924 0.065848 1.55027 0.183058 1.43306C0.300269 1.31585 0.45924 1.25 0.625 1.25H2.5C2.63941 1.25004 2.77481 1.29669 2.88466 1.38253C2.99452 1.46837 3.07251 1.58848 3.10625 1.72375L3.6125 3.75H18.125C18.2168 3.75008 18.3074 3.77038 18.3904 3.80944C18.4735 3.8485 18.5469 3.90537 18.6055 3.976C18.6641 4.04664 18.7064 4.12931 18.7294 4.21815C18.7524 4.30698 18.7556 4.3998 18.7388 4.49L16.8638 14.49C16.8369 14.6332 16.7609 14.7626 16.6489 14.8557C16.5368 14.9488 16.3957 14.9999 16.25 15H5C4.85429 14.9999 4.71321 14.9488 4.60114 14.8557C4.48907 14.7626 4.41306 14.6332 4.38625 14.49L2.5125 4.50875L2.0125 2.5H0.625C0.45924 2.5 0.300269 2.43415 0.183058 2.31694C0.065848 2.19973 0 2.04076 0 1.875ZM3.8775 5L5.51875 13.75H15.7312L17.3725 5H3.8775ZM6.25 15C5.58696 15 4.95107 15.2634 4.48223 15.7322C4.01339 16.2011 3.75 16.837 3.75 17.5C3.75 18.163 4.01339 18.7989 4.48223 19.2678C4.95107 19.7366 5.58696 20 6.25 20C6.91304 20 7.54893 19.7366 8.01777 19.2678C8.48661 18.7989 8.75 18.163 8.75 17.5C8.75 16.837 8.48661 16.2011 8.01777 15.7322C7.54893 15.2634 6.91304 15 6.25 15ZM15 15C14.337 15 13.7011 15.2634 13.2322 15.7322C12.7634 16.2011 12.5 16.837 12.5 17.5C12.5 18.163 12.7634 18.7989 13.2322 19.2678C13.7011 19.7366 14.337 20 15 20C15.663 20 16.2989 19.7366 16.7678 19.2678C17.2366 18.7989 17.5 18.163 17.5 17.5C17.5 16.837 17.2366 16.2011 16.7678 15.7322C16.2989 15.2634 15.663 15 15 15ZM6.25 16.25C6.58152 16.25 6.89946 16.3817 7.13388 16.6161C7.3683 16.8505 7.5 17.1685 7.5 17.5C7.5 17.8315 7.3683 18.1495 7.13388 18.3839C6.89946 18.6183 6.58152 18.75 6.25 18.75C5.91848 18.75 5.60054 18.6183 5.36612 18.3839C5.1317 18.1495 5 17.8315 5 17.5C5 17.1685 5.1317 16.8505 5.36612 16.6161C5.60054 16.3817 5.91848 16.25 6.25 16.25ZM15 16.25C15.3315 16.25 15.6495 16.3817 15.8839 16.6161C16.1183 16.8505 16.25 17.1685 16.25 17.5C16.25 17.8315 16.1183 18.1495 15.8839 18.3839C15.6495 18.6183 15.3315 18.75 15 18.75C14.6685 18.75 14.3505 18.6183 14.1161 18.3839C13.8817 18.1495 13.75 17.8315 13.75 17.5C13.75 17.1685 13.8817 16.8505 14.1161 16.6161C14.3505 16.3817 14.6685 16.25 15 16.25Z" fill="#151411"/>
+                  </svg>
+                <span>Mua ngay</span>
+              </button>
+            </div>
+            <!-- Product 3 -->
+            <div class="flex items-center justify-start flex-col max-w-[286px] max-h-[469px]">
+              <img src="/assets/img/ghelamviec.png" alt="Ghế làm việc" />
+              <span class="text-xl lg:text-[25px] font-light mt-2 text-center mb-auto">Ghế làm việc</span>
+              <span class="text-base lg:text-[25px] font-medium"
+                >2.000.000đ
+                <span class="text-sm lg:text-[22px] text-[#AFADB5] line-through"> - 2.500.000đ</span>
+                  </span
+                ></span
+              >
+              <button class="mt-3 px-[10px] lg:py-[14px] py-2 border border-[#000000] text-xl lg:text-[20px] font-light flex items-center justify-end gap-x-2">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 1.875C0 1.70924 0.065848 1.55027 0.183058 1.43306C0.300269 1.31585 0.45924 1.25 0.625 1.25H2.5C2.63941 1.25004 2.77481 1.29669 2.88466 1.38253C2.99452 1.46837 3.07251 1.58848 3.10625 1.72375L3.6125 3.75H18.125C18.2168 3.75008 18.3074 3.77038 18.3904 3.80944C18.4735 3.8485 18.5469 3.90537 18.6055 3.976C18.6641 4.04664 18.7064 4.12931 18.7294 4.21815C18.7524 4.30698 18.7556 4.3998 18.7388 4.49L16.8638 14.49C16.8369 14.6332 16.7609 14.7626 16.6489 14.8557C16.5368 14.9488 16.3957 14.9999 16.25 15H5C4.85429 14.9999 4.71321 14.9488 4.60114 14.8557C4.48907 14.7626 4.41306 14.6332 4.38625 14.49L2.5125 4.50875L2.0125 2.5H0.625C0.45924 2.5 0.300269 2.43415 0.183058 2.31694C0.065848 2.19973 0 2.04076 0 1.875ZM3.8775 5L5.51875 13.75H15.7312L17.3725 5H3.8775ZM6.25 15C5.58696 15 4.95107 15.2634 4.48223 15.7322C4.01339 16.2011 3.75 16.837 3.75 17.5C3.75 18.163 4.01339 18.7989 4.48223 19.2678C4.95107 19.7366 5.58696 20 6.25 20C6.91304 20 7.54893 19.7366 8.01777 19.2678C8.48661 18.7989 8.75 18.163 8.75 17.5C8.75 16.837 8.48661 16.2011 8.01777 15.7322C7.54893 15.2634 6.91304 15 6.25 15ZM15 15C14.337 15 13.7011 15.2634 13.2322 15.7322C12.7634 16.2011 12.5 16.837 12.5 17.5C12.5 18.163 12.7634 18.7989 13.2322 19.2678C13.7011 19.7366 14.337 20 15 20C15.663 20 16.2989 19.7366 16.7678 19.2678C17.2366 18.7989 17.5 18.163 17.5 17.5C17.5 16.837 17.2366 16.2011 16.7678 15.7322C16.2989 15.2634 15.663 15 15 15ZM6.25 16.25C6.58152 16.25 6.89946 16.3817 7.13388 16.6161C7.3683 16.8505 7.5 17.1685 7.5 17.5C7.5 17.8315 7.3683 18.1495 7.13388 18.3839C6.89946 18.6183 6.58152 18.75 6.25 18.75C5.91848 18.75 5.60054 18.6183 5.36612 18.3839C5.1317 18.1495 5 17.8315 5 17.5C5 17.1685 5.1317 16.8505 5.36612 16.6161C5.60054 16.3817 5.91848 16.25 6.25 16.25ZM15 16.25C15.3315 16.25 15.6495 16.3817 15.8839 16.6161C16.1183 16.8505 16.25 17.1685 16.25 17.5C16.25 17.8315 16.1183 18.1495 15.8839 18.3839C15.6495 18.6183 15.3315 18.75 15 18.75C14.6685 18.75 14.3505 18.6183 14.1161 18.3839C13.8817 18.1495 13.75 17.8315 13.75 17.5C13.75 17.1685 13.8817 16.8505 14.1161 16.6161C14.3505 16.3817 14.6685 16.25 15 16.25Z" fill="#151411"/>
+                  </svg>
+                <span>Mua ngay</span>
+              </button>
+            </div>
           </div>
-          <label for="5-10" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="5-10" class="w-8 h-8" />
-              <span>Từ 5 - 10 triệu</span>
-            </div>
-          </label>
-          <label for="10-20" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="10-20" class="w-8 h-8" />
-              <span>Từ 10 - 20 triệu</span>
-            </div>
-          </label>
-          <label for="over20" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="over20" class="w-8 h-8" />
-              <span>Trên 20 triệu</span>
-            </div>
-          </label>
-          <div class="h-full w-full bg-white font-medium text-2xl py-3 text-left text-[#FFB23F]">
-            Theo thương hiệu
-          </div>
-          <label for="Savilamp" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="Savilamp" class="w-8 h-8" />
-              <span>Savilamp</span>
-            </div>
-          </label>
-          <label for="Francoferri" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="Francoferri" class="w-8 h-8" />
-              <span>Francoferri</span>
-            </div>
-          </label>
-          <label for="Giorgio Collection" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="Giorgio Collection" class="w-8 h-8" />
-              <span>Giorgio Collection</span>
-            </div>
-          </label>
-          <label for="Bentley" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="Bentley" class="w-8 h-8" />
-              <span>Bentley</span>
-            </div>
-          </label>
-          <label for="Pandana" class="w-full select-none">
-            <div
-              class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-              <input type="checkbox" name="" id="Pandana" class="w-8 h-8" />
-              <span>Pandana</span>
-            </div>
-          </label>
         </div>
       </div>
-      <div class="flex-1">
-        <div class="flex items-center justify-end gap-x-3 cursor-pointer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 7H21" stroke="#151411" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M6 12H18" stroke="#151411" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M10 17H14" stroke="#151411" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
+      
 
-          <span class="text-[18px] font-medium">Sắp xếp theo</span>
+      <!-- <div class="container flex items-center justify-center my-[52px]">
+        <div id="pagination" class="flex items-center justify-center">
+          <a href="javascript:prevPage()" id="btn_prev" class="p-[10px]">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.1201 26.56L11.4268 17.8667C10.4001 16.84 10.4001 15.16 11.4268 14.1333L20.1201 5.44"
+                stroke="#151411"
+                strokeWidth="1.5"
+                strokeMiterlimit="{10}"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+          <ul
+            id="pages"
+            class="flex items-center justify-center text-[18px] font-medium"
+          ></ul>
+          <a href="javascript:nextPage()" id="btn_next" class="p-[10px]">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.8799 26.56L20.5732 17.8667C21.5999 16.84 21.5999 15.16 20.5732 14.1333L11.8799 5.44"
+                stroke="#151411"
+                strokeWidth="1.5"
+                strokeMiterlimit="{10}"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
         </div>
-        <div id="data-container" class="mt-[76px] grid grid-cols-3 grid-rows-3 gap-x-[33px] gap-y-[103px]"></div>
-      </div>
-    </div>
-    <!-- Mobile products display -->
-    <div class="lg:hidden heading-category flex items-center justify-start gap-x-[10px] p-5">
-      <h1 class="font-bold text-[18px]">Sản phẩm</h1>
-      <span
-        class="w-[41px] h-[26px] rounded-3xl font-bold text-[12px] text-[#518581] px-4 py-[4.5px] bg-[#F9F9F9] flex items-center justify-center">184</span>
-    </div>
+      </div> -->
 
-    <div id="data-container-mobile" class="lg:hidden grid grid-cols-2 grid-rows-5 gap-[15px]"></div>
 
-    <div class="container flex items-center justify-center my-[52px]">
-      <div id="pagination" class="flex items-center justify-center">
-        <a href="javascript:prevPage()" id="btn_prev" class="p-[10px]">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.1201 26.56L11.4268 17.8667C10.4001 16.84 10.4001 15.16 11.4268 14.1333L20.1201 5.44"
-              stroke="#151411" strokeWidth="1.5" strokeMiterlimit="{10}" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </a>
-        <ul id="pages" class="flex items-center justify-center text-[18px] font-medium"></ul>
-        <a href="javascript:nextPage()" id="btn_next" class="p-[10px]">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.8799 26.56L20.5732 17.8667C21.5999 16.84 21.5999 15.16 20.5732 14.1333L11.8799 5.44"
-              stroke="#151411" strokeWidth="1.5" strokeMiterlimit="{10}" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      autoplay: {
-        delay: 2000,
-      },
-      loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      loop: true,
-    });
-  </script>
-  <script src="/javascripts/paginationjs.js"></script>
+    </main>
 
-  <script src="/javascripts/insertHeaderFooter.js"></script>
-</body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        autoplay: {
+          delay: 2000,
+        },
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        loop: true,
+      });
+    </script> -->
 
+    <script src="/javascripts/insertHeaderFooter.js"></script>
+  </body>
 </html>
