@@ -19,6 +19,8 @@ namespace Funiture_Project.Models
         [Required]
         public string GioiTinh { get; set; }
         [Required]
+        public string DiaChi { get; set;}
+        [Required]
         public string Password { get; set; }
         [Required]
         public string ConfirmPassword { get; set; }

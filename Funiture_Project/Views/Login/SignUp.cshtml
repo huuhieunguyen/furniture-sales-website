@@ -27,6 +27,10 @@
                        name="email"
                        placeholder="Email"
                        class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                <input asp-for="DiaChi" type="text"
+                       name="diachi"
+                       placeholder="Địa chỉ"
+                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
                 <div class="h-[60px] w-[516px] p-[14px] font-bold text-2xl">
                     <label class="radio-inline font-bold text-2xl mr-5">
                         @Html.RadioButtonFor(model => model.GioiTinh, "Nam", new {@name="GioiTinh"})
@@ -58,29 +62,6 @@
             </div>
         </form>
     </div>
-    @*    <script>
-    const changeRegister = document.querySelector(".change-register");
-    const changeLogin = document.querySelector(".change-login");
-    const register = document.querySelector(".register");
-
-    changeRegister.addEventListener("click", () => {
-    document.querySelector(".form-login").classList.add("hidden");
-    document.querySelector(".form-register").classList.remove("hidden");
-    });
-
-    //   document.querySelector(".form-login").addEventListener("submit", (e) => {
-    //     e.preventDefault();
-    //     console.log(
-    //       document.querySelector(".form-login").elements["name"].value,
-    //       document.querySelector(".form-login").elements["password"].value
-    //     );
-    //   });
-
-    changeLogin.addEventListener("click", () => {
-    document.querySelector(".form-register").classList.add("hidden");
-    document.querySelector(".form-login").classList.remove("hidden");
-    });
-    </script>*@
 
 </main>
 

@@ -52,6 +52,7 @@ namespace Funiture_Project.Controllers
                             Password = taikhoan.Password,
                             NgayTao = System.DateTime.Now,
                             GioiTinh = taikhoan.GioiTinh,
+                            DiaChi = taikhoan.DiaChi
                         };
                         context.KhachHang.Add(user);
                         context.SaveChanges();
