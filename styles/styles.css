@@ -3,23 +3,30 @@
 *::after {
 	box-sizing: border-box;
 }
+
 * {
 	margin: 0;
 	padding: 0;
 	font: inherit;
 	font-size: 18px;
 }
+
 html {
 	font-family: "Roboto", sans-serif;
 }
+
 :root {
 	--main-color: #518581;
 	--yellow: #ffb23f;
 	--text-gray: #afadb5;
 }
+
 body {
 	line-height: 1.5;
+	background-color: #f9f9f9;
+
 }
+
 img,
 picture,
 video,
@@ -28,11 +35,13 @@ svg {
 	display: block;
 	max-width: 100%;
 }
+
 button,
 textarea,
 select {
 	outline: none;
 }
+
 p,
 h1,
 h2,
@@ -42,24 +51,29 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
 :root {
 	--green-color: #518581;
 }
+
 .text-heading {
 	font-size: 44px;
 	font-weight: 700;
 	line-height: calc(57.2 / 44);
 	color: black;
 }
+
 .text-desc {
 	font-size: 18px;
 	font-weight: 500;
 	line-height: calc(32.4 / 18);
 	color: #afadb5;
 }
+
 .text-desc.text-desc__yellow {
 	color: #ffb23f;
 }
+
 .button-primary {
 	color: white;
 	font-weight: bold;
@@ -70,9 +84,10 @@ h6 {
 	display: inline-block;
 	text-decoration: none;
 }
+
 .container {
 	width: 100%;
-	max-width: 2180px !important;
+	max-width: 1440px !important;
 	margin: 0 auto;
 	padding-left: 100px;
 	padding-right: 100px;
@@ -103,6 +118,7 @@ h6 {
 	cursor: pointer;
 	user-select: none;
 }
+
 .wrapper span.num {
 	font-size: 20px;
 	border-right: 2px solid rgba(0, 0, 0, 0.2);
@@ -122,7 +138,7 @@ h6 {
 	top: 0;
 	bottom: 0;
 	right: 0;
-	width: 50%;
+	width: 60%;
 	height: 100%;
 	background: white;
 	z-index: 15;
@@ -171,7 +187,7 @@ h6 {
 	/* transform: translateX(0); */
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
 	.container {
 		padding-left: 20px;
 		padding-right: 20px;
@@ -182,4 +198,15 @@ h6 {
 	/* .text-desc {
 		font-size: 20px;
 	} */
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.container {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	.text-heading {
+		font-size: 38px;
+	}
 }
