@@ -1,0 +1,56 @@
+﻿@model Funiture_Project.Models.DanhMucSp
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminProducts", "Delete", "Admin");
+}
+@{
+    var item = Model;
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">
+            Xóa danh mục @item.TenDm
+        </h1>
+    </div>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+        <!-- DataTales -->
+    <div class="container gap-3">
+        <dl class="row">
+            <dt class="col-sm-2">
+                <label asp-for="MaDm">Mã danh mục</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MaDm)
+            </dd>
+
+            <dt class="col-sm-2">
+                <label asp-for="TenDm">Tên danh mục</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TenDm)
+            </dd>
+        </dl>
+
+        <!--------------------Button--------------------------->
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="MaDm" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>

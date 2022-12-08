@@ -11,7 +11,7 @@ namespace Funiture_Project.Models
     {
         public int MaHd { get; set; }
         public int MaSp { get; set; }
-        public int? SoLuong { get; set; }
-        public double? DonGia { get; set; }
+        public int SoLuong { get; set; }
+        public double DonGia { get; set; }
     }
 }
