@@ -68,6 +68,7 @@ for (let i = 0; i < cards.length; i++) {
 	output.innerHTML += `
       <div class="flex items-center justify-start flex-col max-w-[286px] max-h-[469px]">
       <img src="${cards[i].imgUrl}" alt="${cards[i].title}" />
+
       <span class="text-[15px] lg:text-[18px] font-light mt-2 text-center mb-auto">${cards[i].title}</span>
       <span class="text-[15px] lg:text-[18px] font-medium"
         >${cards[i].curPrice}

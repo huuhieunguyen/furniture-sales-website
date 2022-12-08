@@ -1,70 +1,105 @@
 ﻿@model Funiture_Project.Models.SanPham
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Xóa Sản Phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminProducts", "Delete", "Admin");
+}
+@{
+    var item = Model;
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
 
-<h1>Delete</h1>
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">
+            Xóa sản phẩm @item.TenSp
+        </h1>
+    </div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>SanPham</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenSp)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenSp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nsx)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nsx)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ThuongHieu)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ThuongHieu)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TongSl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TongSl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HinhAnh)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MaDm)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MaDm)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ChiTiet)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ChiTiet)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="MaSp" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales -->
+    <div class="container gap-3">
+        <dl class="row">
+            <dt class="col-sm-2">
+                <label asp-for="MaSp">Mã sản phẩm</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TenSp)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="Nsx">Nước sản xuất</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nsx)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="ThuongHieu">Thương hiệu</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ThuongHieu)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="Gia">Giá</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Gia)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="TongSl">Tổng số lượng</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TongSl)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="HinhAnh">Ảnh sản phẩm</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HinhAnh)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="MaDm">Mã danh mục</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MaDm)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="ChiTiet">Chi tiết</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ChiTiet)
+            </dd>
+        </dl>
+
+        <hr class="my-12" />
+
+        <!--------------------Button--------------------------->
+        <form asp-action="Delete" class="d-grid d-flex justify-content-between">
+            <!------ Button Quay Lại ------>
+            <a asp-action="Index" class="form-group btn btn-secondary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span class="text">Quay lại</span>
+            </a>
+
+            <!------ Button Xóa ------>
+            <a class="form-group btn btn-danger btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-trash"></i>
+                </span>
+                <input type="submit" value="Xóa sản phẩm" class="btn btn-danger" />
+            </a>
+        </form>
+    </div>
 </div>

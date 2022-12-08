@@ -6,93 +6,89 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Funiture_Project.Models;
-using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace Funiture_Project.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class AdminProductsController : Controller
+    public class AdminCategoriesController : Controller
     {
         private readonly FurnitureContext _context;
-        public INotyfService _notifyService { get; }
 
-        public AdminProductsController(FurnitureContext context, INotyfService notifyService)
+        public AdminCategoriesController(FurnitureContext context)
         {
             _context = context;
-            _notifyService = notifyService;
         }
 
-        // GET: Admin/AdminProducts
+        // GET: Admin/AdminCategories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.SanPham.ToListAsync());
+            return View(await _context.DanhMucSp.ToListAsync());
         }
 
-        // GET: Admin/AdminProducts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Admin/AdminCategories/Details/5
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var sanPham = await _context.SanPham
-                .FirstOrDefaultAsync(m => m.MaSp == id);
-            if (sanPham == null)
+            var danhMucSp = await _context.DanhMucSp
+                .FirstOrDefaultAsync(m => m.MaDm == id);
+            if (danhMucSp == null)
             {
                 return NotFound();
             }
 
-            return View(sanPham);
+            return View(danhMucSp);
         }
 
-        // GET: Admin/AdminProducts/Create
+        // GET: Admin/AdminCategories/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/AdminProducts/Create
+        // POST: Admin/AdminCategories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaSp,TenSp,Nsx,ThuongHieu,Gia,TongSl,HinhAnh,MaDm,ChiTiet")] SanPham sanPham)
+        public async Task<IActionResult> Create([Bind("MaDm,TenDm")] DanhMucSp danhMucSp)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(sanPham);
+                _context.Add(danhMucSp);
                 await _context.SaveChangesAsync();
-                _notifyService.Success("Thêm thành công");
                 return RedirectToAction(nameof(Index));
             }
-            return View(sanPham);
+            return View(danhMucSp);
         }
 
-        // GET: Admin/AdminProducts/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Admin/AdminCategories/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var sanPham = await _context.SanPham.FindAsync(id);
-            if (sanPham == null)
+            var danhMucSp = await _context.DanhMucSp.FindAsync(id);
+            if (danhMucSp == null)
             {
                 return NotFound();
             }
-            return View(sanPham);
+            return View(danhMucSp);
         }
 
-        // POST: Admin/AdminProducts/Edit/5
+        // POST: Admin/AdminCategories/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MaSp,TenSp,Nsx,ThuongHieu,Gia,TongSl,HinhAnh,MaDm,ChiTiet")] SanPham sanPham)
+        public async Task<IActionResult> Edit(string id, [Bind("MaDm,TenDm")] DanhMucSp danhMucSp)
         {
-            if (id != sanPham.MaSp)
+            if (id != danhMucSp.MaDm)
             {
                 return NotFound();
             }
@@ -101,15 +97,13 @@ namespace Funiture_Project.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(sanPham);
+                    _context.Update(danhMucSp);
                     await _context.SaveChangesAsync();
-                    _notifyService.Success("Cập nhật thành công");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SanPhamExists(sanPham.MaSp))
+                    if (!DanhMucSpExists(danhMucSp.MaDm))
                     {
-                        _notifyService.Error("Cập nhật thất bại!");
                         return NotFound();
                     }
                     else
@@ -119,42 +113,41 @@ namespace Funiture_Project.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(sanPham);
+            return View(danhMucSp);
         }
 
-        // GET: Admin/AdminProducts/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Admin/AdminCategories/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var sanPham = await _context.SanPham
-                .FirstOrDefaultAsync(m => m.MaSp == id);
-            if (sanPham == null)
+            var danhMucSp = await _context.DanhMucSp
+                .FirstOrDefaultAsync(m => m.MaDm == id);
+            if (danhMucSp == null)
             {
                 return NotFound();
             }
 
-            return View(sanPham);
+            return View(danhMucSp);
         }
 
-        // POST: Admin/AdminProducts/Delete/5
+        // POST: Admin/AdminCategories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var sanPham = await _context.SanPham.FindAsync(id);
-            _context.SanPham.Remove(sanPham);
+            var danhMucSp = await _context.DanhMucSp.FindAsync(id);
+            _context.DanhMucSp.Remove(danhMucSp);
             await _context.SaveChangesAsync();
-            _notifyService.Success("Xóa thành công");
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SanPhamExists(int id)
+        private bool DanhMucSpExists(string id)
         {
-            return _context.SanPham.Any(e => e.MaSp == id);
+            return _context.DanhMucSp.Any(e => e.MaDm == id);
         }
     }
 }

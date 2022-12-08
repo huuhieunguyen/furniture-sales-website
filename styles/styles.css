@@ -24,6 +24,7 @@ html {
 body {
 	line-height: 1.5;
 	background-color: #f9f9f9;
+
 }
 
 img,
@@ -102,7 +103,6 @@ h6 {
 		opacity: 0.5;
 		transform: translateY(50%);
 	}
-
 	to {
 		opacity: 1;
 		transform: translateY(0);
@@ -192,7 +192,6 @@ h6 {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-
 	.text-heading {
 		font-size: 38px;
 	}

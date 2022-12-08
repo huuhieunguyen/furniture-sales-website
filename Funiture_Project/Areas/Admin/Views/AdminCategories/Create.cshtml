@@ -1,0 +1,50 @@
+﻿@model Funiture_Project.Models.DanhMucSp
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Thêm danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminCategories", "Index", "Admin");
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <h1>Thêm danh mục sản phẩm</h1>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales -->
+    <div class="container gap-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--*********** Mã danh mục **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="MaDm">Mã danh mục</label>
+                <input class="col-4 form-control bg-white" asp-for="MaDm" />
+                <span asp-validation-for="MaDm" class="text-danger"></span>
+            </div>
+
+            <!--*********** Mã danh mục **************-->
+            <div class="form-group row mb-4">
+                <label asp-for="TenDm" class="col-2 col-form-label">Tên danh mục</label>
+                <input asp-for="TenDm" class="col-4 form-control bg-white" />
+                <span asp-validation-for="TenDm" class="text-danger"></span>
+            </div>
+
+            <!--------------------Button--------------------------->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" /> |
+                <a asp-action="Index">Back to List</a>
+
+            </div>
+        </form>
+    </div>
+</div>

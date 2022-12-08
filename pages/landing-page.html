@@ -18,7 +18,7 @@
 </head>
 
 <body class="bg-[#F9F9F9]">
-    <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
+    <!-- <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
         <div class="container py-[25px] flex items-center justify-between">
             <div class="flex items-center justify-center gap-x-2 cursor-pointer">
                 <img srcset="/assets/img/logo.png 2x" alt="#" />
@@ -49,37 +49,38 @@
                 </span>
             </div>
         </div>
-    </header>
+    </header> -->
     <main class="container ">
         <div class="introduce-with-search mt-20">
-            <div class="text-heading mb-10 text-center text-[64px] relative">
+            <div class="text-heading mb-10 text-center relative ">
                 Tinh tế - Sang trọng <br>
                 Chất lượng
-                <img srcset="../assets/img/stars-plus-wink.png 2x" class="inline-block" alt="">
+                <img srcset="../assets/img/stars-plus-wink.png 2x" class="hidden lg:inline-block" alt="">
             </div>
-            <div class="text-desc text-center mb-16">
+            <div class="text-desc text-center mb-5 lg:mb-16">
                 BiSys - Nơi tô điểm thế giới bên trong ngôi nhà của bạn !
             </div>
             <div class="relative">
-                <img src="../assets/img/introduce3.png" class="w-full relative" alt="">
                 <div
-                    class="absolute top-[0] left-1/2 transform -translate-x-1/2 -translate-y-1/2 search-wrap text-center shadow-[0px 4px 80px rgba(175, 173, 181, 0.2)]">
+                    class="z-10 mb-5 lg:absolute lg:top-[0] lg:left-1/2  lg:-translate-x-1/2 lg:-translate-y-1/2 search-wrap text-center shadow-[0px 4px 80px rgba(175, 173, 181, 0.2)] ">
                     <div class="relative">
-                        <img srcset="../assets/img/arrow-spiral-down.png 2x" class="absolute top-[-270px] left-[-200px]"
-                            alt="">
+                        <img srcset="../assets/img/arrow-spiral-down.png 2x"
+                            class="lg-block hidden absolute top-[-270px] left-[-200px]" alt="">
                         <div class="absolute top-[50%] left-[20px] translate-y-[-50%] ">
                             <img srcset="../assets/img/search-icon.png 2x" alt="">
                         </div>
-                        <div class="absolute top-[50%] right-[15px] translate-y-[-50%]">
+                        <div class="absolute lg:block hidden top-[50%]  right-[15px] translate-y-[-50%]">
                             <button class="button-primary">Tìm kiếm</button>
                         </div>
                         <input type="text"
-                            class="h-[84px] w-[810px] pl-[70px] pr-20 rounded-lg z-0 text-[18px] focus:outline-none"
+                            class="outline-1 outline-black w-full h-[70px] lg:h-[84px] md:w-[810px] pl-[70px] pr-20 rounded-lg z-0 text-[18px] "
                             placeholder="Nhập từ khóa tìm kiếm...">
                     </div>
                 </div>
+                <img src="../assets/img/introduce3.png" class="w-full relative" alt="">
+
             </div>
-            <div class="introduce-list grid-cols-3 grid gap-x-4">
+            <div class="introduce-list lg:grid-cols-3 grid gap-x-4 gap-y-4">
                 <div class="introduce-item bg-[#fff] ">
                     <div class="p-6  rounded-lg">
                         <div class="mb-1">
@@ -127,9 +128,7 @@
 
             </div>
         </div>
-        </div>
-        </div>
-        <div class="category mt-20">
+        <div class="hidden md-block category mt-20">
             <div class="text-heading text-center">Danh mục</div>
             <div class="category-list mt-[45px] grid grid-cols-3 gap-x-10">
                 <div class="category-item text-center mb-[80px]">
@@ -343,9 +342,10 @@
                 <div class="my-custom-pagination-div"></div>
             </div>
         </div>
-        <div class="introduce mt-40 grid grid-cols-2 gap-[50px]">
+        <div class="introduce mt-10 lg:mt-40 grid lg:grid-cols-2 lg:gap-[50px]">
             <div class="flex flex-col">
-                <div class="introduce-list">
+                <div class="introduce-list flex-1">
+
                     <div class="introduce-item mb-[31px]">
                         <div class="text-heading mb-[22px]">
                             Được chế tạo thủ công bằng những nguyên vật liệu tốt nhất
@@ -356,7 +356,7 @@
                         <a href="" class="button-primary ">Tìm hiểu thêm</a>
                     </div>
                 </div>
-                <img src="../assets/img/introduce1.png" alt="">
+                <img class="hidden lg:block" src="../assets/img/introduce1.png" alt="">
 
             </div>
             <div class="flex flex-col">
@@ -389,10 +389,11 @@
                     </div>
 
                 </div>
-                <img src="../assets/img/introduce2.png" alt="">
+                <img class="lg:hidden block mt-5" src="../assets/img/introduce1.png" alt="">
+                <img src="../assets/img/introduce2.png" class="mt-5" alt="">
             </div>
         </div>
-        <div class="rating mt-40">
+        <div class="rating mt-20 lg:mt-40">
             <div class="text-heading text-center mb-[30px]">
                 Nhận xét của khách hàng
             </div>
@@ -552,7 +553,7 @@
 
         </div>
     </main>
-    <footer class="mt-[100px] container  py-[60px] border-t border-t-[#ECE4DE] mb-20">
+    <!-- <footer class="mt-[100px] container  py-[60px] border-t border-t-[#ECE4DE] mb-20">
         <div class="flex items-center justify-center gap-y-[23px] flex-col">
             <div class="flex items-center justify-center gap-x-2 cursor-pointer">
                 <img srcset="/assets/img/logo.png 2x" alt="logo" />
@@ -567,7 +568,7 @@
             </div>
             <span class="font-medium text-2xl">Hãy theo dõi chúng tôi để cập nhật tin mới nhất !</span>
         </div>
-    </footer>
+    </footer> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->

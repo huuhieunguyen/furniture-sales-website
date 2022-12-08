@@ -44,7 +44,7 @@ namespace Funiture_Project
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             /* Tao popup thong bao */
-            services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
+            services.AddNotyf(config => { config.DurationInSeconds = 3; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
             
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
 

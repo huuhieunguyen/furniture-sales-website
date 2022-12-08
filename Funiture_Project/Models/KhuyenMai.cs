@@ -11,10 +11,10 @@ namespace Funiture_Project.Models
     {
         public int MaKm { get; set; }
         public string TenKm { get; set; }
-        public DateTime? NgayBd { get; set; }
-        public DateTime? NgayKt { get; set; }
-        public double? PhanTramKm { get; set; }
-        public double? DinhMuc { get; set; }
+        public DateTime NgayBd { get; set; }
+        public DateTime NgayKt { get; set; }
+        public double PhanTramKm { get; set; }
+        public double DinhMuc { get; set; }
         public double? ToiDa { get; set; }
     }
 }
