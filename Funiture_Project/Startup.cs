@@ -44,15 +44,14 @@ namespace Funiture_Project
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             /* Tao popup thong bao */
-            services.AddNotyf(config => { config.DurationInSeconds = 3; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
+            services.AddNotyf(config => { config.DurationInSeconds = 2; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
             
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
 
             services.AddTransient<AdminSideBarService>();
             /*Tao ket noi den Database*/
             services.AddDbContext<FurnitureContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //Notyf
-            services.AddNotyf(config => { config.DurationInSeconds = 2; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
+
             //Cookie Authentication
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(option =>

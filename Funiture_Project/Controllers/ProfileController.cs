@@ -45,7 +45,7 @@ namespace Funiture_Project.Controllers
                                 foreach (var itemSP in context.SanPham)
                                 {
                                     if (itemCT.MaSp == itemSP.MaSp)
-                                        lsSP.Add(new DSSanPham(itemCT.MaHd, itemCT.MaSp, itemCT.SoLuong, itemCT.DonGia, itemSP.TenSp, itemSP.HinhAnh));
+                                        lsSP.Add(new DSSanPham(itemCT.MaHd, itemCT.MaSp, itemCT.SoLuong, itemCT.DonGia, itemSP.TenSp, itemSP.HinhAnh, itemSP.Nsx));
                                 }
                             }
                         }
