@@ -27,15 +27,16 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="pt-[20px] gap-y-[50px]">
-      <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1>
+  <div class="container px-0">
+    <div class=" gap-y-[50px]">
+      <!-- <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1> -->
       <!-- Thanh header giỏ hàng -->
-      <div class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center flex justify-center bg-[#fff]">
+      <div
+        class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
         <div class="min-w-[58px] flex items-center justify-center">
           <input id="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
         </div>
-        <div class="w-[50%]">
+        <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
           Sản phẩm
         </div>
         <div class="text-center w-[12.5%]">
@@ -52,147 +53,64 @@
         </div>
       </div>
       <!-- Nội dung giỏ hàng -->
-      <div class="cart-info">
+      <div class="cart-info md:shadow">
         <div
-          class="border-b px-[20px] border-[rgba(0,0,0,0.09)] py-[15px] shadow text-[14px] min-h-[55px] shadow items-center flex justify-center bg-[#fff]">
+          class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] pt-[15px]  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
           <div class="min-w-[58px] flex items-center justify-center">
             <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
           </div>
-          <div class="w-[50%]">
+          <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
             <a href="" class="flex">
-              <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-              <div class="ml-3 flex justify-between px-4 lg:px-0 flex-col gap-y-[3px] ">
-                <span class="lg:text-[14px] max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
+              <div class="aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
+                <img class="object-cover h-full" src="../assets/img/product2.png"
+                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+              </div>
+              <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
+                <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
                   LED
                   Chống Cận Bảo Vệ Mắt</span>
                 <span class="lg:text-[14px] ">Phân loại:
                   <span class="lg:text-[14px] ">Đèn ngủ</span>
                 </span>
+                <div class="color-orange md:hidden font-semibold ">
+                  <span class="amount">200000</span>đ
+                  <!-- <input value="200000" type="number" class="amount"></input> -->
+                </div>
               </div>
             </a>
           </div>
-          <div class="text-center w-[12.5%]">
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
             <span class="rate">200000</span>đ
-          </div>
-          <div class="text-center  w-[12.5%]">
-            <div class="px-[45px] hidden md:flex justify-center text-[16px]">
-              <button
-                class="flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                -
-              </button>
-              <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                id="Quantity">
-              <button
-                class="plus-btn flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                +
-              </button>
-
-            </div>
-          </div>
-          <div class="text-center flex items-center justify-center color-orange  w-[12.5%]">
-            <span class="amount">200000</span>đ
             <!-- <input value="200000" type="number" class="amount"></input> -->
           </div>
-          <div class="text-center  w-[12.5%]">
-            Xóa
-          </div>
-        </div>
 
-      </div>
-      <div class="cart-info">
-        <div
-          class="border-b px-[20px] border-[rgba(0,0,0,0.09)] py-[15px] shadow text-[14px] min-h-[55px] shadow items-center flex justify-center bg-[#fff]">
-          <div class="min-w-[58px] flex items-center justify-center">
-            <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
-          </div>
-          <div class="w-[50%]">
-            <a href="" class="flex">
-              <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-              <div class="ml-3 flex justify-between px-4 lg:px-0 flex-col gap-y-[3px] ">
-                <span class="lg:text-[14px] max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
-                  LED
-                  Chống Cận Bảo Vệ Mắt</span>
-                <span class="lg:text-[14px] ">Phân loại:
-                  <span class="lg:text-[14px] ">Đèn ngủ</span>
-                </span>
-              </div>
+          <div
+            class="text-center lg:w-[12.5%] pl-[158px] pr-[30px]  md:px-[45px] flex justify-center text-[16px] my-[7px]">
+
+            <a
+              class="flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              -
             </a>
-          </div>
-          <div class="text-center w-[12.5%]">
-            <span class="rate">200000</span>đ
-          </div>
-          <div class="text-center  w-[12.5%]">
-            <div class="px-[45px] hidden md:flex justify-center text-[16px]">
-              <button
-                class="flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                -
-              </button>
-              <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                id="Quantity">
-              <button
-                class="plus-btn flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                +
-              </button>
-
-            </div>
-          </div>
-          <div class="text-center flex items-center justify-center color-orange  w-[12.5%]">
-            <span class="amount">200000</span>đ
-            <!-- <input value="200000" type="number" class="amount"></input> -->
-          </div>
-          <div class="text-center  w-[12.5%]">
-            Xóa
-          </div>
-        </div>
-
-      </div>
-      <div class="cart-info">
-        <div
-          class="border-b px-[20px] border-[rgba(0,0,0,0.09)] py-[15px] shadow text-[14px] min-h-[55px] shadow items-center flex justify-center bg-[#fff]">
-          <div class="min-w-[58px] flex items-center justify-center">
-            <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
-          </div>
-          <div class="w-[50%]">
-            <a href="" class="flex">
-              <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-              <div class="ml-3 flex justify-between px-4 lg:px-0 flex-col gap-y-[3px] ">
-                <span class="lg:text-[14px] max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
-                  LED
-                  Chống Cận Bảo Vệ Mắt</span>
-                <span class="lg:text-[14px] ">Phân loại:
-                  <span class="lg:text-[14px] ">Đèn ngủ</span>
-                </span>
-              </div>
+            <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
+              id="Quantity">
+            <a
+              class="plus-btn  flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              +
             </a>
-          </div>
-          <div class="text-center w-[12.5%]">
-            <span class="rate">200000</span>đ
-          </div>
-          <div class="text-center  w-[12.5%]">
-            <div class="px-[45px] hidden md:flex justify-center text-[16px]">
-              <button
-                class="flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                -
-              </button>
-              <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                id="Quantity">
-              <button
-                class="plus-btn flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                +
-              </button>
 
-            </div>
+
           </div>
-          <div class="text-center flex items-center justify-center color-orange  w-[12.5%]">
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
             <span class="amount">200000</span>đ
             <!-- <input value="200000" type="number" class="amount"></input> -->
           </div>
-          <div class="text-center  w-[12.5%]">
+          <a href="" class="p-4 text-center  lg:w-[12.5%]">
             Xóa
-          </div>
+          </a>
         </div>
 
       </div>
+
 
     </div>
     <div
@@ -221,7 +139,7 @@
 
     </div>
     <!-- Gợi ý sản phẩm -->
-    <div class="md:mt-5 container">
+    <div class="md:mt-5">
       <div class="block md:pt-[20px]">
         <h1 class="font-semibold text-[20px] lg:text-[40px] text-[#518581]">Có thể bạn quan tâm</h1>
       </div>
