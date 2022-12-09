@@ -68,7 +68,7 @@ Trang web cần đảm bảo được các mục tiêu:
 | 2  | Hà Minh Hùng        | 19520097 |19520097@gm.uit.edu.vn                                       |Frontend Developer|
 | 3  | Nguyễn Trần Hoàng Lợi     | 19520152 |19520152@gm.uit.edu.vn                                 |Frontend Developer|
 | 4  |Nguyễn Võ Thanh Lâm | 20521519 |20521519@gm.uit.edu.vn                                        |Frontend Developer|
-| 5  |Trần Ngọc Mỹ Phương | 20521779 |20521779@gm.uit.edu.vn                                        |Frontend Developer, Dsigner|
+| 5  |Trần Ngọc Mỹ Phương | 20521779 |20521779@gm.uit.edu.vn                                        |Frontend Developer, Designer|
 | 6  | Trần Duy Quốc Việt | 19520353 |19520353@gm.uit.edu.vn                                        |Backend Developer|
 | 7  | Đoàn Tú Quỳnh | 20521825 |20521825@gm.uit.edu.vn                                             |Backend Developer, Database|
 | 8  | Nguyễn Duy Tân | 20521875 |20521875@gm.uit.edu.vn                                            |Backend Developer|
