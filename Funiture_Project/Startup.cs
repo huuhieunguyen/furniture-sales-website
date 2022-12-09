@@ -32,9 +32,6 @@ namespace Funiture_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            /*Tao ket noi den Database*/
-            var stringConnectdb = Configuration.GetConnectionString("dbFurniture");
-            services.AddDbContext<FurnitureContext>(options => options.UseSqlServer(stringConnectdb));
 
             /******Tao ket noi den Database******/
 
@@ -51,6 +48,7 @@ namespace Funiture_Project
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
 
             services.AddTransient<AdminSideBarService>();
+            /*Tao ket noi den Database*/
             services.AddDbContext<FurnitureContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             //Notyf
             services.AddNotyf(config => { config.DurationInSeconds = 2; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
