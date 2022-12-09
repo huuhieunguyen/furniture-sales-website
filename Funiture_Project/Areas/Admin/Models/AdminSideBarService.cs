@@ -63,7 +63,7 @@ namespace Funiture_Project.Areas.Admin.Models
             Items.Add(new SideBarItem()
             {
                 Type = SideBarItemType.NavItem,
-                Controller = "SanPham",
+                Controller = "AdminProducts",
                 Action = "Index",
                 Area = "Admin",
                 Title = "Quản lý sản phẩm",
@@ -84,7 +84,7 @@ namespace Funiture_Project.Areas.Admin.Models
             Items.Add(new SideBarItem()
             {
                 Type = SideBarItemType.NavItem,
-                Controller = "DanhMuc",
+                Controller = "AdminCategories",
                 Action = "Index",
                 Area = "Admin",
                 Title = "Quản lý danh mục",

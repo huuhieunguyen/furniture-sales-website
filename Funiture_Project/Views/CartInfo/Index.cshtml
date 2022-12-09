@@ -4,234 +4,251 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="mt-[128px] mb-[50px] flex items-center justify-center flex-col gap-y-[40px]">
-        <h1 class="font-bold text-[64px]">Giỏ hàng</h1>
-        <div class="flex items-center justify-center w-full flex-col gap-y-[20px]">
-            <table class="border-collapse border border-black w-full">
-                <!-- tiêu đề bảng -->
-                <thead>
-                    <tr class="border border-black">
-                        <th style="
-                    width: 50%;
-                    height: 127px;
-                    padding-left: 61px;
-                    font-size: 25px;
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    column-gap: 13px;
-                  ">
-                            <input class="aspect-square w-[31px] rounded-[5px]"
-                                   type="checkbox" />
-                            <span class="font-light">Sản phẩm</span>
-                        </th>
-                        <th class="font-light text-[25px] py-[41px]">Đơn giá</th>
-                        <th class="font-light text-[25px] py-[41px]">Số lượng</th>
-                        <th class="font-light text-[25px] py-[41px]">Số tiền</th>
-                        <th class="font-light text-[25px] py-[41px]">Thao tác</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <!-- row 1 -->
-                    <tr class="border border-black">
-                        <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                            <input class="aspect-square w-[31px] rounded-[5px]"
-                                   type="checkbox" />
-                            <img src="/assets/img/cart-info-1.png" alt="" />
-                            <div class="flex flex-col font-light text-[20px] py-[6px]">
-                                <span>GH0001</span>
-                                <span>Ghế cao cấp màu gỗ</span>
-                                <span>Việt Nam</span>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-                        </td>
-                        <td style="width: 18%; height: 159px; font-size: 25px">
-                            <div class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
-                                <span class="minus">-</span>
-                                <span class="num">01</span>
-                                <span class="plus">+</span>
-                            </div>
-                        </td>
-                        <td class="font-light text-[20px] py-[41px] px-[45px]">
-                            70.000đ
-                        </td>
-                        <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">
-                            Xóa
-                        </td>
-                    </tr>
-
-                    <!-- row 2 -->
-                    <tr class="border border-black">
-                        <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                            <input class="aspect-square w-[31px] rounded-[5px]"
-                                   type="checkbox" />
-                            <img src="/assets/img/cart-info-1.png" alt="" />
-                            <div class="flex flex-col font-light text-[20px] py-[6px]">
-                                <span>GH0001</span>
-                                <span>Ghế cao cấp màu gỗ</span>
-                                <span>Việt Nam</span>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-                        </td>
-                        <td style="width: 18%; height: 159px; font-size: 25px">
-                            <div class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
-                                <span class="minus">-</span>
-                                <span class="num">01</span>
-                                <span class="plus">+</span>
-                            </div>
-                        </td>
-                        <td class="font-light text-[20px] py-[41px] px-[45px]">
-                            70.000đ
-                        </td>
-                        <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">
-                            Xóa
-                        </td>
-                    </tr>
-
-                    <!-- row 3 -->
-                    <tr class="border border-black">
-                        <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                            <input class="aspect-square w-[31px] rounded-[5px]"
-                                   type="checkbox" />
-                            <img src="/assets/img/cart-info-1.png" alt="" />
-                            <div class="flex flex-col font-light text-[20px] py-[6px]">
-                                <span>GH0001</span>
-                                <span>Ghế cao cấp màu gỗ</span>
-                                <span>Việt Nam</span>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-                        </td>
-                        <td style="width: 18%; height: 159px; font-size: 25px">
-                            <div class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
-                                <span class="minus">-</span>
-                                <span class="num">01</span>
-                                <span class="plus">+</span>
-                            </div>
-                        </td>
-                        <td class="font-light text-[20px] py-[41px] px-[45px]">
-                            70.000đ
-                        </td>
-                        <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">
-                            Xóa
-                        </td>
-                    </tr>
-
-                    <!-- row 4 -->
-                    <tr class="border border-black">
-                        <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                            <input class="aspect-square w-[31px] rounded-[5px]"
-                                   type="checkbox" />
-                            <img src="/assets/img/cart-info-1.png" alt="" />
-                            <div class="flex flex-col font-light text-[20px] py-[6px]">
-                                <span>GH0001</span>
-                                <span>Ghế cao cấp màu gỗ</span>
-                                <span>Việt Nam</span>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-                        </td>
-                        <td style="width: 18%; height: 159px; font-size: 25px">
-                            <div class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
-                                <span class="minus">-</span>
-                                <span class="num">01</span>
-                                <span class="plus">+</span>
-                            </div>
-                        </td>
-                        <td class="font-light text-[20px] py-[41px] px-[45px]">
-                            70.000đ
-                        </td>
-                        <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">
-                            Xóa
-                        </td>
-                    </tr>
-
-                    <!-- row 5 -->
-                    <tr class="border border-black">
-                        <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                            <input class="aspect-square w-[31px] rounded-[5px]"
-                                   type="checkbox" />
-                            <img src="/assets/img/cart-info-1.png" alt="" />
-                            <div class="flex flex-col font-light text-[20px] py-[6px]">
-                                <span>GH0001</span>
-                                <span>Ghế cao cấp màu gỗ</span>
-                                <span>Việt Nam</span>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-                        </td>
-                        <td style="width: 18%; height: 159px; font-size: 25px">
-                            <div class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
-                                <span class="minus">-</span>
-                                <span class="num">01</span>
-                                <span class="plus">+</span>
-                            </div>
-                        </td>
-                        <td class="font-light text-[20px] py-[41px] px-[45px]">
-                            70.000đ
-                        </td>
-                        <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">
-                            Xóa
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<body>
+  <div class="container px-0">
+    <div class="mt-[20px] gap-y-[50px]">
+      <!-- <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1> -->
+      <!-- Thanh header giỏ hàng -->
+      <div
+        class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
+        <div class="min-w-[58px] flex items-center justify-center">
+          <input id="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
         </div>
-        <!-- Payment -->
-        <div class="w-full flex items-center justify-end gap-x-[47px]">
-            <div class="flex items-end justify-center flex-col gap-y-[25px]">
-                <span class="text-[25px]"><strong>Tổng thanh toán</strong></span>
-            </div>
-            <div class="flex items-end justify-center flex-col gap-y-[25px]">
-                <span class="text-[25px]"><strong>3.050.000đ</strong></span>
-            </div>
+        <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
+          Sản phẩm
         </div>
-
-        <div class="w-full flex items-center justify-end">
-            <a asp-action="Index" asp-controller="Payment" asp-area=""> 
-                <button class="rounded-lg bg-[#FFB23F] py-5 px-[84px] shadow-[5px_5px_4px_rgba(0,_0,_0,_0.25)] font-bold text-[30px] text-white">
-                Thanh Toán
-            </button>
+        <div class="text-center w-[12.5%]">
+          Đơn giá
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Số lượng
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Số tiền
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Thao tác
+        </div>
+      </div>
+      <!-- Nội dung giỏ hàng -->
+      <div class="cart-info md:shadow">
+        <div
+          class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] pt-[15px]  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
+          <div class="min-w-[58px] flex items-center justify-center">
+            <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
+          </div>
+          <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
+            <a href="" class="hover:cursor-pointer flex">
+              <div class="aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
+                <img class="object-cover h-full" src="../assets/img/product2.png"
+                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+              </div>
+              <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
+                <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
+                  LED
+                  Chống Cận Bảo Vệ Mắt</span>
+                <span class="lg:text-[14px] ">Phân loại:
+                  <span class="lg:text-[14px] ">Đèn ngủ</span>
+                </span>
+                <div class="color-orange md:hidden font-semibold ">
+                  <span class="amount">200000</span>đ
+                  <!-- <input value="200000" type="number" class="amount"></input> -->
+                </div>
+              </div>
             </a>
-            
+          </div>
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+            <span class="rate">200000</span>đ
+            <!-- <input value="200000" type="number" class="amount"></input> -->
+          </div>
+
+          <div
+            class="text-center lg:w-[12.5%] pl-[158px] pr-[30px]  md:px-[45px] flex justify-center text-[16px] my-[7px]">
+
+            <a
+              class="hover:cursor-pointer flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              -
+            </a>
+            <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
+              id="Quantity">
+            <a
+              class="plus-btn hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              +
+            </a>
+
+
+          </div>
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+            <span class="amount">200000</span>đ
+            <!-- <input value="200000" type="number" class="amount"></input> -->
+          </div>
+          <a href="" class="p-4 text-center  lg:w-[12.5%]">
+            Xóa
+          </a>
         </div>
-    </div>
 
+      </div>
+
+
+    </div>
+    <div
+      class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border  lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-between ">
+
+      <!-- Thanh toán -->
+      <div class="flex  text-[30px] gap-x-2 items-center">
+        <input class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
+        <div class="hidden md:block text-[16px]">Chọn tất cả</div>
+        <div class="lg:hidden block text-[16px]">Tất cả</div>
+      </div>
+      <div class="result-cart flex items-center ">
+        <div class="flex text-[30px] gap-x-2 items-center">
+          <div class="text-[14px] lg:text-[16px]">Tổng thanh toán: </div>
+          <span class="text-[18px] lg:text-[24px] text-[#ee4d2d] font-semibold">
+            <span class="sum-cart">3000000</span>đ
+          </span>
+        </div>
+
+        <button
+          class="ml-2 lg:ml-5 rounded-[2px] text-white border bg-[#ee4d2d] h-[56px]  px-[10px] lg:px-[20px]  text-white text-[15px] lg:text-[24px] font-semibold">
+          Mua hàng
+        </button>
+
+      </div>
+
+    </div>
     <!-- Gợi ý sản phẩm -->
-    <div class="pl-[30px] pt-[90px]">
-        <h1 class="font-bold text-[44px] text-[#518581]">
-            Có thể bạn quan tâm
-        </h1>
+    <div class="md:mt-5">
+      <div class="block md:pt-[20px]">
+        <h1 class="font-semibold text-[20px] lg:text-[40px] text-[#518581]">Có thể bạn quan tâm</h1>
+      </div>
+      <div id="data-container"
+        class="lg:mt-[35px] mt-[20px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
+        <!-- Product 1 -->
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div id="data-container"
-         class="mt-[76px] grid grid-cols-4 gap-x-[45px] gap-y-[62px]"></div>
-</div>
-<script src="~/js/cart.js"></script>
-<script>
-      const plus = document.querySelector(".plus"),
-        minus = document.querySelector(".minus"),
-        num = document.querySelector(".num");
-      let a = 1;
-      plus.addEventListener("click", () => {
-        a++;
-        a = a < 10 ? "0" + a : a;
-        num.innerText = a;
-      });
 
-      minus.addEventListener("click", () => {
-        if (a > 1) {
-          a--;
-          a = a < 10 ? "0" + a : a;
-          num.innerText = a;
-        }
-      });
-    </script>
+  </div>
+</body>
+<script src="~/js/cart.js">
+
+  </script>

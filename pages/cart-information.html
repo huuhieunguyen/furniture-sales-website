@@ -27,306 +27,252 @@
 </head>
 
 <body>
-  <header class="bg-white shadow-[0px_5px_6px_rgba(0,_0,_0,_0.25)]">
-    <div class="container py-[25px] flex items-center justify-between">
-      <div class="flex items-center justify-center gap-x-2 cursor-pointer">
-        <img srcset="/assets/img/logo.png 2x" alt="#" />
-        <span class="font-medium text-[18px]">
-          BiSys - Yêu ngôi nhà của bạn
-        </span>
+  <div class="container px-0">
+    <div class=" gap-y-[50px]">
+      <!-- <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1> -->
+      <!-- Thanh header giỏ hàng -->
+      <div
+        class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
+        <div class="min-w-[58px] flex items-center justify-center">
+          <input id="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
+        </div>
+        <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
+          Sản phẩm
+        </div>
+        <div class="text-center w-[12.5%]">
+          Đơn giá
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Số lượng
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Số tiền
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Thao tác
+        </div>
       </div>
-      <div class="flex items-center justify-center gap-x-[60px] font-medium text-[18px] cursor-pointer">
-        <span>Sản phẩm</span>
-        <span>Về chúng tôi</span>
-        <span>Tin tức</span>
-        <span>Liên hệ</span>
+      <!-- Nội dung giỏ hàng -->
+      <div class="cart-info md:shadow">
+        <div
+          class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] pt-[15px]  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
+          <div class="min-w-[58px] flex items-center justify-center">
+            <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
+          </div>
+          <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
+            <a href="" class="flex">
+              <div class="aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
+                <img class="object-cover h-full" src="../assets/img/product3.png"
+                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+              </div>
+              <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
+                <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
+                  LED
+                  Chống Cận Bảo Vệ Mắt</span>
+                <span class="lg:text-[14px] ">Phân loại:
+                  <span class="lg:text-[14px] ">Đèn ngủ</span>
+                </span>
+                <div class="color-orange md:hidden font-semibold ">
+                  <span class="amount">200000</span>đ
+                  <!-- <input value="200000" type="number" class="amount"></input> -->
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+            <span class="rate">200000</span>đ
+            <!-- <input value="200000" type="number" class="amount"></input> -->
+          </div>
+
+          <div
+            class="text-center lg:w-[12.5%] pl-[158px] pr-[30px]  md:px-[45px] flex justify-center text-[16px] my-[7px]">
+
+            <a
+              class="flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              -
+            </a>
+            <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
+              id="Quantity">
+            <a
+              class="plus-btn  flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              +
+            </a>
+
+
+          </div>
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+            <span class="amount">200000</span>đ
+            <!-- <input value="200000" type="number" class="amount"></input> -->
+          </div>
+          <a href="" class="p-4 text-center  lg:w-[12.5%]">
+            Xóa
+          </a>
+        </div>
+
       </div>
-      <div class="flex items-center justify-center gap-x-6 text-[18px] cursor-pointer">
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-          </svg>
-        </span>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-          </svg>
-        </span>
-      </div>
+
+
     </div>
-  </header>
+    <div
+      class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border  lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-between ">
 
-  <div class="container">
-    <div class="flex flex-col items-center pt-[135px] gap-y-[50px]">
-      <h1 class="font-bold text-[64px] "> Giỏ hàng</h1>
-      <div class="table-cart-list items-center justify-center">
-        <table class="border-collapse border border-black w-full">
-
-          <!-- tiêu đề bảng -->
-          <thead>
-            <tr class="border border-black ">
-              <th class="flex items-center pl-[61px] gap-x-[13px] py-[41px] pr-[315px]">
-                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
-                <span class="font-light text-[25px]">Sản phẩm</span>
-              </th>
-              <th class="font-light text-[25px] py-[41px] ">Đơn giá</th>
-              <th class="font-light text-[25px] py-[41px] ">Số lượng</th>
-              <th class="font-light text-[25px] py-[41px] ">Số tiền</th>
-              <th class="font-light text-[25px] py-[41px] ">Thao tác</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <!-- row 1 -->
-            <tr class="border border-black">
-              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
-                <img src="/assets/img/cart-info-1.png" alt="">
-                <div class="flex flex-col font-light text-[20px] py-[6px]">
-                  <span>GH0001</span>
-                  <span>Ghế cao cấp màu gỗ</span>
-                  <span>Việt Nam</span>
-                </div>
-              </td>
-              <td>
-                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-              </td>
-              <td>
-                <div class="py-[41px] px-[45px]">
-                  <span class="flex  text-[22px]">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path fill-rule="evenodd"
-                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </button>
-                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path
-                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                      </svg>
-                    </button>
-                  </span>
-                </div>
-              </td>
-              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
-              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
-            </tr>
-
-            <!-- row 2 -->
-            <tr class="border border-black">
-              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
-                <img src="/assets/img/cart-info-1.png" alt="">
-                <div class="flex flex-col font-light text-[20px] py-[6px]">
-                  <span>GH0001</span>
-                  <span>Ghế cao cấp màu gỗ</span>
-                  <span>Việt Nam</span>
-                </div>
-              </td>
-              <td>
-                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-              </td>
-              <td>
-                <div class="py-[41px] px-[45px]">
-                  <span class="flex  text-[22px]">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path fill-rule="evenodd"
-                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </button>
-                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path
-                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                      </svg>
-                    </button>
-                  </span>
-                </div>
-              </td>
-              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
-              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
-            </tr>
-
-            <!-- row 3 -->
-            <tr class="border border-black">
-              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
-                <img src="/assets/img/cart-info-1.png" alt="">
-                <div class="flex flex-col font-light text-[20px] py-[6px]">
-                  <span>GH0001</span>
-                  <span>Ghế cao cấp màu gỗ</span>
-                  <span>Việt Nam</span>
-                </div>
-              </td>
-              <td>
-                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-              </td>
-              <td>
-                <div class="py-[41px] px-[45px]">
-                  <span class="flex  text-[22px]">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path fill-rule="evenodd"
-                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </button>
-                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path
-                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                      </svg>
-                    </button>
-                  </span>
-                </div>
-              </td>
-              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
-              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
-            </tr>
-
-            <!-- row 4 -->
-            <tr class="border border-black">
-              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
-                <img src="/assets/img/cart-info-1.png" alt="">
-                <div class="flex flex-col font-light text-[20px] py-[6px]">
-                  <span>GH0001</span>
-                  <span>Ghế cao cấp màu gỗ</span>
-                  <span>Việt Nam</span>
-                </div>
-              </td>
-              <td>
-                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-              </td>
-              <td>
-                <div class="py-[41px] px-[45px]">
-                  <span class="flex  text-[22px]">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path fill-rule="evenodd"
-                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </button>
-                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path
-                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                      </svg>
-                    </button>
-                  </span>
-                </div>
-              </td>
-              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
-              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
-            </tr>
-
-            <!-- row 5 -->
-            <tr class="border border-black">
-              <td class="flex pl-[61px] gap-x-[19px] py-[23px] border-spacing-[9px]">
-                <input class=" aspect-square w-[31px] rounded-[5px]" type="checkbox">
-                <img src="/assets/img/cart-info-1.png" alt="">
-                <div class="flex flex-col font-light text-[20px] py-[6px]">
-                  <span>GH0001</span>
-                  <span>Ghế cao cấp màu gỗ</span>
-                  <span>Việt Nam</span>
-                </div>
-              </td>
-              <td>
-                <span class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</span>
-              </td>
-              <td>
-                <div class="py-[41px] px-[45px]">
-                  <span class="flex  text-[22px]">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path fill-rule="evenodd"
-                          d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </button>
-                    <input class="text-center w-[40px] border-2 border-[#AFADB5]" type="number" min="0" id="Quantity">
-                    <button
-                      class="flex justify-center items-center border-2 border-[#AFADB5] font-bold  aspect-square w-[34px]">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path
-                          d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                      </svg>
-                    </button>
-                  </span>
-                </div>
-              </td>
-              <td class="font-light text-[20px] py-[41px] px-[45px]">70.000đ</td>
-              <td class="font-medium text-[#FF0000] text-[20px] py-[41px] px-[45px]">Xóa</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Thanh toán -->
+      <div class="flex  text-[30px] gap-x-2 items-center">
+        <input class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
+        <div class="hidden md:block text-[16px]">Chọn tất cả</div>
+        <div class="lg:hidden block text-[16px]">Tất cả</div>
       </div>
-    </div>
-    <!-- Payment -->
-    <div class="flex flex-col pl-[776px] pt-[70px] gap-y-[70px]">
-      <div class="flex text-[25px] gap-x-[60px]">
-        <span class="font-medium">Tổng thanh toán</span>
-        <span class="font-light">3.000.000đ</span>
-      </div>
-      <div class="pl-[120px]">
-        <button
-          class="rounded-[10px] hover:drop-shadow-[5px_5px_4px_rgba(0, 0, 0, 0.25)] text-white border bg-[#FFB23F] h-[74px] w-[324px]">
-          <span class="text-white font-black text-[30px]">
-            Thanh Toán
+      <div class="result-cart flex items-center ">
+        <div class="flex text-[30px] gap-x-2 items-center">
+          <div class="text-[14px] lg:text-[16px]">Tổng thanh toán: </div>
+          <span class="text-[18px] lg:text-[24px] text-[#ee4d2d] font-semibold">
+            <span class="sum-cart">3000000</span>đ
           </span>
+        </div>
+
+        <button
+          class="ml-2 lg:ml-5 rounded-[2px] text-white border bg-[#ee4d2d] h-[56px]  px-[10px] lg:px-[20px]  text-white text-[15px] lg:text-[24px] font-semibold">
+          Mua hàng
         </button>
-      </div>
-    </div>
 
+      </div>
+
+    </div>
     <!-- Gợi ý sản phẩm -->
-    <div class="pl-[30px] pt-[90px]">
-      <h1 class="font-bold text-[44px] text-[#518581]">Có thể bạn quan tâm</h1>
+    <div class="md:mt-5">
+      <div class="block md:pt-[20px]">
+        <h1 class="font-semibold text-[20px] lg:text-[40px] text-[#518581]">Có thể bạn quan tâm</h1>
+      </div>
+      <div id="data-container"
+        class="lg:mt-[35px] mt-[20px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
+        <!-- Product 1 -->
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div id="data-container" class="mt-[76px] grid grid-cols-4 gap-x-[45px] gap-y-[62px]"></div>
+
   </div>
-
-  <footer class="container bg-white py-[60px] border-t border-t-[#ECE4DE] my-20 ">
-    <div class="flex items-center justify-center gap-y-[23px] flex-col">
-      <div class="flex items-center justify-center gap-x-2 cursor-pointer">
-        <img srcset="/assets/img/logo.png 2x" alt="logo" />
-        <span class="font-medium text-[18px]">
-          BiSys - Yêu ngôi nhà của bạn
-        </span>
-      </div>
-      <div class="flex items-center justify-center gap-x-[41px] cursor-pointer">
-        <img src="/assets/icons/facebook.png" alt="facebook" />
-        <img src="/assets/icons/instagram.png" alt="instagram" />
-        <img src="/assets/icons/twitter.png" alt="twitter" />
-      </div>
-      <span class="font-medium text-2xl">Hãy theo dõi chúng tôi để cập nhật tin mới nhất !</span>
-    </div>
-  </footer>
-
-  <script src="/javascripts/cart.js">
-
-  </script>
 </body>
+<script src="../javascripts/cart.js">
+
+</script>
 
 </html>
