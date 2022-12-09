@@ -50,6 +50,12 @@ namespace Funiture_Project.Models
                 entity.Property(e => e.MaHd).HasColumnName("MaHD");
 
                 entity.Property(e => e.MaSp).HasColumnName("MaSP");
+
+                entity.HasOne(d => d.MaHdNavigation)
+                    .WithMany(p => p.Cthd)
+                    .HasForeignKey(d => d.MaHd)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CTHD_HoaDon");
             });
 
             modelBuilder.Entity<DanhMucSp>(entity =>
@@ -71,7 +77,9 @@ namespace Funiture_Project.Models
 
             modelBuilder.Entity<GioHang>(entity =>
             {
-                entity.HasKey(e => new { e.MaUser, e.MaSp });
+                entity.HasKey(e => new { e.MaKh, e.MaSp });
+
+                entity.Property(e => e.MaKh).HasColumnName("MaKH");
 
                 entity.Property(e => e.MaSp).HasColumnName("MaSP");
             });
@@ -99,6 +107,10 @@ namespace Funiture_Project.Models
                 entity.Property(e => e.NgayHd)
                     .HasColumnName("NgayHD")
                     .HasColumnType("datetime");
+
+                entity.Property(e => e.Sdt)
+                    .HasColumnName("SDT")
+                    .HasMaxLength(10);
 
                 entity.Property(e => e.ThanhPho).HasMaxLength(255);
 

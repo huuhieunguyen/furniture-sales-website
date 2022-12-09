@@ -9,7 +9,7 @@ namespace Funiture_Project.Models
 {
     public partial class GioHang
     {
-        public int MaUser { get; set; }
+        public int MaKh { get; set; }
         public int MaSp { get; set; }
         public int SoLuong { get; set; }
     }
