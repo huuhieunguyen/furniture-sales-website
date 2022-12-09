@@ -49,7 +49,11 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
 :root {
 	--green-color: #518581;
 }
