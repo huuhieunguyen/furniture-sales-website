@@ -1,89 +1,231 @@
-﻿
+﻿@model Funiture_Project.Models.KhachHang
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<HoaDon> DonHang = ViewBag.DonHang;
 }
 
 <main class="container my-16">
-    <div class="text-heading text-center">
-        Hồ sơ của tôi
-    </div>
-    <div class="text-desc text-desc__yellow text-center my-7">
-        Chỉnh sửa hồ sơ tài khoản
-    </div>
-    <form class="w-full grid gap-x-6 grid-cols-3">
-        <div class="info col-span-2">
-            <div class="flex items-center mb-6">
-                <div class="min-w-[250px]">
-                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="username">
-                        Tên đăng nhập
-                    </label>
-                </div>
-                <div class="w-full">
-                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
-                           id="username" type="text" value="Thanhlam6178">
-                </div>
-            </div>
-            <div class="flex items-center mb-6">
-                <div class="min-w-[250px]">
-                    <label class="block text-gray-500 font-bold text-right mb-1  pr-4" for="full-name">
-                        Họ và tên
-                    </label>
-                </div>
-                <div class="w-full">
-                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
-                           id="full-name" type="text" value="Nguyễn Võ Thanh Lâm">
-                </div>
-            </div>
-            <div class="flex items-center mb-6">
-                <div class="min-w-[250px]">
-                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="email">
-                        Email
-                    </label>
-                </div>
-                <div class="w-full">
-                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
-                           id="email" type="email" value="20521519@gm.uit.edu.vn">
-                </div>
-            </div>
-            <div class="flex items-center mb-6">
-                <div class="min-w-[250px]">
-                    <label class="block text-gray-500 font-bold text-right mb-1 pr-4" for="phone">
-                        Điện thoại
-                    </label>
-                </div>
-                <div>
-                    <input class="border-2 border-gray-200 rounded w-full py-2 px-4  focus:outline-none focus:bg-white focus:border-[#518581]"
-                           id="phone" type="number" value="0942121213">
-                </div>
-            </div>
+    <div class="flex justify-center items-center lg:items-start flex-col lg:flex-row gap-5">
+        <div class="text-white flex justify-center items-center flex-col">
+            <span class="myProfile_btn text-center bg-[#518581] w-[200px] p-3 hover:opacity-[0.5] transition-all cursor-pointer">Hồ sơ của tôi</span>
+            <span class="myOrder_btn text-center bg-[#518581] w-[200px] p-3 hover:opacity-[0.5] transition-all cursor-pointer">Đơn hàng của tôi</span>
+            <span class="changePw_btn text-center bg-[#518581] w-[200px] p-3 hover:opacity-[0.5] transition-all cursor-pointer">Đổi mật khẩu</span>
+            <span class="logOut_btn text-center bg-[#518581] w-[200px] p-3 hover:opacity-[0.5] transition-all cursor-pointer"><a href="/Logout.html">Đăng xuất</a></span>
         </div>
-        <div class="image border-left text-center">
-            <div class="mt-2">
-                <img src="../assets/img/banlamviec.png" class="w-[295px] h-[295px] m-auto rounded-[50%] shadow">
+
+        <div class="lg:w-[1024px] flex justify-center items-center flex-col">
+            <div class="title text-[26px] lg:text-[44px] text-heading text-center">
+                Hồ sơ của tôi
+            </div>
+            <div class="desc text-[14px] lg:text-[18px] text-desc text-desc__yellow text-center mb-7">
+                Chỉnh sửa hồ sơ tài khoản
             </div>
 
-            <label class="inline-block mt-3 px-4 py-2 bg-white border border-gray-300 rounded cursor-pointer"
-                   for="file_input">
-                Đổi
-                ảnh
-            </label>
-            <input class="hidden" id="file_input" type="file">
+            <!-- Hồ sơ của tôi -->
+            <form class="myProfile w-full flex flex-col-reverse lg:grid gap-x-6 lg:grid-cols-3">
+                <div class="info col-span-2">
+                    <div class="lg:flex items-center mb-6">
+                        <div class="min-w-[250px]">
+                            <label class="block text-[16px] lg:text-[18px] text-gray-500 font-bold lg:text-right mb-1 pr-4"
+                                   for="full-name">
+                                Họ và tên
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <input class="text-[14px] lg:text-[18px] border-2 border-gray-200 rounded w-full py-2 px-4 focus:outline-none focus:bg-white focus:border-[#518581]"
+                                   id="full-name"
+                                   type="text"
+                                   value="Nguyễn Võ Thanh Lâm" />
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center mb-6">
+                        <div class="min-w-[250px]">
+                            <label class="block text-[16px] lg:text-[18px] text-gray-500 font-bold lg:text-right mb-1 pr-4"
+                                   for="email">
+                                Email
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <input class="text-[14px] lg:text-[18px] border-2 border-gray-200 rounded w-full py-2 px-4 focus:outline-none focus:bg-white focus:border-[#518581]"
+                                   id="email"
+                                   type="email"
+                                   value="20521519@gm.uit.edu.vn" />
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center mb-6">
+                        <div class="min-w-[250px]">
+                            <label class="block text-[16px] lg:text-[18px] text-gray-500 font-bold lg:text-right mb-1 pr-4"
+                                   for="phone">
+                                Điện thoại
+                            </label>
+                        </div>
+                        <div>
+                            <input class="text-[14px] lg:text-[18px] border-2 border-gray-200 rounded w-full py-2 px-4 focus:outline-none focus:bg-white focus:border-[#518581]"
+                                   id="phone"
+                                   type="number"
+                                   value="0942121213" />
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center mb-6">
+                        <div class="min-w-[250px]">
+                            <label class="block text-[16px] lg:text-[18px] text-gray-500 font-bold lg:text-right mb-1 pr-4"
+                                   for="address-detail">
+                                Địa chỉ
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <input class="text-[14px] lg:text-[18px] border-2 border-gray-200 rounded w-full py-2 px-4 focus:outline-none focus:bg-white focus:border-[#518581]"
+                                   id="address-detail"
+                                   type="text"
+                                   value="Ký túc xá khu A" />
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center">
+                        <div class="w-[250px]"></div>
+                        <a class="button-primary text-[14px] lg:text-[18px] cursor-pointer hover:opacity-[0.5]">
+                            Lưu
+                        </a>
+                    </div>
+                </div>
+                <div class="image border-left text-center mb-8">
+                    <div class="mt-2">
+                        <img src="../assets/img/banlamviec.png"
+                             class="w-[150px] h-[150px] lg:w-[295px] lg:h-[295px] m-auto rounded-[50%] shadow" />
+                    </div>
+
+                    <label class="text-[14px] lg:text-[18px] inline-block mt-3 px-4 py-1 bg-white border border-gray-300 rounded cursor-pointer"
+                           for="file_input">Chọn ảnh</label>
+                    <input class="hidden" id="file_input" type="file" />
+                </div>
+            </form>
+
+            <!-- Đơn hàng của tôi -->
+            @await Html.PartialAsync("DonHangView", DonHang)
+
+            <!-- Thay đổi mật khẩu -->
+            <form class="changePw w-full hidden flex-col-reverse gap-x-6 lg:grid-cols-3">
+                <div class="info col-span-2">
+                    <div class="lg:flex items-center mb-6">
+                        <div class="min-w-[250px]">
+                            <label class="block text-[16px] lg:text-[18px] text-gray-500 font-bold lg:text-right mb-1 pr-4"
+                                   for="password">
+                                Mật khẩu cũ
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <input class="text-[14px] lg:text-[18px] border-2 border-gray-200 rounded w-full py-2 px-4 focus:outline-none focus:bg-white focus:border-[#518581]"
+                                   id="password"
+                                   type="password" />
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center mb-6">
+                        <div class="min-w-[250px]">
+                            <label class="block text-[16px] lg:text-[18px] text-gray-500 font-bold lg:text-right mb-1 pr-4"
+                                   for="newPassword">
+                                Mật khẩu mới
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <input class="text-[14px] lg:text-[18px] border-2 border-gray-200 rounded w-full py-2 px-4 focus:outline-none focus:bg-white focus:border-[#518581]"
+                                   id="newPassword"
+                                   type="password" />
+                        </div>
+                    </div>
+                    <div class="lg:flex items-center mb-6">
+                        <div class="min-w-[250px]">
+                            <label class="block text-[16px] lg:text-[18px] text-gray-500 font-bold lg:text-right mb-1 pr-4"
+                                   for="newPasswordConfirm">
+                                Nhập lại mật khẩu mới
+                            </label>
+                        </div>
+                        <div class="w-full">
+                            <input class="text-[14px] lg:text-[18px] border-2 border-gray-200 rounded w-full py-2 px-4 focus:outline-none focus:bg-white focus:border-[#518581]"
+                                   id="newPasswordConfirm"
+                                   type="password" />
+                        </div>
+                    </div>
+
+                    <div class="lg:flex items-center">
+                        <div class="w-[250px]"></div>
+                        <a class="button-primary text-[14px] lg:text-[18px] cursor-pointer hover:opacity-[0.5]">
+                            Lưu
+                        </a>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="flex items-center">
-            <div class="w-[250px]">
-            </div>
-            <a class="button-primary">
-                Lưu
-            </a>
-        </div>
-        <div class="flex items-center">
-            <div class="w-[250px] ">
-            <a href="~/Profile/ChangePassword" class="button-primary">
-                Thay đổi mật khẩu
-            </a>
-            </div>
-        </div>
-    </form>
+    </div>
 </main>
+<script>
+    const myProfile_btn = document.querySelector(".myProfile_btn");
+    const myOrder_btn = document.querySelector(".myOrder_btn");
+    const changePw_btn = document.querySelector(".changePw_btn");
+    const logOut_btn = document.querySelector(".logOut_btn");
+    const title = document.querySelector(".title");
+    const desc = document.querySelector(".desc");
 
+    myProfile_btn.addEventListener("click", () => {
+        myOrder_btn.classList.remove("opacity-[0.5]");
+        changePw_btn.classList.remove("opacity-[0.5]");
+        logOut_btn.classList.remove("opacity-[0.5]");
+
+        myProfile_btn.classList.add("opacity-[0.5]");
+
+        title.textContent = "Hồ sơ của tôi";
+        desc.textContent = "Chỉnh sửa hồ sơ tài khoản";
+
+        document.querySelector(".myProfile").classList.remove("hidden");
+        document.querySelector(".myProfile").classList.add("flex");
+        document.querySelector(".myProfile").classList.add("lg:grid");
+
+        document.querySelector(".myOrder").classList.remove("flex");
+        document.querySelector(".myOrder").classList.add("hidden");
+
+        document.querySelector(".changePw").classList.remove("grid");
+        document.querySelector(".changePw").classList.add("hidden");
+    });
+
+    myOrder_btn.addEventListener("click", () => {
+        myProfile_btn.classList.remove("opacity-[0.5]");
+        changePw_btn.classList.remove("opacity-[0.5]");
+        logOut_btn.classList.remove("opacity-[0.5]");
+
+        myOrder_btn.classList.add("opacity-[0.5]");
+
+        title.textContent = "Đơn hàng của tôi";
+        desc.textContent = "Xem chi tiết đơn hàng của tôi";
+
+        document.querySelector(".myProfile").classList.remove("flex");
+        document.querySelector(".myProfile").classList.remove("lg:grid");
+        document.querySelector(".myProfile").classList.add("hidden");
+
+        document.querySelector(".changePw").classList.remove("grid");
+        document.querySelector(".changePw").classList.add("hidden");
+
+        document.querySelector(".myOrder").classList.remove("hidden");
+        document.querySelector(".myOrder").classList.add("flex");
+    });
+
+    changePw_btn.addEventListener("click", () => {
+        myProfile_btn.classList.remove("opacity-[0.5]");
+        myOrder_btn.classList.remove("opacity-[0.5]");
+        logOut_btn.classList.remove("opacity-[0.5]");
+
+        changePw_btn.classList.add("opacity-[0.5]");
+
+        title.textContent = "Thay đổi mật khẩu";
+        desc.textContent = "";
+
+        document.querySelector(".changePw").classList.remove("hidden");
+        document.querySelector(".changePw").classList.add("grid");
+
+        document.querySelector(".myProfile").classList.add("hidden");
+        document.querySelector(".myProfile").classList.remove("flex");
+        document.querySelector(".myProfile").classList.remove("lg:grid");
+
+        document.querySelector(".myOrder").classList.add("hidden");
+        document.querySelector(".myOrder").classList.remove("flex");
+    });
+
+</script>

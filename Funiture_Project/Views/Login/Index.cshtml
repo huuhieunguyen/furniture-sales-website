@@ -2,27 +2,34 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model LoginViewModel;
 <main>
     <div>
         <img src="./assets/img/login-bg.png"
              alt="login-background"
              class="object-fill w-full max-h-[860px] relative" />
         <!-- Đăng nhập -->
-        <form action="" class="form-login" autocomplete="off">
+        <form class="form-login" autocomplete="off" asp-controller="Login" asp-action="Index" method="post">
             <div class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]">
                 <span class="text-[44px] font-bold text-[#FFB23F]">Đăng nhập</span>
-                <input type="text"
-                       name="name"
+                <input asp-for="Email_Phone"
+                       type="text"
                        required
-                       placeholder="Tên đăng nhập"
+                       placeholder="Email or Phone"
                        class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
-                <input type="password"
-                       name="password"
+                <input asp-for="Password"
+                       type="password"
                        required
                        placeholder="Mật khẩu"
                        class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
-                <button class="bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl hover:bg-opacity-60">
+                <label>
+                    <input asp-for="KeepLoggedIn"
+                           type="checkbox"
+                           class="w-[20px] h-[20px] m-[20px]" />
+                    <span class=" font-light text-2xl">Remember me </span>
+                </label>
+
+                <button type="submit" class="bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl hover:bg-opacity-60">
                     Đăng nhập
                 </button>
                 <p class="change-register text-xl cursor-pointer text-right">
