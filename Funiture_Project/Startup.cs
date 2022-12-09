@@ -1,5 +1,6 @@
 ﻿using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Abstractions;
+using AspNetCoreHero.ToastNotification.Extensions;
 using Funiture_Project.Areas.Admin.Models;
 using Funiture_Project.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -87,7 +88,7 @@ namespace Funiture_Project
 
             app.UseAuthorization();
             app.UseSession();
-
+            app.UseNotyf();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
