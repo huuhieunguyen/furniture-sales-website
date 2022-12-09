@@ -1,6 +1,8 @@
 using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Funiture_Project.Areas.Admin.Models;
 using Funiture_Project.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -49,6 +51,24 @@ namespace Funiture_Project
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
 
             services.AddTransient<AdminSideBarService>();
+            services.AddDbContext<FurnitureContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //Notyf
+            services.AddNotyf(config => { config.DurationInSeconds = 2; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
+            //Cookie Authentication
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = "/Login/Index";
+                    option.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                });
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,7 +89,10 @@ namespace Funiture_Project
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

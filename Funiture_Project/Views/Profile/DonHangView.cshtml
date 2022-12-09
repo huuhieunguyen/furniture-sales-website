@@ -1,0 +1,67 @@
+﻿@model List<HoaDon>
+@{
+    List<DSSanPham> dsSanPham = ViewBag.dsSanPham;
+}
+@if (Model != null && Model.Count() > 0)
+{
+    <div class="myOrder hidden table-cart-list flex-col items-centerjustify-center gap-y-10">
+        <!-- Đơn hàng -->
+        @foreach (var item in Model)
+        {
+            <table class="border-collapse border border-black w-full">
+                <!-- Tiêu đề bảng -->
+                <thead>
+                    <tr class="border border-gray-400 lg:table-row">
+                        <th class="font-light text-sm lg:text-[18px] py-[12px]">
+                            ID đơn hàng:
+                            <span class="font-bold text-sm lg:text-[18px]">@item.MaHd</span> 
+                        </th>
+                        <th class="font-light text-sm lg:text-[18px] py-[12px]">
+                            Ngày đặt:
+                            <span class="font-bold text-sm lg:text-[18px]">@item.NgayHd</span>
+                        </th>
+                        <th class="font-light text-[18px] py-[12px]"></th>
+                        <th class="font-light text-[18px] py-[12px]"></th>
+                        <th class="font-light text-[18px] py-[12px] hidden lg:table-cell"></th>
+
+                        <th class="font-light text-sm lg:text-[18px] py-[12px]">
+                            <span class="font-bold text-green-500 text-sm lg:text-[18px]">Đang giao</span>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- row 1 -->
+                    <tr class="border border-gray-400 lg:table-row">
+                        <td class="flex pl-[16px] lg:pl-[61px] gap-x-[16px] lg:gap-x-[19px] py-[23px] border-spacing-[9px]">
+                            <img src="/assets/img/cart-info-1.png" alt="" />
+                            <div class="flex flex-col font-light lg:py-[6px]">
+                                <span class="text-[14px] lg:text-[18px]">GH0001</span>
+                                <span class="text-[14px] lg:text-[18px] font-medium max-w-[300px] truncate">Ghế cao cấp màu gỗ</span>
+                                <span class="text-[14px] lg:text-[18px]">Việt Nam</span>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td class="hidden lg:table-cell"></td>
+                        <td class="hidden lg:table-cell"></td>
+                        <td class="text-[20px] py-[41px] px-[45px] hidden lg:table-cell">
+                            <span class="font-bold">1x</span> 70.000
+                        </td>
+                        <td class="lg:hidden"></td>
+                        <td class="lg:hidden align-bottom p-[16px]">
+                            <span class="font-bold">1x</span> 70.000
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+
+
+    </div>
+}
+else
+{
+    <p class="myOrder hidden">Chưa có đơn hàng</p>
+}
+

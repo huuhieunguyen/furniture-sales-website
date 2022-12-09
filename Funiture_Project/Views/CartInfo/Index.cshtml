@@ -5,411 +5,94 @@
 }
 
 <body>
-    <div class="container px-0">
-    <div class="pt-[20px] gap-y-[50px]">
-      <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1>
-      <div class="table-cart-list shadow justify-center bg-[#fff] rounded-[3px]">
-        <table class="border-collapse lg:border  w-full">
-          <!-- tiêu đề bảng -->
-          <thead>
-            <tr class=" hidden lg:table-row">
-              <th class="flex items-center pl-[40px] gap-x-[13px] py-[20px] pr-[315px]">
-                <input class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
-                <span class="text-[16px]">Sản phẩm</span>
-              </th>
-              <th class="text-[16px] py-[20px] ">Đơn giá</th>
-              <th class="text-[16px] py-[20px] ">Số lượng</th>
-              <th class="text-[16px] py-[20px] ">Số tiền</th>
-              <th class="text-[16px] py-[20px] ">Thao tác</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <!-- row 1 -->
-            <tr class="lg:border  flex flex-col py-[10px]  lg:table-row">
-              <td
-                class="flex items-center justify-between md:justify-unset px-[30px] lg:py-[10px] lg:px-[40px] lg:gap-x-[19px] ">
-                <input class="aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
-                <!-- <img src="/assets/img/cart-info-1.png" alt=""> -->
-                <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-                <div class=" flex px-4 lg:px-0 flex-col gap-y-[3px] lg:py-[6px]">
-                  <span class="text-[15px] lg:text-[16px] font-medium max-w-[170px] truncate">Ghế cao cấp màu gỗ</span>
-                  <span class="text-[15px] lg:text-[16px] ">Việt Nam</span>
-                  <span class=" text-[15px] lg:hidden text-[#ee4d2d] font-semibold">70.000đ</span>
-                  <!-- button cộng trừ mobile -->
-                  <div class="flex justify-between lg:hidden text-[16px]">
-                    <div class="flex quantity">
-                      <button
-                        class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path fill-rule="evenodd"
-                            d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                        id="Quantity">
-                      <button
-                        class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path
-                            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                        </svg>
-                      </button>
-                    </div>
-
-                  </div>
-
-                </div>
-                <button class="text-[#ee4d2d] md:hidden font-semibold">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                  </svg>
-
-                </button>
-              </td>
-              <td>
-                <span class=" text-[16px] px-[45px] hidden text-center  lg:block">70.000đ</span>
-              </td>
-              <!-- button cộng trừ pc-->
-              <td>
-                <div class="px-[45px] hidden lg:flex justify-center text-[16px]">
-                  <button
-                    class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </button>
-                  <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                    id="Quantity">
-                  <button
-                    class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path
-                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                  </button>
-
-                </div>
-              </td>
-              <td class="text-[#ee4d2d] text-center text-[16px] px-[45px] hidden lg:table-cell">70.000đ</td>
-              <td class="text-[#FF0000] text-center text-[16px] px-[45px] hidden lg:table-cell">Xóa</td>
-            </tr>
-            <tr class="lg:border  flex flex-col py-[10px]  lg:table-row">
-              <td
-                class="flex items-center justify-between md:justify-unset px-[30px] lg:py-[10px] lg:px-[40px] lg:gap-x-[19px] ">
-                <input class="aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
-                <!-- <img src="/assets/img/cart-info-1.png" alt=""> -->
-                <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-                <div class=" flex px-4 lg:px-0 flex-col gap-y-[3px] lg:py-[6px]">
-                  <span class="text-[15px] lg:text-[16px] font-medium max-w-[170px] truncate">Ghế cao cấp màu gỗ</span>
-                  <span class="text-[15px] lg:text-[16px] ">Việt Nam</span>
-                  <span class=" text-[15px] lg:hidden text-[#ee4d2d] font-semibold">70.000đ</span>
-                  <!-- button cộng trừ mobile -->
-                  <div class="flex justify-between lg:hidden text-[16px]">
-                    <div class="flex quantity">
-                      <button
-                        class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path fill-rule="evenodd"
-                            d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                        id="Quantity">
-                      <button
-                        class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path
-                            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                        </svg>
-                      </button>
-                    </div>
-
-                  </div>
-
-                </div>
-                <button class="text-[#ee4d2d] md:hidden font-semibold">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                  </svg>
-
-                </button>
-              </td>
-              <td>
-                <span class=" text-[16px] px-[45px] hidden text-center  lg:block">70.000đ</span>
-              </td>
-              <!-- button cộng trừ pc-->
-              <td>
-                <div class="px-[45px] hidden lg:flex justify-center text-[16px]">
-                  <button
-                    class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </button>
-                  <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                    id="Quantity">
-                  <button
-                    class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path
-                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                  </button>
-
-                </div>
-              </td>
-
-              <td class="text-[#ee4d2d] text-center text-[16px] px-[45px] hidden lg:table-cell">70.000đ</td>
-              <td class="text-[#FF0000] text-center text-[16px] px-[45px] hidden lg:table-cell">Xóa</td>
-            </tr>
-            <tr class="lg:border  flex flex-col py-[10px]  lg:table-row">
-              <td
-                class="flex items-center justify-between md:justify-unset px-[30px] lg:py-[10px] lg:px-[40px] lg:gap-x-[19px] ">
-                <input class="aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
-                <!-- <img src="/assets/img/cart-info-1.png" alt=""> -->
-                <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-                <div class=" flex px-4 lg:px-0 flex-col gap-y-[3px] lg:py-[6px]">
-                  <span class="text-[15px] lg:text-[16px] font-medium max-w-[170px] truncate">Ghế cao cấp màu gỗ</span>
-                  <span class="text-[15px] lg:text-[16px] ">Việt Nam</span>
-                  <span class=" text-[15px] lg:hidden text-[#ee4d2d] font-semibold">70.000đ</span>
-                  <!-- button cộng trừ mobile -->
-                  <div class="flex justify-between lg:hidden text-[16px]">
-                    <div class="flex quantity">
-                      <button
-                        class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path fill-rule="evenodd"
-                            d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                        id="Quantity">
-                      <button
-                        class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path
-                            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                        </svg>
-                      </button>
-                    </div>
-
-                  </div>
-
-                </div>
-                <button class="text-[#ee4d2d] md:hidden font-semibold">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                  </svg>
-
-                </button>
-              </td>
-              <td>
-                <span class=" text-[16px] px-[45px] hidden text-center  lg:block">70.000đ</span>
-              </td>
-              <!-- button cộng trừ pc-->
-              <td>
-                <div class="px-[45px] hidden lg:flex justify-center text-[16px]">
-                  <button
-                    class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </button>
-                  <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                    id="Quantity">
-                  <button
-                    class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path
-                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                  </button>
-
-                </div>
-              </td>
-
-              <td class="text-[#ee4d2d] text-center text-[16px] px-[45px] hidden lg:table-cell">70.000đ</td>
-              <td class="text-[#FF0000] text-center text-[16px] px-[45px] hidden lg:table-cell">Xóa</td>
-            </tr>
-            <tr class="lg:border  flex flex-col py-[10px]  lg:table-row">
-              <td
-                class="flex items-center justify-between md:justify-unset px-[30px] lg:py-[10px] lg:px-[40px] lg:gap-x-[19px] ">
-                <input class="aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
-                <!-- <img src="/assets/img/cart-info-1.png" alt=""> -->
-                <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-                <div class=" flex px-4 lg:px-0 flex-col gap-y-[3px] lg:py-[6px]">
-                  <span class="text-[15px] lg:text-[16px] font-medium max-w-[170px] truncate">Ghế cao cấp màu gỗ</span>
-                  <span class="text-[15px] lg:text-[16px] ">Việt Nam</span>
-                  <span class=" text-[15px] lg:hidden text-[#ee4d2d] font-semibold">70.000đ</span>
-                  <!-- button cộng trừ mobile -->
-                  <div class="flex justify-between lg:hidden text-[16px]">
-                    <div class="flex quantity">
-                      <button
-                        class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path fill-rule="evenodd"
-                            d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                        id="Quantity">
-                      <button
-                        class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path
-                            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                        </svg>
-                      </button>
-                    </div>
-
-                  </div>
-
-                </div>
-                <button class="text-[#ee4d2d] md:hidden font-semibold">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                  </svg>
-
-                </button>
-              </td>
-              <td>
-                <span class=" text-[16px] px-[45px] hidden text-center  lg:block">70.000đ</span>
-              </td>
-              <!-- button cộng trừ pc-->
-              <td>
-                <div class="px-[45px] hidden lg:flex justify-center text-[16px]">
-                  <button
-                    class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </button>
-                  <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                    id="Quantity">
-                  <button
-                    class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path
-                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                  </button>
-
-                </div>
-              </td>
-
-              <td class="text-[#ee4d2d] text-center text-[16px] px-[45px] hidden lg:table-cell">70.000đ</td>
-              <td class="text-[#FF0000] text-center text-[16px] px-[45px] hidden lg:table-cell">Xóa</td>
-            </tr>
-            <tr class="lg:border  flex flex-col py-[10px]  lg:table-row">
-              <td
-                class="flex items-center justify-between md:justify-unset px-[30px] lg:py-[10px] lg:px-[40px] lg:gap-x-[19px] ">
-                <input class="aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
-                <!-- <img src="/assets/img/cart-info-1.png" alt=""> -->
-                <img class="lg:ml-0 ml-3 w-[80px] h-[80x]" src="/assets/img/denngu.png" alt="">
-                <div class=" flex px-4 lg:px-0 flex-col gap-y-[3px] lg:py-[6px]">
-                  <span class="text-[15px] lg:text-[16px] font-medium max-w-[170px] truncate">Ghế cao cấp màu gỗ</span>
-                  <span class="text-[15px] lg:text-[16px] ">Việt Nam</span>
-                  <span class=" text-[15px] lg:hidden text-[#ee4d2d] font-semibold">70.000đ</span>
-                  <!-- button cộng trừ mobile -->
-                  <div class="flex justify-between lg:hidden text-[16px]">
-                    <div class="flex quantity">
-                      <button
-                        class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path fill-rule="evenodd"
-                            d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                        id="Quantity">
-                      <button
-                        class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[25px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                          <path
-                            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                        </svg>
-                      </button>
-                    </div>
-
-                  </div>
-
-                </div>
-                <button class="text-[#ee4d2d] md:hidden font-semibold">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                  </svg>
-
-                </button>
-              </td>
-              <td>
-                <span class=" text-[16px] px-[45px] hidden text-center  lg:block">70.000đ</span>
-              </td>
-              <!-- button cộng trừ pc-->
-              <td>
-                <div class="px-[45px] hidden lg:flex justify-center text-[16px]">
-                  <button
-                    class="minus flex justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </button>
-                  <input class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
-                    id="Quantity">
-                  <button
-                    class="plus flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[34px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
-                      <path
-                        d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
-                    </svg>
-                  </button>
-
-                </div>
-              </td>
-
-              <td class="text-[#ee4d2d] text-center text-[16px] px-[45px] hidden lg:table-cell">70.000đ</td>
-              <td class="text-[#FF0000] text-center text-[16px] px-[45px] hidden lg:table-cell">Xóa</td>
-            </tr>
-
-          </tbody>
-        </table>
+  <div class="container px-0">
+    <div class="mt-[20px] gap-y-[50px]">
+      <!-- <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1> -->
+      <!-- Thanh header giỏ hàng -->
+      <div
+        class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
+        <div class="min-w-[58px] flex items-center justify-center">
+          <input id="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
+        </div>
+        <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
+          Sản phẩm
+        </div>
+        <div class="text-center w-[12.5%]">
+          Đơn giá
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Số lượng
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Số tiền
+        </div>
+        <div class="text-center  w-[12.5%]">
+          Thao tác
+        </div>
       </div>
-    </div>
+      <!-- Nội dung giỏ hàng -->
+      <div class="cart-info md:shadow">
+        <div
+          class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] pt-[15px]  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
+          <div class="min-w-[58px] flex items-center justify-center">
+            <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
+          </div>
+          <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
+            <a href="" class="hover:cursor-pointer flex">
+              <div class="aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
+                <img class="object-cover h-full" src="../assets/img/product2.png"
+                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+              </div>
+              <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
+                <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
+                  LED
+                  Chống Cận Bảo Vệ Mắt</span>
+                <span class="lg:text-[14px] ">Phân loại:
+                  <span class="lg:text-[14px] ">Đèn ngủ</span>
+                </span>
+                <div class="color-orange md:hidden font-semibold ">
+                  <span class="amount">200000</span>đ
+                  <!-- <input value="200000" type="number" class="amount"></input> -->
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+            <span class="rate">200000</span>đ
+            <!-- <input value="200000" type="number" class="amount"></input> -->
+          </div>
 
-    <!-- Gợi ý sản phẩm -->
-    <div class="py-2 block lg:hidden text-center">
-      <h1 class="text-[18px]">Có thể bạn quan tâm</h1>
-    </div>
-    <div class="container lg:mt-5 shadow bg-[#fff]">
-      <div class="hidden lg:block pt-5 lg:pt-[20px]">
-        <h1 class="font-semibold text-[24px] lg:text-[40px] text-[#518581]">Có thể bạn quan tâm</h1>
+          <div
+            class="text-center lg:w-[12.5%] pl-[158px] pr-[30px]  md:px-[45px] flex justify-center text-[16px] my-[7px]">
+
+            <a
+              class="hover:cursor-pointer flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              -
+            </a>
+            <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
+              id="Quantity">
+            <a
+              class="plus-btn hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+              +
+            </a>
+
+
+          </div>
+          <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+            <span class="amount">200000</span>đ
+            <!-- <input value="200000" type="number" class="amount"></input> -->
+          </div>
+          <a href="" class="p-4 text-center  lg:w-[12.5%]">
+            Xóa
+          </a>
+        </div>
+
       </div>
-      <div id="data-container"
-        class="py-5 lg:mt-[10px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-[16px] gap-y-[32px] lg:gap-x-[45px] lg:gap-y-[62px]">
-      </div>
+
+
     </div>
     <div
-      class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border-[2px] shadow lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-between ">
+      class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border  lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-between ">
 
       <!-- Thanh toán -->
       <div class="flex  text-[30px] gap-x-2 items-center">
@@ -420,7 +103,9 @@
       <div class="result-cart flex items-center ">
         <div class="flex text-[30px] gap-x-2 items-center">
           <div class="text-[14px] lg:text-[16px]">Tổng thanh toán: </div>
-          <div class="text-[18px] lg:text-[24px] text-[#ee4d2d] font-semibold">3.000.000đ</div>
+          <span class="text-[18px] lg:text-[24px] text-[#ee4d2d] font-semibold">
+            <span class="sum-cart">3000000</span>đ
+          </span>
         </div>
 
         <button
@@ -431,32 +116,139 @@
       </div>
 
     </div>
+    <!-- Gợi ý sản phẩm -->
+    <div class="md:mt-5">
+      <div class="block md:pt-[20px]">
+        <h1 class="font-semibold text-[20px] lg:text-[40px] text-[#518581]">Có thể bạn quan tâm</h1>
+      </div>
+      <div id="data-container"
+        class="lg:mt-[35px] mt-[20px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
+        <!-- Product 1 -->
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+        <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+          <div class="h-full flex flex-col overflow-hidden">
+            <div class="aspect-square  rounded-[3px] ">
+              <img class="object-cover h-full" src="../assets/img/product2.png"
+                alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+            </div>
+            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+              <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
+              </p>
+              <div class="flex justify-between items-center mt-3 price ">
+                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                  300.000<span class="md:text-[20px] text-[14px]">đ</span>
+                </span>
+                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                  400.000đ
+                </span>
+              </div>
+              <div class="md:text-[18px] text-[14px] mt-2">
+                Số lượng:
+                <span class="md:text-[18px] text-[14px] font-medium ">100</span>
+              </div>
+              <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+                                
+                                  Hết hàng
+                                
+                              </div> -->
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
   </div>
 </body>
-<script src="~/js/cart.js"></script>
-<script>
-    const plus = document.querySelector(".plus"),
-    minus = document.querySelector(".minus"),
-    num = document.querySelector(".num");
+<script src="~/js/cart.js">
 
-    console.log(num)
-    console.log(plus)
-     console.log(minus)
-    let a = 1;
-    plus.addEventListener("click", () => {
-        a++;
-        console.log('plus')
-        a = a < 10 ? "0" + a : a;
-        num.innerText = a;
-        });
-
-    minus.addEventListener("click", () => {
-        if (a > 1) {
-            console.log('minus')
-
-        a--;
-        a = a < 10 ? "0" + a : a;
-        num.innerText = a;
-        }
-    });
   </script>
