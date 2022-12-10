@@ -25,7 +25,7 @@ const handleClick = (rate, num) => {
 	console.log(String(parseInt(rate.textContent) * num.value));
 	return String(parseInt(rate.textContent) * num.value);
 };
-for (let i = 1; i <= plusBtnList.length; i++) {
+for (let i = 0; i < plusBtnList.length; i++) {
 	plusBtnList[i].addEventListener("click", () => {
 		numList[i].value++;
 		console.log(handleClick(rateList[i], numList[i]));
