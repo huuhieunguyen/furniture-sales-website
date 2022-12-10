@@ -5,12 +5,15 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace Funiture_Project.Models
+namespace Funiture_Project.DataDB
 {
-    public partial class GioHang
+    public partial class Cthd
     {
-        public int MaKh { get; set; }
+        public int MaHd { get; set; }
         public int MaSp { get; set; }
         public int SoLuong { get; set; }
+        public double DonGia { get; set; }
+
+        public virtual HoaDon MaHdNavigation { get; set; }
     }
 }

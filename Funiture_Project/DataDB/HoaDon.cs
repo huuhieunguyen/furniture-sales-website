@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace Funiture_Project.Models
+namespace Funiture_Project.DataDB
 {
     public partial class HoaDon
     {

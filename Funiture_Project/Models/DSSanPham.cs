@@ -11,7 +11,8 @@ namespace Funiture_Project.Models
         private double dongia;
         private string tensp;
         private string hinhanh;
-        public DSSanPham(int mahd, int masp, int soluong, double dongia, string tensp, string hinhanh)
+        private string nsx;
+        public DSSanPham(int mahd, int masp, int soluong, double dongia, string tensp, string hinhanh, string nsx)
         {
             this.mahd = mahd;
             this.masp = masp;
@@ -19,6 +20,7 @@ namespace Funiture_Project.Models
             this.dongia = dongia;
             this.tensp = tensp;
             this.hinhanh = hinhanh;
+            this.nsx = nsx;
         }
         public int MaHD
         {
@@ -49,6 +51,11 @@ namespace Funiture_Project.Models
         {
             get { return hinhanh; }
             set { hinhanh = value; }
+        }
+        public string NSX
+        {
+            get { return nsx; }
+            set { nsx = value; }
         }
     }
 }

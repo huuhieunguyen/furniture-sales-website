@@ -33,7 +33,7 @@ namespace Funiture_Project.Areas.Admin.Models
             });
             Items.Add(new SideBarItem()
             {
-                Type = SideBarItemType.NavItem,
+                /*Type = SideBarItemType.NavItem,
                 Title = "Quản lý Users",
                 AwesomeIcon = "fas fa-users",
                 collapseID = "collapseTwo",
@@ -57,7 +57,14 @@ namespace Funiture_Project.Areas.Admin.Models
                         Title = "Khách hàng",
 
                     }
-                }
+                }*/
+                Type = SideBarItemType.NavItem,
+                Controller = "AdminCustomers",
+                Action = "Index",
+                Area = "Admin",
+                Title = "Quản lý khách hàng",
+                AwesomeIcon = "fas fa-users"
+
 
             });
             Items.Add(new SideBarItem()
@@ -68,7 +75,6 @@ namespace Funiture_Project.Areas.Admin.Models
                 Area = "Admin",
                 Title = "Quản lý sản phẩm",
                 AwesomeIcon = "fas fa-tags"
-
             });
 
             Items.Add(new SideBarItem()
@@ -79,7 +85,6 @@ namespace Funiture_Project.Areas.Admin.Models
                 Area = "Admin",
                 Title = "Quản lý khuyến mãi",
                 AwesomeIcon = "fas fa-percentage"
-
             });
             Items.Add(new SideBarItem()
             {
@@ -89,7 +94,6 @@ namespace Funiture_Project.Areas.Admin.Models
                 Area = "Admin",
                 Title = "Quản lý danh mục",
                 AwesomeIcon = "fas fa-boxes"
-
             });
 
             Items.Add(new SideBarItem() { Type = SideBarItemType.Divider });
@@ -126,7 +130,6 @@ namespace Funiture_Project.Areas.Admin.Models
                 Area = "Admin",
                 Title = "Thống kê",
                 AwesomeIcon = "fas fa-chart-bar"
-
             });
 
         }
