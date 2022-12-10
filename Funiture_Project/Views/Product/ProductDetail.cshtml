@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<SanPham> lsSanPham = ViewBag.SanPham;
+    int amount = 1;
 }
 <style>
     /* Chrome, Safari, Edge, Opera */
@@ -61,7 +62,7 @@
                 <br />
                 <span class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Tình trạng</span>
                 :
-                @if(Model.TongSl>0)
+                @if (Model.TongSl > 0)
                 {
                     <span class="font-light lg:text-[18px] text-[14px]">Còn trong kho</span>
                 }
@@ -104,24 +105,26 @@
                     </button>
                 </div>
                 <div>
-                    <a href="/Product/ThemVaoGioHang">
-                        Thêm vào giỏ hàng
-                    </a>
-                    <button class="ThemVaoGioHang lg:w-[285px] w-32 lg:h-[58px] h-10 border">
-                        <span class="font-bold lg:text-[18px] text-[14px]">Thêm vào giỏ hàng</span>
-                    </button>
+                    
+                    <a asp-controller="CartInfo" asp-action="addtocart" asp-route-masp="@Model.MaSp" asp-route-amount="2">Thêm vào giỏ hàng</a>
+                    @*<a asp-controller="CartInfo" asp-action="AddToCart" asp-route-masp="@Model.MaSp"
+                    class="ThemVaoGioHang lg:w-[285px] w-32 lg:h-[58px] h-10 border"
+                    class="font-bold lg:text-[18px] text-[14px]">
+                    Thêm vào giỏ hàng
+                    </a>*@
+
                 </div>
             </div>
         </div>
     </div>
 
     <div class="product-same mt-10 p-5">
-      <h1 class="font-bold text-[24px] lg:text-[44px] text-[#518581]">Sản phẩm tương tự</h1>
-      <div id="data-container" class="lg:mt-[45px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
-          @if(lsSanPham!=null)
-          {
-              foreach(var item in lsSanPham)
-              {
+        <h1 class="font-bold text-[24px] lg:text-[44px] text-[#518581]">Sản phẩm tương tự</h1>
+        <div id="data-container" class="lg:mt-[45px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
+            @if (lsSanPham != null)
+            {
+                foreach (var item in lsSanPham)
+                {
                     string url = $"/ProductDetail/{item.MaSp}";
                     <a href="@url" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
                         <div class="h-full flex flex-col overflow-hidden">
@@ -138,7 +141,7 @@
                                         @item.Gia.ToString("#,##0")<span class="md:text-[20px] text-[14px]">đ</span>
                                     </span>
                                     <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
-                                        
+
                                     </span>
                                 </div>
                                 <div class="md:text-[18px] text-[14px] mt-2">
@@ -153,12 +156,12 @@
                             </div>
                         </div>
                     </a>
-              }
-          }
-      </div>
+                }
+            }
+        </div>
     </div>
-    
-    
+
+
 </div>
 <script>
     const plus = document.querySelector(".plus"),

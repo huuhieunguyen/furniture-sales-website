@@ -87,7 +87,7 @@
                                 <span class="amount">@thanhtien</span>đ
                                 <!-- <input value="200000" type="number" class="amount"></input> -->
                             </div>
-                            <a href="" class="p-4 text-center  lg:w-[12.5%]">
+                            <a asp-controller="CartInfo" asp-action="Remove" asp-route-masp="@item.MaSp" class="p-4 text-center  lg:w-[12.5%]">
                                 Xóa
                             </a>
                         </div>
@@ -110,7 +110,7 @@
                 <div class="flex text-[30px] gap-x-2 items-center">
                     <div class="text-[14px] lg:text-[16px]">Tổng thanh toán: </div>
                     <span class="text-[18px] lg:text-[24px] text-[#ee4d2d] font-semibold">
-                        <span class="sum-cart">3000000</span>đ
+                        <span class="sum-cart">0</span>đ
                     </span>
                 </div>
 
