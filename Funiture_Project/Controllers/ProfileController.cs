@@ -56,7 +56,7 @@ namespace Funiture_Project.Controllers
                     return View(khachhang);
                 }
             }
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Login");
         }
         [HttpPost]
         public IActionResult ChangePassword(ChangePasswordVM model)
@@ -75,10 +75,17 @@ namespace Funiture_Project.Controllers
                 }
                 if (model.OldPassword == taikhoan.Password)
                 {
-                    taikhoan.Password = model.NewPassword;
-                    context.Update(taikhoan);
-                    context.SaveChanges();
-                    notyfService.Success("Thay đổi mật khẩu thành công");
+                    if (model.NewPassword == model.ConfirmPassword)
+                    {
+                        taikhoan.Password = model.NewPassword;
+                        context.Update(taikhoan);
+                        context.SaveChanges();
+                        notyfService.Success("Thay đổi mật khẩu thành công");
+                    }
+                    else
+                    {
+                        notyfService.Success("Mật khẩu ");
+                    }
                     return RedirectToAction("Index", "Profile");
                 }
                 else
@@ -94,7 +101,7 @@ namespace Funiture_Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                var taikhoanID = HttpContext.Session.Get("MaKH");
+                var taikhoanID = HttpContext.Session.GetString("MaKH");
                 if (taikhoanID != null)
                 {
                     var taikhoan = context.KhachHang.Find(Convert.ToInt32(taikhoanID));
