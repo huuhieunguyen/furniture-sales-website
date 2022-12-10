@@ -84,7 +84,7 @@ namespace Funiture_Project.Controllers
                     }
                     else
                     {
-                        notyfService.Success("Mật khẩu ");
+                        notyfService.Error("Mật khẩu không giống nhau");
                     }
                     return RedirectToAction("Index", "Profile");
                 }

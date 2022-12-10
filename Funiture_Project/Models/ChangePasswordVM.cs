@@ -16,7 +16,6 @@ namespace Funiture_Project.Models
         [Required]
         public string NewPassword { get; set; }
         [Required]
-        [Compare("NewPassword", ErrorMessage = "Mật khẩu không giống nhau")]
         public string ConfirmPassword { get; set;}
     }
 }
