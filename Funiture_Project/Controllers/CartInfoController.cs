@@ -8,13 +8,14 @@ using Funiture_Project.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Funiture_Project.Controllers
 {
     public class CartInfoController : Controller
     {
         private readonly FurnitureContext _context;
-        public INotyfService _notyfService { get;}
+        public INotyfService _notyfService { get; }
         public CartInfoController(FurnitureContext context, INotyfService notyfService)
         {
             _context = context;
@@ -125,7 +126,35 @@ namespace Funiture_Project.Controllers
 
         public IActionResult Index()
         {
+            var r_sp = _context.SanPham.AsNoTracking();
+            int count = r_sp.Count();
+
+
+            List<SanPham> lsSanPham = new List<SanPham>();
+            for (int i = 0; i < 4; i++)
+            {
+                int index = new Random().Next(count);
+                var randomSanPham = r_sp.Skip(index).FirstOrDefault();
+                int dem = 0;
+                for (int j = 0; j < lsSanPham.Count; j++)
+                {
+                    if (lsSanPham[j].MaSp == randomSanPham.MaSp)
+                    {
+                        dem++;
+                    }
+                }
+                if (dem == 0)
+                {
+                    lsSanPham.Add(randomSanPham);
+                }
+                else
+                {
+                    i--;
+                }
+            }
+            ViewBag.SanPham = lsSanPham;
             return View();
         }
+
     }
 }
