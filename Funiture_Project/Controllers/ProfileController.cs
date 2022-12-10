@@ -1,13 +1,20 @@
-﻿using AspNetCoreHero.ToastNotification.Abstractions;
-using Funiture_Project.Models;
-using Funiture_Project.ModelViews;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+using System.Text;
+using Funiture_Project.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System;
+using System.ComponentModel.DataAnnotations;
+using Funiture_Project.ModelViews;
 
 namespace Funiture_Project.Controllers
 {
