@@ -33,6 +33,8 @@ namespace Funiture_Project.Controllers
                 //PagedList<SanPham> models = new PagedList<SanPham>(lsSanPham, pageNumber, pageSize);
                 var models = _context.SanPham.OrderBy(x => x.MaSp)
                     .ToPagedList(pageNumber, pageSize);
+                int count = _context.SanPham.Count();
+                ViewBag.SoLuongSP = count;
                 ViewBag.lsDanhMuc = lsdanhmuc;
                 ViewBag.CurrentPage = pageNumber;
                 return View(models);
@@ -115,7 +117,11 @@ namespace Funiture_Project.Controllers
                 var models = _context.SanPham.OrderBy(x => x.MaSp)
                     .Where(x => x.MaDm == dieukien)
                     .ToPagedList(pageNumber, pageSize);
+                int count = _context.SanPham.AsNoTracking()
+                    .Where(x => x.MaDm == dieukien)
+                    .Count();
                 var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
+                ViewBag.SoLuongSP = count;
                 ViewBag.lsDanhMuc = lsdanhmuc;
                 ViewBag.CurrentPage = pageNumber;
                 return View(models);

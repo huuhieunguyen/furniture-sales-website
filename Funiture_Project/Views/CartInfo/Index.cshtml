@@ -52,8 +52,8 @@
                                             @item.TenSp
                                         </span>
                                         <span class="lg:text-[14px] ">
-                                            Phân loại:
-                                            <span class="lg:text-[14px] ">Đèn ngủ</span>
+                                            Danh mục: 
+                                            <span class="lg:text-[14px] ">@item.MaDm</span>
                                         </span>
                                         <div class="color-orange md:hidden font-semibold ">
                                             <span class="amount">@item.Gia</span>đ
@@ -81,7 +81,10 @@
 
                             </div>
                             <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
-                                <span class="amount">200000</span>đ
+                                @{
+                                    double thanhtien = @item.Gia * @item.TongSl;
+                                }
+                                <span class="amount">@thanhtien</span>đ
                                 <!-- <input value="200000" type="number" class="amount"></input> -->
                             </div>
                             <a href="" class="p-4 text-center  lg:w-[12.5%]">
