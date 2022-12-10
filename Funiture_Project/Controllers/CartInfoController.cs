@@ -126,6 +126,10 @@ namespace Funiture_Project.Controllers
 
         public IActionResult Index()
         {
+            if(HttpContext.Session.GetString("MaKH") == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             int makh = int.Parse(HttpContext.Session.GetString("MaKH"));
             var r_sp = _context.SanPham.AsNoTracking();
             int count = r_sp.Count();
