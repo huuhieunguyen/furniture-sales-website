@@ -268,7 +268,7 @@
                     {
                         string url = $"/ProductDetail/{item.MaSp}";
                         <!-- Product 1 -->
-                        <a href="@url" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+                        <a href="@url" class="border-[2px] hover:border-[#518581] border-[transparent]  hover:-translate-y-1 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
                             <div class="h-full flex flex-col overflow-hidden">
                                 <div class="aspect-square  rounded-[3px] ">
                                     <img class="object-cover h-full" src="@item.HinhAnh"
@@ -302,6 +302,8 @@
                 }
 
             </div>
+             
+                
             @Html.PagedListPager(Model, page => Url.Action("Index", "Product", new { page }))
         </div>
 

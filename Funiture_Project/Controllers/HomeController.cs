@@ -29,12 +29,12 @@ namespace Funiture_Project.Controllers
         {
             var sanpham = _context.SanPham.AsNoTracking()
                 .OrderBy(x => x.TongSl)
-                .Take(5)
+                .Take(10)
                 .ToList();
-            
+
             var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
             List<string> lsanhDM = new List<string>();
-            foreach(var d in lsdanhmuc)
+            foreach (var d in lsdanhmuc)
             {
                 var hinhanh = _context.SanPham.AsNoTracking()
                     .Where(x => x.MaDm == d.MaDm)
