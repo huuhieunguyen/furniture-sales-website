@@ -7,13 +7,13 @@
 }
 
 <body>
-    <div class="container px-0">
+    <div class="container px-0 md:px-[100px]">
         <div class="mt-[20px] gap-y-[50px]">
             <!-- <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1> -->
             <!-- Thanh header giỏ hàng -->
             <div class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
                 <div class="min-w-[58px] flex items-center justify-center">
-                    <input id="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
+                    <input name="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
                 </div>
                 <div class="w-[calc(100%-58px)] lg:w-[calc(50%-58px)]">
                     Sản phẩm
@@ -56,15 +56,15 @@
                                             <span class="lg:text-[14px] ">@item.MaDm</span>
                                         </span>
                                         <div class="color-orange md:hidden font-semibold ">
-                                            <span class="amount">@item.Gia</span>đ
-                                            <!-- <input value="200000" type="number" class="amount"></input> -->
+                                            <span class="rate">@item.Gia</span>đ
+                                           
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
-                                <span class="rate">@item.Gia</span>đ
-                                <!-- <input value="200000" type="number" class="amount"></input> -->
+                                <span class="rate-mobile">@item.Gia</span>đ
+                               
                             </div>
 
                             <div class="text-center lg:w-[12.5%] pl-[158px] pr-[30px]  md:px-[45px] flex justify-center text-[16px] my-[7px]">
@@ -72,7 +72,7 @@
                                 <a class="hover:cursor-pointer flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
                                     -
                                 </a>
-                                <input value=@item.TongSl class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="0"
+                                <input value=@item.TongSl class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min=1
                                id="Quantity">
                                 <a class="plus-btn hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
                                     +
@@ -84,8 +84,7 @@
                                 @{
                                     double thanhtien = @item.Gia * @item.TongSl;
                                 }
-                                <span class="amount">@thanhtien</span>đ
-                                <!-- <input value="200000" type="number" class="amount"></input> -->
+                                <span class="amount">@thanhtien</span>đ                             
                             </div>
                             <a asp-controller="CartInfo" asp-action="Remove" asp-route-masp="@item.MaSp" class="p-4 text-center  lg:w-[12.5%]">
                                 Xóa
@@ -102,7 +101,7 @@
         <div class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border  lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-between ">
             <!-- Thanh toán -->
             <div class="flex  text-[30px] gap-x-2 items-center">
-                <input class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
+                <input name="wanna-buy-all" class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
                 <div class="hidden md:block text-[16px]">Chọn tất cả</div>
                 <div class="lg:hidden block text-[16px]">Tất cả</div>
             </div>
