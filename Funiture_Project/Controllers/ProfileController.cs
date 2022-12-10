@@ -1,12 +1,20 @@
-﻿using AspNetCoreHero.ToastNotification.Abstractions;
-using Funiture_Project.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+using System.Text;
+using Funiture_Project.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System;
+using System.ComponentModel.DataAnnotations;
+using Funiture_Project.ModelViews;
 
 namespace Funiture_Project.Controllers
 {
@@ -55,8 +63,70 @@ namespace Funiture_Project.Controllers
                     return View(khachhang);
                 }
             }
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Login");
         }
-
+        [HttpPost]
+        public IActionResult ChangePassword(ChangePasswordVM model)
+        {
+            if (ModelState.IsValid)
+            {
+                var taikhoanID = HttpContext.Session.GetString("MaKH");
+                if (taikhoanID == null)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+                var taikhoan = context.KhachHang.Find(Convert.ToInt32(taikhoanID));
+                if (taikhoan == null)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+                if (model.OldPassword == taikhoan.Password)
+                {
+                    if (model.NewPassword == model.ConfirmPassword)
+                    {
+                        taikhoan.Password = model.NewPassword;
+                        context.Update(taikhoan);
+                        context.SaveChanges();
+                        notyfService.Success("Thay đổi mật khẩu thành công");
+                    }
+                    else
+                    {
+                        notyfService.Error("Mật khẩu không giống nhau");
+                    }
+                    return RedirectToAction("Index", "Profile");
+                }
+                else
+                {
+                    notyfService.Error("Mật khẩu không đúng");
+                    return RedirectToAction("Index", "Profile");
+                }
+            }
+            return RedirectToAction("Index", "Profile");
+        }
+        [HttpPost]
+        public IActionResult ChangeProfile(ChangeProfileVM profile)
+        {
+            if (ModelState.IsValid)
+            {
+                var taikhoanID = HttpContext.Session.GetString("MaKH");
+                if (taikhoanID != null)
+                {
+                    var taikhoan = context.KhachHang.Find(Convert.ToInt32(taikhoanID));
+                    if (taikhoan == null)
+                    {
+                        return RedirectToAction("Index", "Profile");
+                    }
+                    taikhoan.HoTen = profile.HoTen;
+                    taikhoan.Email = profile.Email;
+                    taikhoan.Sdt = profile.SDT;
+                    taikhoan.DiaChi = profile.DiaChi;
+                    context.Update(taikhoan);
+                    context.SaveChanges();
+                    notyfService.Success("Thay đổi thông tin tài khoản thành công");
+                    return RedirectToAction("Index", "Profile");
+                }
+            }
+            return RedirectToAction("Index", "Profile");
+        }
     }
 }
