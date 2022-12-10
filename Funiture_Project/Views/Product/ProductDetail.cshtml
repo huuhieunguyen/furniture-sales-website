@@ -42,36 +42,6 @@
         <div class="aspect-square">
             <img class="w-full object-cover" src="@Model.HinhAnh" alt="" />
         </div>
-        
-
-<<<<<<< Updated upstream
-        <div class="pt-[45px] gap-y-3">
-            <p class="font-bold lg:text-[44px] text-[24px]">Ghế làm việc</p>
-            <p class="font-medium text-gray-500 lg:text-[18px] text-[14px] pt-[10px]">
-                @*Sự kết hợp của gỗ và len*@
-            </p>
-            <p class="leading-[180%] pt-[10px]">
-                <span class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Mã sản phẩm</span>
-                :
-                <span class="font-light lg:text-[18px] text-[14px]">@Model.MaSp</span>
-                <br />
-                <span class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Thương hiệu</span>
-                :
-                <span class="font-light lg:text-[18px] text-[14px]">@Model.ThuongHieu</span>
-                <br />
-                <span class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Tình trạng</span>
-                :
-                @if (Model.TongSl > 0)
-                {
-                    <span class="font-light lg:text-[18px] text-[14px]">Còn trong kho</span>
-                }
-                else
-                {
-                    <span class="font-light lg:text-[18px] text-[14px]">Hết hàng</span>
-                }
-                <br />
-                <br />
-=======
         <div class="gap-y-3">
             <div class="font-bold lg:text-[44px] text-[24px]">Ghế làm việc</div>
             
@@ -92,7 +62,6 @@
                         <span class="font-light text-black lg:text-[18px] text-[14px]">Hết hàng</span>
                     }
                 </div>                                            
->>>>>>> Stashed changes
                 <span class="text-gray-500 pt-[10px] lg:text-[18px] text-[14px] w-[590px] h-[96px]">
                     @Html.Raw(Model.ChiTiet)
                 </span>
@@ -109,23 +78,6 @@
                 </span>
                 <!-- Button số lượng -->
                 <div class="text-center ml-5 flex justify-center text-[16px]">
-
-<<<<<<< Updated upstream
-            <div class="flex grid grid-cols-2 gap-x-[20px] pt-[24px]">
-                <div>
-                    <button class="bg-[#518581] lg:w-[285px] w-32 lg:h-[58px] h-10 border">
-                        <span class="font-bold lg:text-[18px] text-[14px] text-[#F9F9F9]">Mua ngay</span>
-                    </button>
-                </div>
-                <div>
-                    
-                    <a asp-controller="CartInfo" asp-action="addtocart" asp-route-masp="@Model.MaSp" asp-route-amount="2">Thêm vào giỏ hàng</a>
-                    @*<a asp-controller="CartInfo" asp-action="AddToCart" asp-route-masp="@Model.MaSp"
-                    class="ThemVaoGioHang lg:w-[285px] w-32 lg:h-[58px] h-10 border"
-                    class="font-bold lg:text-[18px] text-[14px]">
-                    Thêm vào giỏ hàng
-                    </a>*@
-=======
                     <a class="hover:cursor-pointer flex minus justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
                         -
                     </a>
@@ -136,9 +88,6 @@
                     <a class="plus hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
                         +
                     </a>
-
->>>>>>> Stashed changes
-
                 </div>
             </div>
 
@@ -154,15 +103,7 @@
         </div>
     </div>
 
-<<<<<<< Updated upstream
-    <div class="product-same mt-10 p-5">
-        <h1 class="font-bold text-[24px] lg:text-[44px] text-[#518581]">Sản phẩm tương tự</h1>
-        <div id="data-container" class="lg:mt-[45px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
-            @if (lsSanPham != null)
-            {
-                foreach (var item in lsSanPham)
-                {
-=======
+
     <div class="product-same mt-10">
       <h1 class="font-bold text-[24px] lg:text-[44px] text-[#518581]">Sản phẩm tương tự</h1>
       <div id="data-container" class="lg:mt-[45px] mt-[15px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
@@ -170,7 +111,7 @@
           {
               foreach(var item in lsSanPham)
               {
->>>>>>> Stashed changes
+
                     string url = $"/ProductDetail/{item.MaSp}";
                     <a href="@url" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
                         <div class="h-full flex flex-col overflow-hidden">
