@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System;
 
 namespace Funiture_Project.Controllers
 {
@@ -121,7 +120,7 @@ namespace Funiture_Project.Controllers
                     notyfService.Error("Sai thông tin đăng nhập");
                     return View();
                 }
-                //Lưu Session MaNV
+                //Lưu Session MakH
                 HttpContext.Session.SetString("MaNV", admin.MaNv.ToString());
 
                 //true pass word: add role, sigin
