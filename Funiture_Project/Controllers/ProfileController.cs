@@ -58,6 +58,7 @@ namespace Funiture_Project.Controllers
                             }
                         }
                     }
+                    ViewBag.KhachHang = context.KhachHang.Find(Convert.ToInt32(taikhoanID));
                     ViewBag.dsSanPham = lsSP;
                     var ds = context.NhanVien;
                     return View(khachhang);
