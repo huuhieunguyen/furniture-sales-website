@@ -8,13 +8,14 @@ using Funiture_Project.Extensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Funiture_Project.Controllers
 {
     public class CartInfoController : Controller
     {
         private readonly FurnitureContext _context;
-        public INotyfService _notyfService { get;}
+        public INotyfService _notyfService { get; }
         public CartInfoController(FurnitureContext context, INotyfService notyfService)
         {
             _context = context;
@@ -125,7 +126,50 @@ namespace Funiture_Project.Controllers
 
         public IActionResult Index()
         {
+            int makh = int.Parse(HttpContext.Session.GetString("MaKH"));
+            var r_sp = _context.SanPham.AsNoTracking();
+            int count = r_sp.Count();
+
+            var giohang = _context.GioHang.AsNoTracking()
+                .Where(x => x.MaKh == makh)
+                .ToList();
+            List<SanPham> lsSanPham = new List<SanPham>();
+            foreach (var item in giohang)
+            {
+                var sanpham = _context.SanPham.AsNoTracking()
+                    .Where(x => x.MaSp == item.MaSp)
+                    .FirstOrDefault();
+                sanpham.TongSl = item.SoLuong;
+                lsSanPham.Add(sanpham);
+            }
+
+            List<SanPham> lsSanPhamDeXuat = new List<SanPham>();
+            for (int i = 0; i < 4; i++)
+            {
+                int index = new Random().Next(count);
+                var randomSanPham = r_sp.Skip(index).FirstOrDefault();
+                int dem = 0;
+                for (int j = 0; j < lsSanPhamDeXuat.Count; j++)
+                {
+                    if (lsSanPhamDeXuat[j].MaSp == randomSanPham.MaSp)
+                    {
+                        dem++;
+                    }
+                }
+                if (dem == 0)
+                {
+                    lsSanPhamDeXuat.Add(randomSanPham);
+                }
+                else
+                {
+                    i--;
+                }
+            }
+
+            ViewBag.SanPham = lsSanPham;
+            ViewBag.SanPhamDeXuat = lsSanPhamDeXuat;
             return View();
         }
+
     }
 }

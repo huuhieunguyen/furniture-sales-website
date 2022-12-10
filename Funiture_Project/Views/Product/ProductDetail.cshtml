@@ -1,6 +1,8 @@
-﻿@{
+﻿@model Funiture_Project.Models.SanPham
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<SanPham> lsSanPham = ViewBag.SanPham;
 }
 <style>
     /* Chrome, Safari, Edge, Opera */
@@ -39,42 +41,47 @@
             </div>
             <!-- Ảnh sản phẩm -->
             <div>
-                <img src="/assets/img/brown-chair.png" alt="" />
+                <img src="@Model.HinhAnh" alt="" />
             </div>
         </div>
 
         <div class="pt-[45px] gap-y-3">
             <p class="font-bold lg:text-[44px] text-[24px]">Ghế làm việc</p>
             <p class="font-medium text-gray-500 lg:text-[18px] text-[14px] pt-[10px]">
-                Sự kết hợp của gỗ và len
+                @*Sự kết hợp của gỗ và len*@
             </p>
             <p class="leading-[180%] pt-[10px]">
                 <span class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Mã sản phẩm</span>
                 :
-                <span class="font-light lg:text-[18px] text-[14px]">H6503</span>
+                <span class="font-light lg:text-[18px] text-[14px]">@Model.MaSp</span>
                 <br />
                 <span class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Thương hiệu</span>
                 :
-                <span class="font-light lg:text-[18px] text-[14px]">Bentley</span>
+                <span class="font-light lg:text-[18px] text-[14px]">@Model.ThuongHieu</span>
                 <br />
                 <span class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Tình trạng</span>
                 :
-                <span class="font-light lg:text-[18px] text-[14px]">Còn trong kho</span>
+                @if(Model.TongSl>0)
+                {
+                    <span class="font-light lg:text-[18px] text-[14px]">Còn trong kho</span>
+                }
+                else
+                {
+                    <span class="font-light lg:text-[18px] text-[14px]">Hết hàng</span>
+                }
                 <br />
                 <br />
                 <span class="text-gray-500 pt-[10px] lg:text-[18px] text-[14px] w-[590px] h-[96px]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
-                    tortor quisque purus aliquet arcu magna. Purus ultrices nibh nunc
-                    orci cras nunc facilisi tristique. Dolor ultrices ...
+                    @Html.Raw(Model.ChiTiet)
                 </span>
-                <span class="text-[#518581] lg:text-[18px] text-[14px] font-medium">Đọc thêm</span>
+                <span class="text-[#518581] lg:text-[18px] text-[14px] font-medium"></span>
             </p>
             <!-- Giá sản phẩm -->
             <div class="gap-x-3 pt-[19px]">
                 <p>
-                    <span class="font-bold lg:text-4xl text-2xl">2.000.000đ</span>
+                    <span class="font-bold lg:text-4xl text-2xl">@Model.Gia.ToString("#,##0")đ</span>@*
                     <span class="lg:text-4xl text-2xl text-gray-500">-</span>
-                    <span class="font-normal lg:text-4xl text-2xl text-gray-400 italic line-through align-bottom">2.500.000đ</span>
+                    <span class="font-normal lg:text-4xl text-2xl text-gray-400 italic line-through align-bottom">2.500.000đ</span>*@
                 </p>
             </div>
             <!-- Số lượng -->
@@ -87,7 +94,7 @@
                 <!-- Button số lượng -->
                 <div class="wrapper lg:h-[40px] h-[32px] lg:w-[180px] w-[150px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]">
                     <span class="minus">-</span>
-                    <span class="num">01</span>
+                    <span class="num">1</span>
                     <span class="plus">+</span>
                 </div>
             </div>
@@ -99,7 +106,10 @@
                     </button>
                 </div>
                 <div>
-                    <button class="lg:w-[285px] w-32 lg:h-[58px] h-10 border">
+                    <a href="/Product/ThemVaoGioHang">
+                        Thêm vào giỏ hàng
+                    </a>
+                    <button class="ThemVaoGioHang lg:w-[285px] w-32 lg:h-[58px] h-10 border">
                         <span class="font-bold lg:text-[18px] text-[14px]">Thêm vào giỏ hàng</span>
                     </button>
                 </div>
@@ -110,126 +120,43 @@
     <div class="product-same mt-10 p-5">
       <h1 class="font-bold text-[24px] lg:text-[44px] text-[#518581]">Sản phẩm tương tự</h1>
       <div id="data-container" class="lg:mt-[45px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
-          <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
-            <div class="h-full flex flex-col overflow-hidden">
-              <div class="aspect-square  rounded-[3px] ">
-                <img class="object-cover h-full" src="../assets/img/product2.png"
-                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
-              </div>
-              <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
-                <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
-                  Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
-                </p>
-                <div class="flex justify-between items-center mt-3 price ">
-                  <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
-                    300.000<span class="md:text-[20px] text-[14px]">đ</span>
-                  </span>
-                  <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
-                    400.000đ
-                  </span>
-                </div>
-                <div class="md:text-[18px] text-[14px] mt-2">
-                  Số lượng:
-                  <span class="md:text-[18px] text-[14px] font-medium ">100</span>
-                </div>
-                <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
-                                
-                                  Hết hàng
-                                
-                              </div> -->
-              </div>
-            </div>
-          </a>
-          <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
-            <div class="h-full flex flex-col overflow-hidden">
-              <div class="aspect-square  rounded-[3px] ">
-                <img class="object-cover h-full" src="../assets/img/product2.png"
-                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
-              </div>
-              <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
-                <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
-                  Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
-                </p>
-                <div class="flex justify-between items-center mt-3 price ">
-                  <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
-                    300.000<span class="md:text-[20px] text-[14px]">đ</span>
-                  </span>
-                  <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
-                    400.000đ
-                  </span>
-                </div>
-                <div class="md:text-[18px] text-[14px] mt-2">
-                  Số lượng:
-                  <span class="md:text-[18px] text-[14px] font-medium ">100</span>
-                </div>
-                <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
-                                
-                                  Hết hàng
-                                
-                              </div> -->
-              </div>
-            </div>
-          </a>
-          <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
-            <div class="h-full flex flex-col overflow-hidden">
-              <div class="aspect-square  rounded-[3px] ">
-                <img class="object-cover h-full" src="../assets/img/product2.png"
-                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
-              </div>
-              <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
-                <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
-                  Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
-                </p>
-                <div class="flex justify-between items-center mt-3 price ">
-                  <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
-                    300.000<span class="md:text-[20px] text-[14px]">đ</span>
-                  </span>
-                  <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
-                    400.000đ
-                  </span>
-                </div>
-                <div class="md:text-[18px] text-[14px] mt-2">
-                  Số lượng:
-                  <span class="md:text-[18px] text-[14px] font-medium ">100</span>
-                </div>
-                <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
-                                
-                                  Hết hàng
-                                
-                              </div> -->
-              </div>
-            </div>
-          </a>
-          <a href="" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
-            <div class="h-full flex flex-col overflow-hidden">
-              <div class="aspect-square  rounded-[3px] ">
-                <img class="object-cover h-full" src="../assets/img/product2.png"
-                  alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
-              </div>
-              <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
-                <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
-                  Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt
-                </p>
-                <div class="flex justify-between items-center mt-3 price ">
-                  <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
-                    300.000<span class="md:text-[20px] text-[14px]">đ</span>
-                  </span>
-                  <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
-                    400.000đ
-                  </span>
-                </div>
-                <div class="md:text-[18px] text-[14px] mt-2">
-                  Số lượng:
-                  <span class="md:text-[18px] text-[14px] font-medium ">100</span>
-                </div>
-                <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
-                                
-                                  Hết hàng
-                                
-                              </div> -->
-              </div>
-            </div>
-          </a>
+          @if(lsSanPham!=null)
+          {
+              foreach(var item in lsSanPham)
+              {
+                    string url = $"/ProductDetail/{item.MaSp}";
+                    <a href="@url" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+                        <div class="h-full flex flex-col overflow-hidden">
+                            <div class="aspect-square  rounded-[3px] ">
+                                <img class="object-cover h-full" src="@item.HinhAnh"
+                             alt="@item.TenSp">
+                            </div>
+                            <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+                                <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                                    @item.TenSp
+                                </p>
+                                <div class="flex justify-between items-center mt-3 price ">
+                                    <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                                        @item.Gia.ToString("#,##0")<span class="md:text-[20px] text-[14px]">đ</span>
+                                    </span>
+                                    <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+                                        
+                                    </span>
+                                </div>
+                                <div class="md:text-[18px] text-[14px] mt-2">
+                                    Số lượng:
+                                    <span class="md:text-[18px] text-[14px] font-medium ">@item.TongSl</span>
+                                </div>
+                                <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+
+                                                  Hết hàng
+
+                                              </div> -->
+                            </div>
+                        </div>
+                    </a>
+              }
+          }
       </div>
     </div>
     
@@ -242,14 +169,14 @@
     let a = 1;
     plus.addEventListener("click", () => {
         a++;
-        a = a < 10 ? "0" + a : a;
+        a = a < 10 ? a : a;
         num.innerText = a;
     });
 
     minus.addEventListener("click", () => {
         if (a > 1) {
             a--;
-            a = a < 10 ? "0" + a : a;
+            a = a < 10 ? a : a;
             num.innerText = a;
         }
     });
