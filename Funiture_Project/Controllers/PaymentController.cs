@@ -38,12 +38,12 @@ namespace Funiture_Project.Controllers
                 return gh;
             }
         }
-        [Route("checkout.html", Name = "Checkout")]
+        [Route("Payment.html", Name = "Payment")]
         public IActionResult Index(string returnUrl = null)
         {
             //Lay gio hang ra de xu ly
             var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
-            var taikhoanID = HttpContext.Session.GetString("CustomerId");
+            var taikhoanID = HttpContext.Session.GetString("MaKH");
             MuaHangVM model = new MuaHangVM();
             if (taikhoanID != null)
             {
@@ -60,12 +60,12 @@ namespace Funiture_Project.Controllers
         }
 
         [HttpPost]
-        [Route("checkout.html", Name = "Checkout")]
+        [Route("payment.html", Name = "payment")]
         public IActionResult Index(MuaHangVM muaHang)
         {
             //Lay ra gio hang de xu ly
             var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
-            var taikhoanID = HttpContext.Session.GetString("CustomerId");
+            var taikhoanID = HttpContext.Session.GetString("MaKH");
             MuaHangVM model = new MuaHangVM();
             if (taikhoanID != null)
             {
@@ -91,24 +91,20 @@ namespace Funiture_Project.Controllers
                     donhang.ThanhPho = model.TinhThanh;
 
                     donhang.NgayHd = DateTime.Now;
-                    donhang.TransactStatusId = 1;//Don hang moi
-                    donhang.Deleted = false;
-                    donhang.Paid = false;
-                    donhang.Note = Utilities.StripHTML(model.Note);
-                    donhang.TotalMoney = Convert.ToInt32(cart.Sum(x => x.TotalMoney));
+                    donhang.Ttdh = "Đang chờ"; //Don hang moi
+                    donhang.Tttt = "Chưa thanh toán";//Don hang moi
+                    donhang.TriGia = cart.Sum(x => x.TotalMoney);
                     _context.Add(donhang);
                     _context.SaveChanges();
-                    //tao danh sach don hang
-
+                    
+                    //tao CTHD
                     foreach (var item in cart)
                     {
-                        OrderDetail orderDetail = new OrderDetail();
-                        orderDetail.OrderId = donhang.OrderId;
-                        orderDetail.ProductId = item.product.ProductId;
-                        orderDetail.Amount = item.amount;
-                        orderDetail.TotalMoney = donhang.TotalMoney;
-                        orderDetail.Price = item.product.Price;
-                        orderDetail.CreateDate = DateTime.Now;
+                        Cthd orderDetail = new Cthd();
+                        orderDetail.MaHd = donhang.MaHd;
+                        orderDetail.MaSp = item.sanPham.MaSp;
+                        orderDetail.SoLuong = item.amount;
+                        orderDetail.DonGia = item.TotalMoney;
                         _context.Add(orderDetail);
                     }
                     _context.SaveChanges();
@@ -117,9 +113,7 @@ namespace Funiture_Project.Controllers
                     //Xuat thong bao
                     _notyfService.Success("Đơn hàng đặt thành công");
                     //cap nhat thong tin khach hang
-                    return RedirectToAction("Success");
-
-
+                    return RedirectToAction("Index", "Product");
                 }
             }
             catch
@@ -133,7 +127,7 @@ namespace Funiture_Project.Controllers
             return View(model);
         }
 
-        [Route("dat-hang-thanh-cong.html", Name = "Success")]
+/*        [Route("Payment-Success.html", Name = "Success")]
         public IActionResult Success()
         {
             try
@@ -177,5 +171,5 @@ namespace Funiture_Project.Controllers
             }
             return string.Empty;
         }
-    }
+*/    }
 }

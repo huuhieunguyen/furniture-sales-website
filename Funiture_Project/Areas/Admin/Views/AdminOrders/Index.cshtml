@@ -1,22 +1,22 @@
-﻿@model IEnumerable<Funiture_Project.Models.KhachHang>
+﻿@model IEnumerable<Funiture_Project.Models.HoaDon>
 @inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
 
 @{
-    ViewData["Title"] = "Quản lý Khách hàng";
+    ViewData["Title"] = "Quản lý Hóa Đơn";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 @section Sidebar{
     @Html.Raw(_AdminSideBarService.renderHtml())
 }
 @{
-    _AdminSideBarService.setActive("AdminCustomers", "Index", "Admin");
+    _AdminSideBarService.setActive("AdminOrders", "Index", "Admin");
 }
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-flex justify-content-between">
-        <h1 class="h3 mb-2 text-gray-800">Danh mục khách hàng</h1>
+        <h1 class="h3 mb-2 text-gray-800">Danh mục hóa đơn</h1>
     </div>
 
     <hr class="my-12" />
@@ -33,14 +33,16 @@
                     @*Tieu de cot cho bang*@
                     <thead class="thead-dark">
                         <tr>
-                            <th>Mã</th>
-                            <th>Họ tên</th>
-                            <th>Giới tính</th>
-                            <th>Email</th>
-                            <th>Sđt</th>
-                            <th>Ngày tạo</th>
+                            <th>Mã DM</th>
+                            <th>Tình trạng DH</th>
+                            <th>Tình trạng TT</th>
+                            <th>Mã KH</th>
+                            <th>Ngày HD</th>
+                            <th>Ngày GH</th>
+                            <th>SĐT</th>
                             <th>Địa chỉ</th>
                             <th>Thành phố</th>
+                            <th>Trị giá</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -51,17 +53,19 @@
                             foreach (var item in Model)
                             {
                                 <tr>
-                                    <th scope="row">@item.MaKh</th>
-                                    <td>@item.HoTen</td>
-                                    <td>@item.GioiTinh</td>
-                                    <td>@item.Email</td>
+                                    <th scope="row">@item.MaHd</th>
+                                    <td>@item.Ttdh</td>
+                                    <td>@item.Tttt</td>
+                                    <td>@item.MaKh</td>
+                                    <td>@item.NgayHd</td>
+                                    <td>@item.NgayGh</td>
                                     <td>@item.Sdt</td>
-                                    <td>@item.NgayTao</td>
                                     <td>@item.DiaChi</td>
                                     <td>@item.ThanhPho</td>
+                                    <td>@item.TriGia</td>
 
                                     <td class="d-flex justify-content-center">
-                                        <a asp-action="Edit" asp-route-id="@item.MaKh">
+                                        <a asp-action="Edit" asp-route-id="@item.MaHd">
                                             <img src="~/admin/img/bi_pencil-square.svg"
                                          alt="" />
                                         </a>
@@ -75,3 +79,4 @@
         </div>
     </div>
 </div>
+
