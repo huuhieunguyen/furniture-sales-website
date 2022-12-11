@@ -21,18 +21,18 @@
 <div class="container md:pt-[50px] pt-[20px]">
     <!-- Đường dẫn -->
     <div class="flex items-center gap-x-2 pb-[13px]">
-        
+
         <svg xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-[26px]">
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke-width="1.5"
+             stroke="currentColor"
+             class="w-[26px]">
             <path stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  stroke-linejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
         </svg>
-       
+
         <div class="md:text-2xl">
             Trang chủ / Sản phẩm / Thông tin sản phẩm
         </div>
@@ -44,16 +44,19 @@
         </div>
         <div class="gap-y-3">
             <div class="font-bold lg:text-[44px] text-[24px]">Ghế làm việc</div>
-            
+
             <div class="leading-[180%] pt-[10px]">
-                <div class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Mã sản phẩm: 
+                <div class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">
+                    Mã sản phẩm:
                     <span class="font-medium text-black lg:text-[18px] text-[14px]">@Model.MaSp</span>
-                </div>         
-                <div class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Thương hiệu: 
+                </div>
+                <div class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">
+                    Thương hiệu:
                     <span class="font-light text-black lg:text-[18px] text-[14px]">@Model.ThuongHieu</span>
-                </div>                
-                <div class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">Tình trạng: 
-                    @if(Model.TongSl>0)
+                </div>
+                <div class="font-medium text-[#AD7E5C] lg:text-[18px] text-[14px]">
+                    Tình trạng:
+                    @if (Model.TongSl > 0)
                     {
                         <span class="font-light text-black lg:text-[18px] text-[14px]">Còn trong kho</span>
                     }
@@ -61,15 +64,15 @@
                     {
                         <span class="font-light text-black lg:text-[18px] text-[14px]">Hết hàng</span>
                     }
-                </div>                                            
+                </div>
                 <span class="text-gray-500 pt-[10px] lg:text-[18px] text-[14px] w-[590px] h-[96px]">
                     @Html.Raw(Model.ChiTiet)
                 </span>
-               
+
             </div>
             <!-- Giá sản phẩm -->
             <div class="gap-x-3 pt-[19px]">
-                  <span class="font-bold lg:text-4xl text-2xl">@Model.Gia.ToString("#,##0")đ</span>
+                <span class="font-bold lg:text-4xl text-2xl">@Model.Gia.ToString("#,##0")đ</span>
             </div>
             <!-- Số lượng -->
             <div class="flex gap-x-[50px] pt-[27px] items-center">
@@ -83,8 +86,8 @@
                     </a>
 
                     <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="1"
-                    id="Quantity">
-                    
+                           id="Quantity">
+
                     <a class="plus hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
                         +
                     </a>
@@ -95,9 +98,10 @@
                 <a href="" class="hover:scale-1 cursor-pointer bg-[#518581] text-center py-4 block font-semibold lg:text-[18px] text-[14px] text-[#F9F9F9]">
                     Mua ngay
                 </a>
-                <a href="/Product/ThemVaoGioHang" class="cursor-pointer block text-center py-4 border-2 border-[#518581] text-[#518581] font-semibold lg:text-[18px] text-[14px]">
+                <a class="cursor-pointer block text-center py-4 border-2 border-[#518581] text-[#518581] font-semibold lg:text-[18px] text-[14px]"
+                   asp-controller="CartInfo" asp-action="AddToCart" asp-route-masp="@Model.MaSp" asp-route-amount="1">
                     Thêm vào giỏ hàng
-                </a>                 
+                </a>
 
             </div>
         </div>
@@ -105,12 +109,12 @@
 
 
     <div class="product-same mt-10">
-      <h1 class="font-bold text-[24px] lg:text-[44px] text-[#518581]">Sản phẩm tương tự</h1>
-      <div id="data-container" class="lg:mt-[45px] mt-[15px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
-          @if(lsSanPham!=null)
-          {
-              foreach(var item in lsSanPham)
-              {
+        <h1 class="font-bold text-[24px] lg:text-[44px] text-[#518581]">Sản phẩm tương tự</h1>
+        <div id="data-container" class="lg:mt-[45px] mt-[15px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[25px] lg:gap-y-[45px] gap-x-3 gap-y-[15px]">
+            @if (lsSanPham != null)
+            {
+                foreach (var item in lsSanPham)
+                {
 
                     string url = $"/ProductDetail/{item.MaSp}";
                     <a href="@url" class="hover:-translate-y-2 overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
@@ -160,8 +164,7 @@
     });
 
     minus.addEventListener("click", () => {
-        if(num.value>1)
-        {
+        if (num.value > 1) {
             num.value--
         }
     });
