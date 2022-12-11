@@ -106,25 +106,76 @@ namespace Funiture_Project.Controllers
             }
             return View("Index");
         }
-
-        [Route("/Product/{dieukien}", Name = "LocSanPham")]
-        public IActionResult Index(int? page, string dieukien)
+        [Route("/Product/{madm}/{gia}", Name = "LocSanPham")]
+        public IActionResult Index(int? page, string madm, int gia)
         {
             try
             {
-                var pageNumber = page == null || page <= 0 ? 1 : page.Value;
-                var pageSize = 9;
-                var models = _context.SanPham.OrderBy(x => x.MaSp)
-                    .Where(x => x.MaDm == dieukien)
-                    .ToPagedList(pageNumber, pageSize);
-                int count = _context.SanPham.AsNoTracking()
-                    .Where(x => x.MaDm == dieukien)
-                    .Count();
-                var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
-                ViewBag.SoLuongSP = count;
-                ViewBag.lsDanhMuc = lsdanhmuc;
-                ViewBag.CurrentPage = pageNumber;
-                return View(models);
+                if (gia == 0)
+                {
+                    var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+                    var pageSize = 9;
+                    var models = _context.SanPham.OrderBy(x => x.MaSp)
+                        .Where(x => x.MaDm == madm)
+                        .ToPagedList(pageNumber, pageSize);
+                    int count = _context.SanPham.AsNoTracking()
+                        .Where(x => x.MaDm == madm)
+                        .Count();
+                    var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
+                    ViewBag.SoLuongSP = count;
+                    ViewBag.lsDanhMuc = lsdanhmuc;
+                    ViewBag.CurrentPage = pageNumber;
+                    return View(models);
+                }
+                if (gia == 1)
+                {
+                    var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+                    var pageSize = 9;
+                    var models = _context.SanPham.OrderBy(x => x.MaSp)
+                        .Where(x => x.Gia < 10000000)
+                        .ToPagedList(pageNumber, pageSize);
+                    int count = _context.SanPham.AsNoTracking()
+                        .Where(x => x.Gia < 10000000)
+                        .Count();
+                    var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
+                    ViewBag.SoLuongSP = count;
+                    ViewBag.lsDanhMuc = lsdanhmuc;
+                    ViewBag.CurrentPage = pageNumber;
+                    return View(models);
+                }
+                if (gia == 2)
+                {
+                    var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+                    var pageSize = 9;
+                    var models = _context.SanPham.OrderBy(x => x.MaSp)
+                        .Where(x => x.Gia >= 10000000 && x.Gia <= 15000000)
+                        .ToPagedList(pageNumber, pageSize);
+                    int count = _context.SanPham.AsNoTracking()
+                        .Where(x => x.Gia >= 10000000 && x.Gia <= 15000000)
+                        .Count();
+                    var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
+                    ViewBag.SoLuongSP = count;
+                    ViewBag.lsDanhMuc = lsdanhmuc;
+                    ViewBag.CurrentPage = pageNumber;
+                    return View(models);
+                }
+                else
+                {
+                    var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+                    var pageSize = 9;
+                    var models = _context.SanPham.OrderBy(x => x.MaSp)
+                        .Where(x => x.Gia > 15000000)
+                        .ToPagedList(pageNumber, pageSize);
+                    int count = _context.SanPham.AsNoTracking()
+                        .Where(x => x.Gia > 15000000)
+                        .Count();
+                    var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
+                    ViewBag.SoLuongSP = count;
+                    ViewBag.lsDanhMuc = lsdanhmuc;
+                    ViewBag.CurrentPage = pageNumber;
+                    return View(models);
+                }
+
             }
             catch
             {
@@ -132,29 +183,23 @@ namespace Funiture_Project.Controllers
             }
         }
 
-        [Route("/ThemVaoGioHang", Name = "ThemVaoGioHang")]
-        public IActionResult ThemVaoGioHang(int soluong = 1)
+        [HttpPost]
+        public IActionResult Index(int? page, string searchkey)
         {
-            int masp = int.Parse(HttpContext.Session.GetString("Masp"));
-            int makh = int.Parse(HttpContext.Session.GetString("Makh"));
-            var count = _context.GioHang
-                .Where(x => x.MaKh == makh && x.MaSp == masp)
+            string key = searchkey;
+            var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+            var pageSize = 9;
+            var models = _context.SanPham.OrderBy(x => x.MaSp)
+                .Where(x => x.TenSp.Contains(searchkey))
+                .ToPagedList(pageNumber, pageSize);
+            int count = _context.SanPham.AsNoTracking()
+                .Where(x => x.TenSp.Contains(searchkey))
                 .Count();
-            GioHang gh = new GioHang();
-            if (count == 0)
-            {
-                gh.MaKh = makh;
-                gh.MaSp = masp;
-                gh.SoLuong = soluong;
-                _context.GioHang.Add(gh);
-                _context.SaveChanges();
-                return RedirectToAction($"/ProductDetail/{masp}");
-            }
-            gh = _context.GioHang.Single(x => x.MaKh == makh && x.MaSp == masp);
-            gh.SoLuong += soluong;
-            _context.SaveChanges();
-            return RedirectToAction($"/ProductDetail/{masp}");
-
+            var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
+            ViewBag.SoLuongSP = count;
+            ViewBag.lsDanhMuc = lsdanhmuc;
+            ViewBag.CurrentPage = pageNumber;
+            return View(models);
         }
 
     }
