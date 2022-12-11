@@ -1,6 +1,10 @@
-﻿@{
+﻿@using Funiture_Project.Models;
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    KhachHang khachang = ViewBag.KhachHang;
+    List<SanPham> lsSanPham = ViewBag.lsSanPham;
+    double tongThanhTien = ViewBag.TongThanhTien;
 }
 <link href="~/css/slider-product.css" rel="stylesheet" />
 
@@ -21,7 +25,7 @@
                 </span>
                 <span class="w-full flex items-center justify-between gap-x-3 lg:gap-x-5">
                     <p>
-                        <strong class="text-sm lg:text-[25px]">Như Loan (+84) 906254967</strong>
+                        <strong class="text-sm lg:text-[25px]">@khachang.HoTen @khachang.Sdt</strong>
                     </p>
                     <p class="text-sm lg:text-[25px]">
                         10 CMT8, Phường 11, Quận Tân Bình, TP. Hồ Chí Minh
@@ -50,43 +54,50 @@
 
                 <!-- Product 1 -->
                 <div class="cart-info md:shadow">
-                    <div class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] py-[5px] px-5  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
+                    @if (lsSanPham != null)
+                    {
+                        foreach (var item in lsSanPham)
+                        {
+                            <div class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] py-[5px] px-5  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
+                                <div class="lg:flex-1">
+                                    <a href="" class="flex">
+                                        <div class="aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
+                                            <img class="object-cover h-full" src="@item.HinhAnh"
+                                         alt="@item.TenSp">
+                                        </div>
+                                        <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
+                                            <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">
+                                                @item.TenSp
+                                            </span>
 
-                        <div class="lg:flex-1">
-                            <a href="" class="flex">
-                                <div class="aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
-                                    <img class="object-cover h-full" src="../assets/img/product2.png"
-                                         alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+                                            <div class="md:hidden md:font-semibold flex justify-between">
+                                                <span class="rate">@item.Gia.ToString("#,##0")đ</span>
+                                                <span class="ml-[15px] quantity">x2</span>
+                                                <!-- <input value="200000" type="number" class="amount"></input> -->
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
-                                    <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">
-                                        Đèn bàn học HY2266 Bóng
-                                        LED
-                                        Chống Cận Bảo Vệ Mắt
-                                    </span>
-
-                                    <div class="md:hidden md:font-semibold flex justify-between">
-                                        <span class="rate">200000đ</span>
-                                        <span class="ml-[15px] quantity">x2</span>
-                                        <!-- <input value="200000" type="number" class="amount"></input> -->
-                                    </div>
+                                <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+                                    <span class="rate">@item.Gia.ToString("#,##0")</span>đ
+                                    <!-- <input value="200000" type="number" class="amount"></input> -->
                                 </div>
-                            </a>
-                        </div>
-                        <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
-                            <span class="rate">200000</span>đ
-                            <!-- <input value="200000" type="number" class="amount"></input> -->
-                        </div>
 
-                        <div class="num hidden text-center lg:w-[12.5%] lg:block text-[16px]" type="number" min="0" id="Quantity">
-                            1
-                        </div>
-                        <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
-                            <span class="amount">200000</span>đ
-                            <!-- <input value="200000" type="number" class="amount"></input> -->
-                        </div>
+                                <div class="num hidden text-center lg:w-[12.5%] lg:block text-[16px]" type="number" min="0" id="Quantity">
+                                    @item.TongSl
+                                </div>
+                                @{
+                                    double thanhtien = item.Gia * item.TongSl;
+                                }
+                                <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+                                    <span class="amount">@thanhtien.ToString("#,##0")</span>đ
+                                    <!-- <input value="200000" type="number" class="amount"></input> -->
+                                </div>
 
-                    </div>
+                            </div>
+
+                        }
+                    }
                 </div>
             </div>
         </div>
@@ -109,13 +120,13 @@
             <div class="flex text-[30px] gap-x-2 items-center">
                 <div class="text-[14px] lg:text-[16px]">Tổng thanh toán: </div>
                 <span class="text-[18px] lg:text-[24px] text-[#ee4d2d] font-semibold">
-                    <span class="sum-cart">3000000</span>đ
+                    <span class="sum-cart">@tongThanhTien</span>đ
                 </span>
             </div>
         </div>
 
-        <a asp-controller="Payment" asp-action="Index"
-            class="ml-2 lg:ml-5 rounded-[2px] text-white border bg-[#ee4d2d] h-[56px]  px-[10px] lg:px-[20px]  text-white text-[15px] lg:text-[24px] font-semibold">
+        <a asp-controller="Payment" asp-action="InsertHoaDon"
+           class="ml-2 lg:ml-5 flex items-center rounded-[2px] text-white border bg-[#ee4d2d] h-[56px]  px-[10px] lg:px-[20px]  text-white text-[15px] lg:text-[24px] font-semibold">
             Đặt hàng
         </a>
 

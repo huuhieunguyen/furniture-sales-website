@@ -50,12 +50,6 @@ namespace Funiture_Project.Models
                 entity.Property(e => e.MaHd).HasColumnName("MaHD");
 
                 entity.Property(e => e.MaSp).HasColumnName("MaSP");
-
-                entity.HasOne(d => d.MaHdNavigation)
-                    .WithMany(p => p.Cthd)
-                    .HasForeignKey(d => d.MaHd)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CTHD_HoaDon");
             });
 
             modelBuilder.Entity<DanhMucSp>(entity =>
@@ -90,9 +84,7 @@ namespace Funiture_Project.Models
 
                 entity.Property(e => e.MaHd).HasColumnName("MaHD");
 
-                entity.Property(e => e.DiaChi)
-                    .IsRequired()
-                    .HasMaxLength(255);
+                entity.Property(e => e.DiaChi).HasMaxLength(255);
 
                 entity.Property(e => e.MaKh).HasColumnName("MaKH");
 
@@ -115,12 +107,10 @@ namespace Funiture_Project.Models
                 entity.Property(e => e.ThanhPho).HasMaxLength(255);
 
                 entity.Property(e => e.Ttdh)
-                    .IsRequired()
                     .HasColumnName("TTDH")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Tttt)
-                    .IsRequired()
                     .HasColumnName("TTTT")
                     .HasMaxLength(255);
             });

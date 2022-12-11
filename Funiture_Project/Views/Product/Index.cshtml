@@ -7,6 +7,8 @@
     int count = ViewBag.SoLuongSP;
     int PageCurrent = ViewBag.CurrentPage;
     int PageNext = PageCurrent + 1;
+    string madm = "all";
+    int gia = 0;
     //string url_search = $"";
 }
 
@@ -88,12 +90,21 @@
                   strokeLinecap="round"
                   strokeLinejoin="round" />
         </svg>
-        <input type="text"
+
+        <form asp-action="Index" asp-controller="Product" method="post" class="relative w-full">
+            <input type="text" name="searchkey"
+                   class="px-[8px] lg:px-[18px] w-full h-[38px] lg:h-[66px] text-sm lg:text-base"
+                   placeholder="Nhập từ khóa tìm kiếm" />
+            <button class="absolute top-0 right-[25px]  text-white bg-[#518581] w-[169px] h-[38px] lg:h-[66px] lg:px-[33px] lg:py-[18px] px-[20px] py-[6px] text-sm lg:text-[18px] font-bold">
+                Tìm kiếm
+            </button>
+        </form>
+        @*<input type="text"
                class="px-[8px] lg:px-[18px] w-full h-[38px] lg:h-[66px] text-sm lg:text-base"
                placeholder="Nhập từ khóa tìm kiếm" />
         <button class="text-white bg-[#518581] w-[169px] h-[38px] lg:h-[66px] lg:px-[33px] lg:py-[18px] px-[20px] py-[6px] text-sm lg:text-[18px] font-bold">
             Tìm kiếm
-        </button>
+        </button>*@
     </div>
 
     <!-- Mobile products display -->
@@ -133,10 +144,13 @@
                 {
                     foreach (var item in lsDanhMuc)
                     {
-                        string url = $"/Product/{item.MaDm}";
-                        <a href="@url" class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
+                        <a asp-action="Index" asp-controller="Product" asp-route-madm="@item.MaDm" asp-route-gia="@gia" class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
                             @item.TenDm
                         </a>
+                        @*string url = $"/Product/{item.MaDm}";
+                        <a href="@url" class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
+                            @item.TenDm
+                        </a>*@
                     }
                 }
                 @*<button class="h-full w-full bg-white font-light text-2xl py-3 text-center bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)]">
@@ -176,25 +190,28 @@
                 <div class="h-full w-full bg-white font-medium text-2xl py-3 text-left text-[#FFB23F]">
                     Theo giá
                 </div>
-                <label for="5-10" class="w-full select-none">
+                <a for="5-10" class="w-full select-none"
+                   asp-action="Index" asp-controller="Product" asp-route-madm="@madm" asp-route-gia="1">
                     <span class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-                        <input type="checkbox" name="" id="5-10" class="w-8 h-8" />
-                        <span>Từ 5 - 10 triệu</span>
+                        @*<input type="checkbox" name="" id="5-10" class="w-8 h-8" />*@
+                        <span>Dưới 10 triệu</span>
                     </span>
-                </label>
-                <label for="10-20" class="w-full select-none">
+                </a>
+                <a for="10-20" class="w-full select-none"
+                   asp-action="Index" asp-controller="Product" asp-route-madm="@madm" asp-route-gia="2">
                     <span class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-                        <input type="checkbox" name="" id="10-20" class="w-8 h-8" />
-                        <span>Từ 10 - 20 triệu</span>
+                        @*<input type="checkbox" name="" id="10-20" class="w-8 h-8" />*@
+                        <span>Từ 10 - 15 triệu</span>
                     </span>
-                </label>
-                <label for="over20" class="w-full select-none">
+                </a>
+                <a for="over20" class="w-full select-none"
+                   asp-action="Index" asp-controller="Product" asp-route-madm="@madm" asp-route-gia="3">
                     <span class="h-full w-full bg-white font-light text-2xl py-3 pl-[35px] bg-[#F9F9F9] active:shadow-[4px_4px_4px_rgba(0,0,0,0.25)] flex items-center gap-x-[10px]">
-                        <input type="checkbox" name="" id="over20" class="w-8 h-8" />
-                        <span>Trên 20 triệu</span>
+                        @*<input type="checkbox" name="" id="over20" class="w-8 h-8" />*@
+                        <span>Trên 15 triệu</span>
                     </span>
-                </label>
-                <div class="h-full w-full bg-white font-medium text-2xl py-3 text-left text-[#FFB23F]">
+                </a>
+                @*<div class="h-full w-full bg-white font-medium text-2xl py-3 text-left text-[#FFB23F]">
                     Theo thương hiệu
                 </div>
                 <label for="Savilamp" class="w-full select-none">
@@ -232,7 +249,7 @@
                         <input type="checkbox" name="" id="Pandana" class="w-8 h-8" />
                         <span>Pandana</span>
                     </span>
-                </label>
+                </label>*@
             </div>
         </div>
         <div class="flex-1">
