@@ -13,7 +13,5 @@ namespace Funiture_Project.Models
         public int MaSp { get; set; }
         public int SoLuong { get; set; }
         public double DonGia { get; set; }
-
-        public virtual HoaDon MaHdNavigation { get; set; }
     }
 }

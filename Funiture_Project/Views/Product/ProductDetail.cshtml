@@ -85,7 +85,7 @@
                         -
                     </a>
 
-                    <input value=1 class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="1"
+                    <input value="@amount" class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min="1"
                            id="Quantity">
 
                     <a class="plus hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
@@ -99,7 +99,7 @@
                     Mua ngay
                 </a>
                 <a class="cursor-pointer block text-center py-4 border-2 border-[#518581] text-[#518581] font-semibold lg:text-[18px] text-[14px]"
-                   asp-controller="CartInfo" asp-action="AddToCart" asp-route-masp="@Model.MaSp" asp-route-amount="1">
+                   asp-controller="CartInfo" asp-action="AddToCart" asp-route-masp="@Model.MaSp" asp-route-amount="@amount">
                     Thêm vào giỏ hàng
                 </a>
 
