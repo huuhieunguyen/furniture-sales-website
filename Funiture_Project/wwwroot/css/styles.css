@@ -227,3 +227,33 @@ input::-webkit-inner-spin-button {
         font-size: 38px;
     }
 }
+
+.pagination-container {
+    margin-top: 50px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center
+}
+
+    .pagination li a, .pagination li span {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--green-color);
+        font-size: 20px;
+    }
+
+
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+        .pagination .active, .pagination li a:hover {
+            background-color: var(--green-color);
+            color: white
+        }
