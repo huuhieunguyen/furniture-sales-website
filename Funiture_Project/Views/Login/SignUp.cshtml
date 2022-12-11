@@ -11,26 +11,26 @@
              alt="login-background"
              class="object-fill w-full max-h-[860px] relative" />
         <!-- Đăng ký -->
-        <form asp-action="SignUp" class="form-register" autocomplete="off">
+        <form asp-action="SignUp" class="form-register " autocomplete="off">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]">
-                <span class="text-[44px] font-bold text-[#FFB23F]">Đăng ký</span>
+            <div class="fadeUp lg:absolute lg:top-[25%] top-[20%] lg:right-[80px] right-[45px] lg:w-[618px] lg:min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] lg:gap-y-[38px] gap-y-[20px]">
+                <span class="lg:text-[44px] text-xl font-bold text-[#FFB23F]">Đăng ký</span>
                 <input asp-for="HoTen" type="text"
                        name="HoTen"
                        placeholder="Họ và Tên"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <input asp-for="SDT" type="text"
                        name="Sdt"
                        placeholder="Số điện thoại"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <input asp-for="Email" type="text"
                        name="email"
                        placeholder="Email"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <input asp-for="DiaChi" type="text"
                        name="diachi"
                        placeholder="Địa chỉ"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <div class="h-[60px] w-[516px] p-[14px] font-bold text-2xl">
                     <label class="radio-inline font-bold text-2xl mr-5">
                         @Html.RadioButtonFor(model => model.GioiTinh, "Nam", new {@name="GioiTinh"})
@@ -44,19 +44,19 @@
                 <input asp-for="Password" type="password"
                        name="password"
                        placeholder="Mật khẩu"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <input asp-for="ConfirmPassword" type="password"
                        name="confirmPassword"
                        placeholder="Nhập lại mật khẩu"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <div class="flex items-center justify-end gap-x-[23px]">
                     <button type="submit"
-                            class="register bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[180px] p-[14px] font-bold text-2xl hover:bg-opacity-60">
+                            class="register bg-[#FFB23F] text-white rounded-lg shadow lg:h-[60px] h-[50px] w-[180px] p-[14px] font-bold lg:text-2xl text-sm hover:bg-opacity-60">
                         Đăng ký
                     </button>
-                    <button class="change-login bg-white text-[#AFADB5] rounded-lg shadow h-[60px] w-[180px] p-[14px] font-bold text-2xl hover:bg-opacity-60"
+                    <button class="change-login bg-white text-[#AFADB5] rounded-lg shadow lg:h-[60px] h-[50px] w-[180px] p-[14px]"
                             type="button">
-                        <a href="~/Login" class="h-[60px] w-[180px] p-[14px] font-bold text-2xl">Hủy</a>
+                        <a href="~/Login" class="h-[60px] w-[180px] p-[14px]  font-bold lg:text-2xl text-sm hover:bg-opacity-60">Hủy</a>
                     </button>
                 </div>
             </div>

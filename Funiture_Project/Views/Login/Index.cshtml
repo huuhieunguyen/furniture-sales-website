@@ -7,21 +7,21 @@
     <div>
         <img src="./assets/img/login-bg.png"
              alt="login-background"
-             class="object-fill w-full max-h-[860px] relative" />
+             class="hidden lg:block object-fill lg:max-w-full  lg:w-full  max-h-[860px] relative" />
         <!-- Đăng nhập -->
         <form class="form-login" autocomplete="off" asp-controller="Login" asp-action="Index" method="post">
-            <div class="fadeUp absolute top-[25%] right-[80px] w-[618px] min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] gap-y-[38px]">
-                <span class="text-[44px] font-bold text-[#FFB23F]">Đăng nhập</span>
+            <div class="fadeUp lg:absolute lg:top-[25%] top-[20%] lg:right-[80px] right-[45px] lg:w-[618px] lg:min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] lg:gap-y-[38px] gap-y-[20px]">
+                <span class="lg:text-[44px] text-xl font-bold text-[#FFB23F]">Đăng nhập</span>
                 <input asp-for="Email_Phone"
                        type="text"
                        required
                        placeholder="Email or Phone"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <input asp-for="Password"
                        type="password"
                        required
                        placeholder="Mật khẩu"
-                       class="bg-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl" />
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
                 <label>
                     <input asp-for="KeepLoggedIn"
                            type="checkbox"
@@ -29,10 +29,10 @@
                     <span class=" font-light text-2xl">Remember me </span>
                 </label>
 
-                <button type="submit" class="bg-[#FFB23F] text-white rounded-lg shadow h-[60px] w-[516px] p-[14px] font-bold text-2xl hover:bg-opacity-60">
+                <button type="submit" class="bg-[#FFB23F] text-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm hover:bg-opacity-60">
                     Đăng nhập
                 </button>
-                <p class="change-register text-xl cursor-pointer text-right">
+                <p class="change-register lg:text-xl text-sm cursor-pointer text-right">
                     Nếu chưa có tài khoản, nhấn <a href="~/SignUp"><strong>Đăng ký</strong></a>
                 </p>
             </div>
