@@ -1,0 +1,81 @@
+﻿@model Funiture_Project.Models.DanhMucSp
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminCategories", "Index", "Admin");
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">
+            Chỉnh sửa thông tin danh mục
+        </h1>
+
+        <!--------------- Button Xóa Sản Phẩm -------------------->
+        @{
+            var item = Model;
+        }
+
+        <a asp-action="Delete" asp-route-id="@item.MaDm" class="btn btn-danger btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-trash"></i>
+            </span>
+            <span class="text">Xóa thông tin</span>
+        </a>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales Example -->
+    <div class="container gap-3">
+        <!--**************************************-->
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaDm" />
+
+            <!--*********** Mã danh mục **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="MaDm">Mã sản phẩm</label>
+                <input class="col-4 form-control bg-white" asp-for="MaDm" disabled />
+            </div>
+
+            <!--*********** Tên danh mục **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="TenDm">Tên danh mục</label>
+                <input class="col-4 form-control bg-white" asp-for="TenDm" />
+                <span asp-validation-for="TenDm" class="text-danger"></span>
+            </div>
+
+            <!--------------------Button--------------------------->
+            <div class="d-grid d-flex justify-content-between">
+                <!------ Button Quay Lại ------>
+                <a asp-action="Index" class="form-group btn btn-secondary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text">Quay lại</span>
+                </a>
+
+                <!------ Button Lưu ------>
+                <a class="form-group btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <input type="submit" value="Lưu thông tin" class="btn btn-success" />
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>

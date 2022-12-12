@@ -1,264 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Payment Page</title>
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <link rel="stylesheet" href="/styles/slider-product.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-  </head>
-  <body class="bg-[#F9F9F9]">
-    <main class="container p-5">
-      <div
-        class="mt-[50px] lg:mt-[128px] mb-[50px] flex items-center justify-center flex-col gap-y-[40px]"
-      >
-        <h1 class="text-[26px] lg:text-[64px] font-bold">Thanh toán</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <link rel="stylesheet" href="/styles/slider-product.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body class="bg-[#F9F9F9]">
+  <main class="container p-0">
+    <div class="mt-[50px] lg:mt-[128px] mb-[50px] flex items-center justify-center flex-col gap-y-[40px]">
+      <h1 class="text-[26px] lg:text-[64px] font-bold">Thanh toán</h1>
+      <div class="flex items-center justify-center w-full flex-col gap-y-[20px]">
         <div
-          class="flex items-center justify-center w-full flex-col gap-y-[20px]"
-        >
+          class="w-full flex items-center justify-center w-full flex-col p-5 lg:px-[46px] lg:py-[18px] border border-[rgba(21,20,17,0.7)] lg:gap-y-5">
+          <span class="w-full flex items-center justify-center gap-x-2 lg:gap-x-0 text-[#FFB23F] font-medium">
+            <div class="w-[24px] lg:w-[70px]">
+              <svg width="28" height="37" viewBox="0 0 28 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.7281 36.075C19.4688 31.4355 28 20.191 28 13.875C28 6.21484 21.7292 0 14 0C6.27083 0 0 6.21484 0 13.875C0 20.191 8.53125 31.4355 12.2719 36.075C13.1687 37.1807 14.8312 37.1807 15.7281 36.075ZM14 18.5C11.426 18.5 9.33333 16.426 9.33333 13.875C9.33333 11.324 11.426 9.25 14 9.25C16.574 9.25 18.6667 11.324 18.6667 13.875C18.6667 16.426 16.574 18.5 14 18.5Z"
+                  fill="#FFB23F" />
+              </svg>
+            </div>
+            <p class="w-full text-base lg:text-[30px]">Địa chỉ nhận hàng</p>
+          </span>
+          <span class="w-full flex items-center justify-between gap-x-3 lg:gap-x-5">
+            <p>
+              <strong class="text-sm lg:text-[25px]">Như Loan (+84) 906254967</strong>
+            </p>
+            <p class="text-sm lg:text-[25px]">
+              10 CMT8, Phường 11, Quận Tân Bình, TP. Hồ Chí Minh
+            </p>
+            <p class="text-base lg:text-[25px] text-[#518581] cursor-pointer">
+              Thay đổi
+            </p>
+          </span>
+        </div>
+        <div class="w-full">
+          <!-- Title -->
           <div
-            class="w-full flex items-center justify-center w-full flex-col p-5 lg:px-[46px] lg:py-[18px] border border-[rgba(21,20,17,0.7)] lg:gap-y-5"
-          >
-            <span
-              class="w-full flex items-center justify-center gap-x-2 lg:gap-x-0 text-[#FFB23F] font-medium"
-            >
-              <div class="w-[24px] lg:w-[70px]">
-                <svg
-                  width="28"
-                  height="37"
-                  viewBox="0 0 28 37"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15.7281 36.075C19.4688 31.4355 28 20.191 28 13.875C28 6.21484 21.7292 0 14 0C6.27083 0 0 6.21484 0 13.875C0 20.191 8.53125 31.4355 12.2719 36.075C13.1687 37.1807 14.8312 37.1807 15.7281 36.075ZM14 18.5C11.426 18.5 9.33333 16.426 9.33333 13.875C9.33333 11.324 11.426 9.25 14 9.25C16.574 9.25 18.6667 11.324 18.6667 13.875C18.6667 16.426 16.574 18.5 14 18.5Z"
-                    fill="#FFB23F"
-                  />
-                </svg>
+            class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
+            <div class="w-[calc(100%-58px)] lg:flex-1">
+              Sản phẩm
+            </div>
+            <div class="text-center w-[12.5%]">
+              Đơn giá
+            </div>
+            <div class="text-center  w-[12.5%]">
+              Số lượng
+            </div>
+            <div class="text-center  w-[12.5%]">
+              Thành tiền
+            </div>
+          </div>
+
+          <!-- Product 1 -->
+          <div class="cart-info md:shadow">
+            <div
+              class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] py-[5px] px-5  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
+
+              <div class="lg:flex-1">
+                <a href="" class="flex">
+                  <div class="aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
+                    <img class="object-cover h-full" src="../assets/img/product2.png"
+                      alt="Đèn bàn học HY2266 Bóng LED Chống Cận Bảo Vệ Mắt">
+                  </div>
+                  <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
+                    <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">Đèn bàn học HY2266 Bóng
+                      LED
+                      Chống Cận Bảo Vệ Mắt</span>
+
+                    <div class="md:hidden md:font-semibold flex justify-between">
+                      <span class="rate">200000đ</span>
+                      <span class="ml-[15px] quantity">x2</span>
+                      <!-- <input value="200000" type="number" class="amount"></input> -->
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+                <span class="rate">200000</span>đ
+                <!-- <input value="200000" type="number" class="amount"></input> -->
               </div>
 
-              <p class="w-full text-base lg:text-[30px]">Địa chỉ nhận hàng</p>
-            </span>
-            <span
-              class="w-full flex items-center justify-between gap-x-3 lg:gap-x-5"
-            >
-              <p>
-                <strong class="text-sm lg:text-[25px]"
-                  >Như Loan <input value="(+84) 906254967" class="outline-none"/></strong
-                >
-              </p>
-              <input class="w-[60%] text-sm lg:text-[25px] outline-none" value="10 CMT8, Phường 11, Quận Tân Bình, TP. Hồ Chí Minh">
-              </input>
-              <p class="text-base lg:text-[25px] text-[#518581] cursor-pointer">
-                Thay đổi
-              </p>
-            </span>
+              <div class="num hidden text-center lg:w-[12.5%] lg:block text-[16px]" type="number" min="0" id="Quantity">
+                1 </div>
+              <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
+                <span class="amount">200000</span>đ
+                <!-- <input value="200000" type="number" class="amount"></input> -->
+              </div>
+
+            </div>
           </div>
-          <div class="w-full">
-            <!-- Title -->
-            <table
-              style="border: 1px solid; width: 100%"
-              class="lg:table hidden"
-            >
-              <tbody>
-                <tr style="height: 127px">
-                  <td
-                    class="w-[50%] h-[127px] lg:pl-[61px] text-sm lg:text-[25px] flex justify-start items-center gap-x-[13px]"
-                  >
-                    <div class="w-[31px]">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="{1.5}"
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                        />
-                      </svg>
-                    </div>
-
-                    <span>Sản phẩm</span>
-                  </td>
-                  <td
-                    style="width: 16%; height: 127px"
-                    class="text-sm lg:text-[25px]"
-                  >
-                    Đơn giá
-                  </td>
-                  <td
-                    style="width: 18%; height: 127px"
-                    class="text-sm lg:text-[25px]"
-                  >
-                    Số lượng
-                  </td>
-                  <td
-                    style="width: 16%; height: 127px"
-                    class="text-sm lg:text-[25px]"
-                  >
-                    Thành tiền
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Product 1 -->
-            <table style="border: 1px solid; width: 100%">
-              <tbody>
-                <tr class="lg:table-row flex flex-col h-full lg:h-[159px]">
-                  <td
-                    class="p-5 lg:p-0 w-full h-[159px] lg:pl-[61px] text-sm lg:text-[20px] flex justify-start items-center gap-x-[19px]"
-                  >
-                    <div class="w-[160px] object-cover">
-                      <img src="/assets/img/denngu.png" alt="" />
-                    </div>
-
-                    <div
-                      class="flex items-start justify-center flex-col gap-y-2 w-full"
-                    >
-                      <span>ĐE001</span>
-                      <strong>Đèn ngủ phong cách Châu Âu</strong>
-                      <span>Anh</span>
-                    </div>
-                  </td>
-                  <td
-                    class="lg:w-[16%] lg:h-[159px] lg:text-[20px] text-xl font-medium text-right lg:text-left pr-5 lg:pr-0"
-                  >
-                    900.000đ
-                  </td>
-                  <td
-                    style="width: 18%; font-size: 25px"
-                    class="pl-5 lg:pl-0 lg:h-[159px]"
-                  >
-                    <div
-                      class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
-                    >
-                      <span class="minus">-</span>
-                      <span class="num">01</span>
-                      <span class="plus">+</span>
-                    </div>
-                  </td>
-                  <td
-                    class="lg:w-[16%] lg:h-[159px] lg:text-[20px] text-xl font-medium text-right lg:text-left p-5 lg:p-0"
-                  >
-                    1.800.000đ
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <!-- Product 2 -->
-            <!-- <table style="border: 1px solid; width: 100%">
-              <tbody>
-                <tr style="height: 159px">
-                  <td
-                    style="
-                      width: 100%;
-                      height: 159px;
-                      padding-left: 61px;
-                      font-size: 20px;
-                      display: flex;
-                      justify-content: start;
-                      align-items: center;
-                      column-gap: 19px;
-                    "
-                  >
-                    <div class="w-[160px] object-cover">
-                      <img src="./assets/img/ghelamviec.png" alt="" />
-                    </div>
-
-                    <div
-                      class="flex items-start justify-center flex-col gap-y-2 w-full"
-                    >
-                      <span>GE001</span>
-                      <span>Ghế sofa nâu cổ điển</span>
-                      <strong>Thái Lan</strong>
-                    </div>
-                  </td>
-                  <td style="width: 16%; height: 159px; font-size: 20px">
-                    1.000.000đ
-                  </td>
-                  <td style="width: 18%; height: 159px; font-size: 25px">
-                    <div
-                      class="wrapper h-[40px] w-[180px] flex justify-center items-center rounded shadow-[0_5px_5px_rgba(0,0,0,0.2)]"
-                    >
-                      <span class="minus">-</span>
-                      <span class="num">01</span>
-                      <span class="plus">+</span>
-                    </div>
-                  </td>
-                  <td style="width: 16%; height: 159px; font-size: 25px">
-                    1.000.000đ
-                  </td>
-                </tr>
-              </tbody>
-            </table> -->
-          </div>
-        </div>
-
-        <div class="w-full flex items-center justify-end gap-x-[47px]">
-          <div class="flex items-end justify-center flex-col gap-y-[25px]">
-            <span class="text-base lg:text-[22px]">Tổng tiền hàng</span>
-            <span class="text-base lg:text-[22px]">Phí vận chuyển</span>
-            <span
-              ><strong class="text-xl lg:text-[25px]"
-                >Tổng thanh toán</strong
-              ></span
-            >
-          </div>
-          <div class="flex items-end justify-center flex-col gap-y-[25px]">
-            <span class="text-base lg:text-[22px]">3.000.000đ</span>
-            <span class="text-base lg:text-[22px]">50.000đ</span>
-            <span
-              ><strong class="text-xl lg:text-[25px]">3.050.000đ</strong></span
-            >
-          </div>
-        </div>
-
-        <div class="w-full flex items-center lg:justify-end justify-center">
-          <button
-            class="rounded-lg bg-[#FFB23F] lg:py-5 lg:px-[84px] py-3 px-10 shadow-[5px_5px_4px_rgba(0,_0,_0,_0.25)] font-bold text-xl lg:text-[30px] text-white"
-          >
-            Đặt hàng
-          </button>
         </div>
       </div>
-    </main>
-    <script>
-      const plus = document.querySelector(".plus"),
-        minus = document.querySelector(".minus"),
-        num = document.querySelector(".num");
-      let a = 1;
-      plus.addEventListener("click", () => {
-        a++;
-        a = a < 10 ? "0" + a : a;
-        num.innerText = a;
-      });
 
-      minus.addEventListener("click", () => {
-        if (a > 1) {
-          a--;
-          a = a < 10 ? "0" + a : a;
-          num.innerText = a;
-        }
-      });
-    </script>
-    <script src="/javascripts/insertHeaderFooter.js"></script>
-  </body>
+      <div class="w-full flex items-center justify-end gap-x-[47px]">
+
+      </div>
+    </div>
+
+    <div
+      class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border  lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-between ">
+
+      <!-- Thanh toán -->
+      <div class="flex  text-[30px] gap-x-2 items-center">
+        <div class="hidden md:block text-[16px]">Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo Điều khoản
+          BiSys</div>
+
+      </div>
+      <div class="result-cart flex items-center ">
+        <div class="flex text-[30px] gap-x-2 items-center">
+          <div class="text-[14px] lg:text-[16px]">Tổng thanh toán: </div>
+          <span class="text-[18px] lg:text-[24px] text-[#ee4d2d] font-semibold">
+            <span class="sum-cart">3000000</span>đ
+          </span>
+        </div>
+
+        <button
+          class="ml-2 lg:ml-5 rounded-[2px] text-white border bg-[#ee4d2d] h-[56px]  px-[10px] lg:px-[20px]  text-white text-[15px] lg:text-[24px] font-semibold">
+          Đặt hàng
+        </button>
+
+      </div>
+
+    </div>
+    </div>
+  </main>
+
+</body>
+
 </html>

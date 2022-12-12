@@ -1,0 +1,109 @@
+﻿@model Funiture_Project.Models.SanPham
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminProducts", "Index", "Admin");
+}
+@{
+    ViewData["Title"] = "Thêm sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <h1>Thêm sản phẩm</h1>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales -->
+    <div class="container gap-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!--*********** Mã sản phẩm **************-->
+            <div class="form-group row mb-4">
+                <label asp-for="TenSp" class="col-2 col-form-label">Tên sản phẩm</label>
+                <input asp-for="TenSp" class="col-4 form-control bg-white" />
+                <span asp-validation-for="TenSp" class="text-danger"></span>
+            </div>
+
+            <!--*********** Mã danh mục **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="MaDm">Mã danh mục</label>
+                <input class="col-4 form-control bg-white text-uppercase" asp-for="MaDm" />
+                <span asp-validation-for="MaDm" class="text-danger"></span>
+            </div>
+
+            <!--************ Nước sản xuất **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="Nsx">Nước sản xuất</label>
+                <input class="col-4 form-control bg-white" asp-for="Nsx" />
+                <span asp-validation-for="Nsx" class="text-danger"></span>
+            </div>
+
+            <!--************ Thương hiệu **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="ThuongHieu">Thương hiệu</label>
+                <input class="col-4 form-control bg-white" asp-for="ThuongHieu" />
+                <span asp-validation-for="ThuongHieu" class="text-danger"></span>
+            </div>
+
+            <!--************ Giá bán **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="Gia">Đơn giá</label>
+                <input class="col-4 form-control bg-white" type="number"
+                       inputmode="decimal"
+                       min="0"
+                       step=".01" asp-for="Gia" />
+                <span asp-validation-for="Gia" class="text-danger"></span>
+            </div>
+
+            <!--************ Tổng số lượng **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="TongSl">Tổng số lượng</label>
+                <input class="col-4 form-control bg-white" min="0" asp-for="TongSl" />
+                <span asp-validation-for="TongSl" class="text-danger"></span>
+            </div>
+
+            <!--************ Hình ảnh **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="HinhAnh">Hình ảnh</label>
+                <input class="col-4 form-control bg-white" asp-for="HinhAnh" placeholder="url"/>
+                <span asp-validation-for="HinhAnh" class="text-danger"></span>
+            </div>
+
+            <!--************ Mô tả Chi tiết SP **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="ChiTiet">Chi Tiết</label>
+                <textarea class="col-4 form-control bg-white" id="autoresizing" asp-for="ChiTiet"></textarea>
+                <span asp-validation-for="ChiTiet" class="text-danger"></span>
+            </div>
+
+            <hr class="my-12" />
+
+            <!--------------------Button--------------------------->
+            <div class="d-grid d-flex justify-content-between">
+                <!------ Button Quay Lại ------>
+                <a asp-action="Index" class="form-group btn btn-secondary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text">Quay lại</span>
+                </a>
+
+                <!------ Button Lưu ------>
+                <a class="form-group btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <input type="submit" value="Lưu thông tin" class="btn btn-success" />
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+﻿@model Funiture_Project.Models.HoaDon
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Cập nhật Hóa đơn";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminOrders", "Index", "Admin");
+}
+@{
+    var item = Model;
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">
+            Cập nhật Hóa đơn @item.MaHd
+        </h1>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales Example -->
+    <div class="container gap-3">
+        <!--**************************************-->
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaHd" />
+
+            <!--*********** Tình trạng đơn hàng **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="Ttdh">Tình trạng đơn hàng</label>
+                <select class="col-4 input-group form-control bg-white custom-select" asp-for="Ttdh">
+                    <option selected>@item.Ttdh</option>
+                    <option value="1">Đang chờ</option>
+                    <option value="2">Đang giao</option>
+                    <option value="3">Đã giao</option>
+                    <option value="4">Bị hủy</option>
+                </select>
+                <span asp-validation-for="Ttdh" class="text-danger"></span>
+            </div>
+
+            <!--*********** Tình trạng thanh toán **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="Tttt">Tình trạng đơn hàng</label>
+                <select class="col-4 input-group form-control bg-white custom-select" asp-for="Tttt">
+                    <option selected>@item.Tttt</option>
+                    <option value="1">Chưa thanh toán</option>
+                    <option value="2">Đã thanh toán</option>
+                </select>
+                <span asp-validation-for="Tttt" class="text-danger"></span>
+            </div>
+            <!--*********** Mã khách hàng **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="MaKh">Mã khách hàng</label>
+                <input class="col-4 form-control bg-white" asp-for="MaKh" disabled/>
+                <span asp-validation-for="MaKh" class="text-danger"></span>
+            </div>
+
+            <!--************ Ngày Hóa đơn **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="NgayHd">Ngày Hóa đơn</label>
+                <input class="col-4 form-control bg-white" asp-for="NgayHd" />
+                <span asp-validation-for="NgayHd" class="text-danger"></span>
+            </div>
+
+            <!--************ Ngày Giao hàng**************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="NgayGh">Ngày Giao hàng</label>
+                <input class="col-4 form-control bg-white" asp-for="NgayGh" />
+                <span asp-validation-for="NgayGh" class="text-danger"></span>
+            </div>
+
+            <!--************ Sđt Khách hàng **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="Sdt">Sđt Khách hàng</label>
+                <input class="col-4 form-control bg-white" asp-for="Sdt" disabled/>
+                <span asp-validation-for="Sdt" class="text-danger"></span>
+            </div>
+
+            <!--************ Địa chỉ **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="DiaChi">Địa chỉ</label>
+                <input class="col-4 form-control bg-white" min="0" asp-for="DiaChi" disabled/>
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+
+            <!--************ Thành phố **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="ThanhPho">Thành phố</label>
+                <input class="col-4 form-control bg-white" asp-for="ThanhPho" disabled/>
+                <span asp-validation-for="ThanhPho" class="text-danger"></span>
+            </div>
+
+            <!--************ Trị Giá HD **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="TriGia">Trị Giá HD</label>
+                <input class="col-4 form-control bg-white" type="number"
+                       inputmode="decimal"
+                       min="0"
+                       step=".01" asp-for="TriGia" disabled/>
+                <span asp-validation-for="TriGia" class="text-danger"></span>
+            </div>
+
+            <hr class="my-12" />
+
+            <!--------------------Button--------------------------->
+            <div class="d-grid d-flex justify-content-between">
+                <!------ Button Quay Lại ------>
+                <a asp-action="Index" class="form-group btn btn-secondary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text">Quay lại</span>
+                </a>
+
+                <!------ Button Lưu ------>
+                <a class="form-group btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <input type="submit" value="Lưu thông tin" class="btn btn-success" />
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+<!--------------------------------------------------------------------->
