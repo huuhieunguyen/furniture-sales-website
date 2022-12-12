@@ -109,31 +109,31 @@ namespace Funiture_Project.Controllers
             //}
         }
 
-        [HttpPost]
-        [Route("api/cart/update")]
-        public IActionResult UpdateCart(int productID, int? amount)
-        {
-            //Lay gio hang ra de xu ly
-            var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
-            try
-            {
-                if (cart != null)
-                {
-                    CartItem item = cart.SingleOrDefault(p => p.sanPham.MaSp == productID);
-                    if (item != null && amount.HasValue) // da co -> cap nhat so luong
-                    {
-                        item.amount = amount.Value;
-                    }
-                    //Luu lai session
-                    HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
-                }
-                return Json(new { success = true });
-            }
-            catch
-            {
-                return Json(new { success = false });
-            }
-        }
+//         [HttpPost]
+//         [Route("api/cart/update")]
+//         public IActionResult UpdateCart(int productID, int? amount)
+//         {
+//             //Lay gio hang ra de xu ly
+//             var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
+//             try
+//             {
+//                 if (cart != null)
+//                 {
+//                     CartItem item = cart.SingleOrDefault(p => p.sanPham.MaSp == productID);
+//                     if (item != null && amount.HasValue) // da co -> cap nhat so luong
+//                     {
+//                         item.amount = amount.Value;
+//                     }
+//                     //Luu lai session
+//                     HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
+//                 }
+//                 return Json(new { success = true });
+//             }
+//             catch
+//             {
+//                 return Json(new { success = false });
+//             }
+//         }
 
         [Route("remove/{masp}")]
         public ActionResult Remove(int masp)
