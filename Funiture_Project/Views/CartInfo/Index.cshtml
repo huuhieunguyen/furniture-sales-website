@@ -8,15 +8,15 @@
 
 <body>
     <div class="container px-0 md:px-[100px]">
-        
+
         <div class="mt-[20px] gap-y-[50px]">
             <!-- <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1> -->
             <!-- Thanh header giỏ hàng -->
             <div class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
                 @*<div class="min-w-[58px] flex items-center justify-center">
-                    <input name="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
+                <input name="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
                 </div>*@
-                <div class="w-[calc(100%)] lg:w-[calc(50%)]">
+                <div class="w-full lg:w-[50%]">
                     Sản phẩm
                 </div>
                 <div class="text-center w-[12.5%]">
@@ -38,54 +38,64 @@
                 {
                     foreach (var item in lsSanPham)
                     {
-                        <div class="border-b md:px-[20px] border-[rgba(0,0,0,0.09)] md:py-[15px] pt-[15px]  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
-                           @* <div class="min-w-[58px] flex items-center justify-center">
-                                <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
-                            </div>*@
-                            <div class="w-[calc(100%)] lg:w-[calc(50%)]">
+                        <div class="border-b lg:px-[20px] border-[rgba(0,0,0,0.09)] lg:py-[15px] pt-[15px]  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
+                            @* <div class="min-w-[58px] flex items-center justify-center">
+                    <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
+                    </div>*@
+                            <div class="w-full lg:w-[50%]">
                                 <a href="" class="hover:cursor-pointer flex">
-                                    <div class="ml-[10px] aspect-square min-w-[80px] max-h-[80px] rounded-[3px] ">
+                                    <div class="ml-[10px] lg:ml-[0] aspect-square min-w-[80px] max-w-[80px] rounded-[3px] ">
                                         <img class="object-cover h-full" src="@item.HinhAnh"
                                      alt="@item.TenSp">
                                     </div>
                                     <div class="ml-3 flex justify-between px-2 lg:px-0 flex-col gap-y-[3px] ">
-                                        <span class="lg:text-[14px] md:max-w-[250px] line-clamp-2">
+                                        <span class="lg:text-[14px] lg:max-w-[250px] line-clamp-2">
                                             @item.TenSp
                                         </span>
                                         <span class="lg:text-[14px] ">
-                                            Danh mục: 
+                                            Danh mục:
                                             <span class="lg:text-[14px] ">@item.MaDm</span>
                                         </span>
-                                        <div class="color-orange md:hidden font-semibold ">
+                                        <div class="color-orange lg:hidden font-semibold ">
                                             <span class="rate">@item.Gia</span>đ
-                                           
+
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
                                 <span class="rate-mobile">@item.Gia</span>đ
-                               
+
                             </div>
 
-                            <div class="text-center lg:w-[12.5%] pl-[110px] pr-[30px]  md:px-[45px] flex justify-center text-[16px] my-[7px]">
+                            @if (item.TongSl != 0)
+                            {
+                                <div class="text-center lg:w-[12.5%] pl-[110px] pr-[30px]  lg:px-[45px] flex justify-center text-[16px] my-[7px]">
 
-                                <a class="hover:cursor-pointer flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                                    -
-                                </a>
-                                <input value=@item.TongSl class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min=1
+                                    <a class="hover:cursor-pointer flex minus-btn justify-center items-center border border-r-0 border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+                                        -
+                                    </a>
+                                    <input value=@item.TongSl class="num text-center w-[45px] border border-[rgba(0,0,0,0.09)]" type="number" min=1
                                id="Quantity">
-                                <a class="plus-btn hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
-                                    +
-                                </a>
+                                    <a class="plus-btn hover:cursor-pointer flex justify-center items-center border-l-0 border border-[rgba(0,0,0,0.09)] aspect-square w-[32px] h-[32px]">
+                                        +
+                                    </a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="text-center lg:w-[12.5%] pl-[110px] pr-[30px]  lg:px-[45px] flex justify-center text-[16px] my-[7px]">
+                                    <span>
+                                        Hết hàng
+                                    </span>
+                                </div>
+                            }
 
-
-                            </div>
                             <div class="hidden text-center lg:flex items-center justify-center color-orange font-semibold w-[12.5%]">
                                 @{
                                     double thanhtien = @item.Gia * @item.TongSl;
                                 }
-                                <span class="amount">@thanhtien</span>đ                             
+                                <span class="amount">@thanhtien</span>đ
                             </div>
                             <a asp-controller="CartInfo" asp-action="Remove" asp-route-masp="@item.MaSp" class="p-4 text-center  lg:w-[12.5%]">
                                 Xóa
@@ -102,9 +112,9 @@
         <div class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border  lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-end ">
             <!-- Thanh toán -->
             @*<div class="flex  text-[30px] gap-x-2 items-center">
-                <input name="wanna-buy-all" class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
-                <div class="hidden md:block text-[16px]">Chọn tất cả</div>
-                <div class="lg:hidden block text-[16px]">Tất cả</div>
+            <input name="wanna-buy-all" class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
+            <div class="hidden md:block text-[16px]">Chọn tất cả</div>
+            <div class="lg:hidden block text-[16px]">Tất cả</div>
             </div>*@
             <div class="result-cart flex items-center ">
                 <div class="flex text-[30px] gap-x-2 items-center">

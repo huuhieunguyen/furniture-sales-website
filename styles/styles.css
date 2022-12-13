@@ -103,6 +103,13 @@ h6 {
 	padding-right: 100px;
 }
 
+@media screen and (max-width: 1023px) {
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
 .fadeUp {
 	animation: fadeUp 0.5s ease-in;
 	transition: all 0.5s ease-in;

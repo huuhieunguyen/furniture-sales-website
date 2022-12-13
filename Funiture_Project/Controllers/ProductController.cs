@@ -32,8 +32,9 @@ namespace Funiture_Project.Controllers
                 //    .OrderBy(x => x.MaSp);
                 //PagedList<SanPham> models = new PagedList<SanPham>(lsSanPham, pageNumber, pageSize);
                 var models = _context.SanPham.OrderBy(x => x.MaSp)
+                    .Where(x => x.TongSl > 0)
                     .ToPagedList(pageNumber, pageSize);
-                int count = _context.SanPham.Count();
+                int count = _context.SanPham.Where(x => x.TongSl > 0).Count();
                 ViewBag.SoLuongSP = count;
                 ViewBag.lsDanhMuc = lsdanhmuc;
                 ViewBag.CurrentPage = pageNumber;
@@ -117,9 +118,10 @@ namespace Funiture_Project.Controllers
                     var pageSize = 9;
                     var models = _context.SanPham.OrderBy(x => x.MaSp)
                         .Where(x => x.MaDm == madm)
-                        .ToPagedList(pageNumber, pageSize);
+                        .ToPagedList(pageNumber, pageSize)
+                        .Where(x => x.TongSl > 0);
                     int count = _context.SanPham.AsNoTracking()
-                        .Where(x => x.MaDm == madm)
+                        .Where(x => x.MaDm == madm && x.TongSl > 0)
                         .Count();
                     var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
                     ViewBag.SoLuongSP = count;
@@ -132,10 +134,10 @@ namespace Funiture_Project.Controllers
                     var pageNumber = page == null || page <= 0 ? 1 : page.Value;
                     var pageSize = 9;
                     var models = _context.SanPham.OrderBy(x => x.MaSp)
-                        .Where(x => x.Gia < 10000000)
+                        .Where(x => x.Gia < 10000000 && x.TongSl > 0)
                         .ToPagedList(pageNumber, pageSize);
                     int count = _context.SanPham.AsNoTracking()
-                        .Where(x => x.Gia < 10000000)
+                        .Where(x => x.Gia < 10000000 && x.TongSl > 0)
                         .Count();
                     var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
                     ViewBag.SoLuongSP = count;
@@ -148,10 +150,10 @@ namespace Funiture_Project.Controllers
                     var pageNumber = page == null || page <= 0 ? 1 : page.Value;
                     var pageSize = 9;
                     var models = _context.SanPham.OrderBy(x => x.MaSp)
-                        .Where(x => x.Gia >= 10000000 && x.Gia <= 15000000)
+                        .Where(x => x.Gia >= 10000000 && x.Gia <= 15000000 && x.TongSl > 0)
                         .ToPagedList(pageNumber, pageSize);
                     int count = _context.SanPham.AsNoTracking()
-                        .Where(x => x.Gia >= 10000000 && x.Gia <= 15000000)
+                        .Where(x => x.Gia >= 10000000 && x.Gia <= 15000000 && x.TongSl > 0)
                         .Count();
                     var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
                     ViewBag.SoLuongSP = count;
@@ -164,10 +166,10 @@ namespace Funiture_Project.Controllers
                     var pageNumber = page == null || page <= 0 ? 1 : page.Value;
                     var pageSize = 9;
                     var models = _context.SanPham.OrderBy(x => x.MaSp)
-                        .Where(x => x.Gia > 15000000)
+                        .Where(x => x.Gia > 15000000 && x.TongSl > 0)
                         .ToPagedList(pageNumber, pageSize);
                     int count = _context.SanPham.AsNoTracking()
-                        .Where(x => x.Gia > 15000000)
+                        .Where(x => x.Gia > 15000000 && x.TongSl > 0)
                         .Count();
                     var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
                     ViewBag.SoLuongSP = count;
@@ -190,10 +192,10 @@ namespace Funiture_Project.Controllers
             var pageNumber = page == null || page <= 0 ? 1 : page.Value;
             var pageSize = 9;
             var models = _context.SanPham.OrderBy(x => x.MaSp)
-                .Where(x => x.TenSp.Contains(searchkey))
+                .Where(x => x.TenSp.Contains(searchkey) && x.TongSl > 0)
                 .ToPagedList(pageNumber, pageSize);
             int count = _context.SanPham.AsNoTracking()
-                .Where(x => x.TenSp.Contains(searchkey))
+                .Where(x => x.TenSp.Contains(searchkey) && x.TongSl > 0)
                 .Count();
             var lsdanhmuc = _context.DanhMucSp.AsNoTracking().ToList();
             ViewBag.SoLuongSP = count;

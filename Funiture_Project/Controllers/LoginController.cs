@@ -170,6 +170,7 @@ namespace Funiture_Project.Controllers
         [Route("Logout.html", Name = "Logout")]
         public IActionResult Logout()
         {
+            HttpContext.Session.Remove("MaNV");
             HttpContext.Session.Remove("MaKH");
             HttpContext.SignOutAsync();
             notyfService.Success("Đăng xuất thành công");
