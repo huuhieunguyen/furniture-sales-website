@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Funiture_Project.Models.HoaDon>
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Quản lý Hóa Đơn";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminOrders", "Index", "Admin");
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Danh mục hóa đơn</h1>
+    </div>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable"
+                       width="100%"
+                       cellspacing="0">
+                    @*Tieu de cot cho bang*@
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Mã DM</th>
+                            <th>Tình trạng DH</th>
+                            <th>Tình trạng TT</th>
+                            <th>Mã KH</th>
+                            <th>Ngày HD</th>
+                            <th>Ngày GH</th>
+                            <th>SĐT</th>
+                            <th>Địa chỉ</th>
+                            <th>Thành phố</th>
+                            <th>Trị giá</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.MaHd</th>
+                                    <td>@item.Ttdh</td>
+                                    <td>@item.Tttt</td>
+                                    <td>@item.MaKh</td>
+                                    <td>@item.NgayHd</td>
+                                    <td>@item.NgayGh</td>
+                                    <td>@item.Sdt</td>
+                                    <td>@item.DiaChi</td>
+                                    <td>@item.ThanhPho</td>
+                                    <td>@item.TriGia</td>
+
+                                    <td class="d-flex justify-content-center">
+                                        <a asp-action="Edit" asp-route-id="@item.MaHd">
+                                            <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

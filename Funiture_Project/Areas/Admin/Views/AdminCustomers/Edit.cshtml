@@ -1,0 +1,137 @@
+﻿@model Funiture_Project.Models.KhachHang
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminOrders", "Index", "Admin");
+}
+@{
+    var item = Model;
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">
+            Cập nhật Khách hàng @item.MaKh
+        </h1>
+    </div>
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales Example -->
+    <div class="container gap-3">
+        <!--**************************************-->
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaKh" />
+
+            @*<!--*********** Tình trạng đơn hàng **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="Ttdh">Tình trạng đơn hàng</label>
+                <select class="col-4 input-group form-control bg-white custom-select" asp-for="Ttdh">
+                    <option selected>@item.Ttdh</option>
+                    <option value="1">Đang chờ</option>
+                    <option value="2">Đang giao</option>
+                    <option value="3">Đã giao</option>
+                    <option value="4">Bị hủy</option>
+                </select>
+                <span asp-validation-for="Ttdh" class="text-danger"></span>
+            </div>
+
+            <!--*********** Tình trạng thanh toán **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="Tttt">Tình trạng đơn hàng</label>
+                <select class="col-4 input-group form-control bg-white custom-select" asp-for="Tttt">
+                    <option selected>@item.Tttt</option>
+                    <option value="1">Chưa thanh toán</option>
+                    <option value="2">Đã thanh toán</option>
+                </select>
+                <span asp-validation-for="Tttt" class="text-danger"></span>
+            </div>
+            <!--*********** Mã khách hàng **************-->
+            <div class="form-group row mb-4">
+                <label class="col-2 col-form-label" asp-for="MaKh">Mã khách hàng</label>
+                <input class="col-4 form-control bg-white" asp-for="MaKh" disabled />
+                <span asp-validation-for="MaKh" class="text-danger"></span>
+            </div>*@
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaKh" />
+            <div class="form-group">
+                <label asp-for="HoTen" class="control-label"></label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sdt" class="control-label"></label>
+                <input asp-for="Sdt" class="form-control" />
+                <span asp-validation-for="Sdt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiaChi" class="control-label"></label>
+                <input asp-for="DiaChi" class="form-control" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThanhPho" class="control-label"></label>
+                <input asp-for="ThanhPho" class="form-control" />
+                <span asp-validation-for="ThanhPho" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NgayTao" class="control-label"></label>
+                <input asp-for="NgayTao" class="form-control" />
+                <span asp-validation-for="NgayTao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quyen" class="control-label"></label>
+                <input asp-for="Quyen" class="form-control" disabled/>
+                <span asp-validation-for="Quyen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="GioiTinh">Giới tính</label>
+                <select class="form-control custom-select" asp-for="GioiTinh">
+                    <option selected>@item.GioiTinh</option>
+                    <option value="1">Nam</option>
+                    <option value="2">Nữ</option>
+                </select>
+            </div>
+
+            <hr class="my-12" />
+
+            <!--------------------Button--------------------------->
+            <div class="d-grid d-flex justify-content-between">
+                <!------ Button Quay Lại ------>
+                <a asp-action="Index" class="form-group btn btn-secondary btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text">Quay lại</span>
+                </a>
+
+                <!------ Button Lưu ------>
+                <a class="form-group btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <input type="submit" value="Lưu thông tin" class="btn btn-success" />
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+<!--------------------------------------------------------------------->

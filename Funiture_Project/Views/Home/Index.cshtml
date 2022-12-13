@@ -1,11 +1,20 @@
-﻿@{
+﻿@model IEnumerable<Funiture_Project.Models.SanPham>
+@using Funiture_Project.Models;
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> lsAnhDM = ViewBag.AnhDanhMuc;
+    List<DanhMucSp> lsDanhMucSP = ViewBag.DanhMucSP;
+}
+@{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/css/swiper.css" rel="stylesheet" />
 <main class="container ">
     <div class="introduce-with-search mt-10 lg:mt-20">
-        <div class="text-heading mb-10 text-center relative ">
+        <div class="text-heading mb-[20px] text-center relative ">
             Tinh tế - Sang trọng <br>
             Chất lượng
             <img srcset="../assets/img/stars-plus-wink.png 2x" class="hidden lg:inline-block" alt="">
@@ -14,7 +23,7 @@
             BiSys - Nơi tô điểm thế giới bên trong ngôi nhà của bạn !
         </div>
         <div class="relative">
-            <div class="z-10 mb-5 lg:absolute lg:top-[0] lg:left-1/2  lg:-translate-x-1/2 lg:-translate-y-1/2 search-wrap text-center shadow-[0px 4px 80px rgba(175, 173, 181, 0.2)] ">
+           @* <div class="z-10 mb-5 lg:absolute lg:top-[0] lg:left-1/2  lg:-translate-x-1/2 lg:-translate-y-1/2 search-wrap text-center shadow-[0px 4px 80px rgba(175, 173, 181, 0.2)] ">
                 <div class="relative">
                     <img srcset="../assets/img/arrow-spiral-down.png 2x"
                          class="lg-block hidden absolute top-[-270px] left-[-200px]" alt="">
@@ -25,10 +34,10 @@
                         <button class="button-primary">Tìm kiếm</button>
                     </div>
                     <input type="text"
-                           class="outline-1 outline-black w-full h-[70px] lg:h-[84px] md:w-[810px] pl-[70px] pr-20 rounded-lg z-0 text-[18px] "
+                           class="outline-1 outline-black w-full h-[70px] lg:h-[65px] md:w-[810px] pl-[70px] pr-20 rounded-lg z-0 text-[18px] "
                            placeholder="Nhập từ khóa tìm kiếm...">
                 </div>
-            </div>
+            </div>*@
             <img src="../assets/img/introduce3.png" class="w-full relative" alt="">
 
         </div>
@@ -82,218 +91,92 @@
     </div>
     <div class="hidden md:block category mt-20">
         <div class="text-heading text-center">Danh mục</div>
-        <div class="category-list mt-[45px] grid lg:grid-cols-3 grid-cols-2 gap-x-10">
-            <div class="category-item text-center mb-[80px]">
-                <div class="overflow-hidden cursor-pointer rounded-xl relative group">
-                    <div class="w-full h-full rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute flex items-center justify-center bg-[#000] bg-opacity-40">
-                        <div class="font-bold px-[42px] py-[12px] text-[26px] text-white border-white border-solid border-4  ">
-                            Chi
-                            tiết
-                        </div>
+        <div class="category-list mt-[45px] grid md:grid-cols-3 grid-cols-2 gap-x-16 gap-y-[50px]">
+            @if (lsDanhMucSP != null)
+            {
+                for (int i = 0; i < lsDanhMucSP.Count(); i++)
+                {
+                    string url = $"/Product/{lsDanhMucSP[i].MaDm}";
+                    <div class="category-item text-center">
+                    <a href="@url">
+                        
+                            <div class="overflow-hidden cursor-pointer rounded-xl relative group">
+                                <div class="w-full h-full rounded-xl z-10 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute flex items-center justify-center bg-[#000] bg-opacity-40">
+                                    <div class="font-bold px-[42px] py-[12px] text-[26px] text-white border-white border-solid border-4  ">
+                                        Chi
+                                        tiết
+                                    </div>
 
+                                </div>
+
+                                <img alt=""
+                             class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
+                             src="@lsAnhDM[i]" />
+                            </div>
+                    </a>
+                        <a href="@url" class="button-primary mt-[21px] ">
+                            @lsDanhMucSP[i].TenDm
+                        </a>
                     </div>
+                }
+            }
 
-                    <img alt=""
-                         class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
-                         src="../assets/img/Rectangle 23.png" />
-                </div>
-                <a href="" class="button-primary mt-[21px] ">
-                    Nội
-                    thất phòng ăn
-                </a>
-            </div>
-            <div class="category-item text-center mb-[80px]">
-                <div class="overflow-hidden cursor-pointer rounded-xl relative group">
-                    <div class="w-full h-full rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute flex items-center justify-center bg-[#000] bg-opacity-40">
-                        <div class="font-bold px-[42px] py-[12px] text-[26px] text-white border-white border-solid border-4  ">
-                            Chi
-                            tiết
-                        </div>
-
-                    </div>
-
-                    <img alt=""
-                         class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
-                         src="../assets/img/Rectangle 23.png" />
-                </div>
-                <a href="" class="button-primary mt-[21px] ">
-                    Nội
-                    thất phòng ăn
-                </a>
-            </div>
-            <div class="category-item text-center mb-[80px]">
-                <div class="overflow-hidden cursor-pointer rounded-xl relative group">
-                    <div class="w-full h-full rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute flex items-center justify-center bg-[#000] bg-opacity-40">
-                        <div class="font-bold px-[42px] py-[12px] text-[26px] text-white border-white border-solid border-4  ">
-                            Chi
-                            tiết
-                        </div>
-
-                    </div>
-
-                    <img alt=""
-                         class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
-                         src="../assets/img/Rectangle 23.png" />
-                </div>
-                <a href="" class="button-primary mt-[21px] ">
-                    Nội
-                    thất phòng ăn
-                </a>
-            </div>
-            <div class="category-item text-center mb-[80px]">
-                <div class="overflow-hidden cursor-pointer rounded-xl relative group">
-                    <div class="w-full h-full rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute flex items-center justify-center bg-[#000] bg-opacity-40">
-                        <div class="font-bold px-[42px] py-[12px] text-[26px] text-white border-white border-solid border-4  ">
-                            Chi
-                            tiết
-                        </div>
-
-                    </div>
-
-                    <img alt=""
-                         class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
-                         src="../assets/img/Rectangle 23.png" />
-                </div>
-                <a href="" class="button-primary mt-[21px] ">
-                    Nội
-                    thất phòng ăn
-                </a>
-            </div>
-            <div class="category-item text-center mb-[80px]">
-                <div class="overflow-hidden cursor-pointer rounded-xl relative group">
-                    <div class="w-full h-full rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute flex items-center justify-center bg-[#000] bg-opacity-40">
-                        <div class="font-bold px-[42px] py-[12px] text-[26px] text-white border-white border-solid border-4  ">
-                            Chi
-                            tiết
-                        </div>
-                    </div>
-                    <img alt=""
-                         class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
-                         src="../assets/img/Rectangle 23.png" />
-                </div>
-                <a href="" class="button-primary mt-[21px] ">
-                    Nội
-                    thất phòng ăn
-                </a>
-            </div>
-            <div class="category-item text-center mb-[80px]">
-                <div class="overflow-hidden cursor-pointer rounded-xl relative group">
-                    <div class="w-full h-full rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute flex items-center justify-center bg-[#000] bg-opacity-40">
-                        <div class="font-bold px-[42px] py-[12px] text-[26px] text-white border-white border-solid border-4  ">
-                            Chi
-                            tiết
-                        </div>
-                    </div>
-                    <img alt=""
-                         class="object-cover w-full aspect-square group-hover:scale-110 transition duration-300 ease-in-out"
-                         src="../assets/img/Rectangle 23.png" />
-                </div>
-                <a href="" class="button-primary mt-[21px] ">
-                    Nội
-                    thất phòng ăn
-                </a>
-            </div>
         </div>
     </div>
+
     <div class="product mt-10 lg:mt-20">
-        <div class="text-heading text-center mb-[30px]">
+        <div class="text-heading text-center mb-[20px]">
             Sản phẩm bán chạy
         </div>
-        <div class="text-desc text-center mb-[50px]">
+        <div class="text-desc text-center mb-[40px]">
             Dẫn đầu xu hướng năm 2022
         </div>
         <div class="swiper mySwiper1">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="rounded overflow-hidden ">
-                        <div class="aspect-square bg-no-repeat bg-center bg-cover"
-                             style="background-image: url('../assets/img/product1.png');"></div>
-                        <div class=" pt-[12px]">
-                            <p class="text-gray-700 text-[18px]">
-                                Sofa
-                            </p>
-                            <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
-                            <p class="text-desc">
-                                Using kapuk randu material
-                            </p>
-                            <div class="text-[24px] font-bold mb-2 mt-p[18px]">$58.39</div>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <div class="swiper-slide">
+                            
+                                @{string url = $"/ProductDetail/{item.MaSp}";}
+                                <!-- Product 1 -->
+                            <a href="@url" class="w-full h-full border-[2px] hover:border-[#518581] border-[transparent] overflow-hidden rounded-[3px] shadow product-item bg-[#fff]">
+                                    <div class="h-full flex flex-col overflow-hidden">
+                                        <div class="aspect-square  rounded-[3px] ">
+                                            <img class="object-cover h-full" src="@item.HinhAnh"
+                                         alt="@item.TenSp">
+                                        </div>
+                                        <div class="flex-1 flex flex-col px-[12px] md:px-[17px] md:py-[20px] py-[14px]">
+                                            <p class="flex-1 line-clamp-2 text-gray-700 md:text-[18px] text-[13px] ">
+                                                @item.TenSp
+                                            </p>
+                                            <div class="flex justify-between items-center mt-3 price ">
+                                                <span class="md:text-[24px] text-[16px] current-price font-semibold color-orange">
+                                                    @item.Gia.ToString("#,##0")<span class="md:text-[20px] text-[14px]">đ</span>
+                                                </span>
+                                                <span class="md:text-[18px] ml-[4px] text-[13px] old-price line-through text-slate-500">
+
+                                                </span>
+                                            </div>
+                                            <div class="md:text-[18px] text-[14px] mt-2">
+                                                Số lượng:
+                                                <span class="md:text-[18px] text-[14px] font-medium ">@item.TongSl</span>
+                                            </div>
+                                            <!-- <div class="md:text-[18px] text-[14px] mt-1 current-price font-semibold color-orange">
+
+                                                              Hết hàng
+
+                                                          </div> -->
+                                        </div>
+                                    </div>
+                                </a>
+
+                            
                         </div>
+                    }
+                }
 
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="rounded overflow-hidden ">
-                        <div class="aspect-square bg-no-repeat bg-center bg-cover"
-                             style="background-image: url('../assets/img/product2.png');"></div>
-                        <div class=" pt-[12px]">
-                            <p class="text-gray-700 text-[18px]">
-                                Sofa
-                            </p>
-                            <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
-                            <p class="text-desc">
-                                Using kapuk randu material
-                            </p>
-                            <div class="text-[24px] font-bold mb-2 mt-p[18px]">$58.39</div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="rounded overflow-hidden ">
-                        <div class="aspect-square bg-no-repeat bg-center bg-cover"
-                             style="background-image: url('../assets/img/product3.png');"></div>
-                        <div class=" pt-[12px]">
-                            <p class="text-gray-700 text-[18px]">
-                                Sofa
-                            </p>
-                            <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
-                            <p class="text-desc">
-                                Using kapuk randu material
-                            </p>
-                            <div class="text-[24px] font-bold mb-2 mt-p[18px]">$58.39</div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="rounded overflow-hidden ">
-                        <div class="aspect-square bg-no-repeat bg-center bg-cover"
-                             style="background-image: url('../assets/img/product2.png');"></div>
-                        <div class=" pt-[12px]">
-                            <p class="text-gray-700 text-[18px]">
-                                Sofa
-                            </p>
-                            <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
-                            <p class="text-desc">
-                                Using kapuk randu material
-                            </p>
-                            <div class="text-[24px] font-bold mb-2 mt-p[18px]">$58.39</div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="rounded overflow-hidden ">
-                        <div class="aspect-square bg-no-repeat bg-center bg-cover"
-                             style="background-image: url('../assets/img/product3.png');"></div>
-                        <div class=" pt-[12px]">
-                            <p class="text-gray-700 text-[18px]">
-                                Sofa
-                            </p>
-                            <div class="font-bold text-[26px] mt-[6px] mb-[6px]">Sofa Empuk Banget</div>
-                            <p class="text-desc">
-                                Using kapuk randu material
-                            </p>
-                            <div class="text-[24px] font-bold mb-2 mt-p[18px]">$58.39</div>
-                        </div>
-
-                    </div>
-
-                </div>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -305,13 +188,13 @@
             <div class="introduce-list flex-1">
 
                 <div class="introduce-item mb-[31px]">
-                    <div class="text-heading mb-[22px]">
+                    <div class="text-heading mb-[20px]">
                         Được chế tạo thủ công bằng những nguyên vật liệu tốt nhất
                     </div>
                     <div class="text-desc mb-[22px]">
                         BiSys cam kết bảo hành 1 năm cho tất cả các sản phẩm.
                     </div>
-                    <a href="" class="button-primary ">Tìm hiểu thêm</a>
+                    <a href="/Product" class="button-primary ">Tìm hiểu thêm</a>
                 </div>
             </div>
             <img class="hidden lg:block" src="../assets/img/introduce1.png" alt="">
@@ -352,37 +235,37 @@
         </div>
     </div>
     <div class="rating mt-10 lg:mt-40">
-        <div class="text-heading text-center mb-[30px]">
+        <div class="text-heading text-center mb-[20px]">
             Nhận xét của khách hàng
         </div>
-        <div class="text-desc text-center mb-[50px]">
+        <div class="text-desc text-center mb-[40px]">
             Sự hài lòng của bạn là ưu tiên hàng đầu và quan trong nhất của chúng tôi
         </div>
         <div class="swiper mySwiper2">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="rating-item ">
-                        <div class="p-6 bg-gray-100 rounded-lg">
+                        <div class="p-5 bg-white rounded-lg">
                             <div class="mb-5">
-                                <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                <img srcset="../assets/img/quote-up.png 3x  " alt="">
                             </div>
 
-                            <p class="text-desc text-justify">
-                                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
-                                nisi,
-                                adipiscing mauris non.
+                            <p class="text-desc text-justify line-clamp-2">
+                                Sản phẩm như hình, giao nhanh, đóng gói cẩn thận, đầy đủ dụng cụ để tự lắp ráp.
                             </p>
-                            <div class="rating justify-between flex items-center">
+                            <div class="pt-3 rating justify-between flex items-center">
                                 <div class="customer-info flex items-center">
-                                    <img src="../assets/img/avatar-customer.png" alt="">
+                                    <span>
+                                        <img class="h-[50px] w-[50px] object-cover rounded-full" src="../assets/img/myphuong.JPG" alt="">
+                                    </span>
                                     <h3 class="text-[20px] font-bold ml-3">
-                                        Janne Cooper
+                                        Mỹ Phương
                                     </h3>
                                 </div>
                                 <div class="point-star flex items-center">
                                     <img srcset="../assets/img/star.png 2x" alt="">
                                     <h3 class="text-[18px] font-bold ml-1">
-                                        4.5
+                                        5
                                     </h3>
                                 </div>
                             </div>
@@ -391,120 +274,184 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="rating-item ">
-                        <div class="p-6 bg-gray-100 rounded-lg">
+                        <div class="p-5 bg-white rounded-lg">
                             <div class="mb-5">
-                                <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                <img srcset="../assets/img/quote-up.png 3x  " alt="">
                             </div>
 
-                            <p class="text-desc text-justify">
-                                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
-                                nisi,
-                                adipiscing mauris non.
+                            <p class="text-desc text-justify line-clamp-2">
+                                Sản phẩm như hình, giao nhanh, đóng gói cẩn thận, đầy đủ dụng cụ để tự lắp ráp.
                             </p>
-                            <div class="rating justify-between flex items-center">
+                            <div class="pt-3 rating justify-between flex items-center">
                                 <div class="customer-info flex items-center">
-                                    <img src="../assets/img/avatar-customer.png" alt="">
+                                    <span>
+                                        <img class="h-[50px] w-[50px] object-cover rounded-full" src="../assets/img/myphuong.JPG" alt="">
+                                    </span>
                                     <h3 class="text-[20px] font-bold ml-3">
-                                        Janne Cooper
+                                        Mỹ Phương
                                     </h3>
                                 </div>
                                 <div class="point-star flex items-center">
                                     <img srcset="../assets/img/star.png 2x" alt="">
                                     <h3 class="text-[18px] font-bold ml-1">
-                                        4.5
+                                        5
                                     </h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div class="rating-item ">
-                        <div class="p-6 bg-gray-100 rounded-lg">
+                        <div class="p-5 bg-white rounded-lg">
                             <div class="mb-5">
-                                <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                <img srcset="../assets/img/quote-up.png 3x  " alt="">
                             </div>
 
-                            <p class="text-desc text-justify">
-                                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
-                                nisi,
-                                adipiscing mauris non.
+                            <p class="text-desc text-justify line-clamp-2">
+                                Sản phẩm như hình, giao nhanh, đóng gói cẩn thận, đầy đủ dụng cụ để tự lắp ráp.
                             </p>
-                            <div class="rating justify-between flex items-center">
+                            <div class="pt-3 rating justify-between flex items-center">
                                 <div class="customer-info flex items-center">
-                                    <img src="../assets/img/avatar-customer.png" alt="">
+                                    <span>
+                                        <img class="h-[50px] w-[50px] object-cover rounded-full" src="../assets/img/myphuong.JPG" alt="">
+                                    </span>
                                     <h3 class="text-[20px] font-bold ml-3">
-                                        Janne Cooper
+                                        Mỹ Phương
                                     </h3>
                                 </div>
                                 <div class="point-star flex items-center">
                                     <img srcset="../assets/img/star.png 2x" alt="">
                                     <h3 class="text-[18px] font-bold ml-1">
-                                        4.5
+                                        5
                                     </h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+           
                 <div class="swiper-slide">
                     <div class="rating-item ">
-                        <div class="p-6 bg-gray-100 rounded-lg">
+                        <div class="p-5 bg-white rounded-lg">
                             <div class="mb-5">
-                                <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                <img srcset="../assets/img/quote-up.png 3x  " alt="">
                             </div>
 
-                            <p class="text-desc text-justify">
-                                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
-                                nisi,
-                                adipiscing mauris non.
+                            <p class="text-desc text-justify line-clamp-2">
+                                Sản phẩm như hình, giao nhanh, đóng gói cẩn thận, đầy đủ dụng cụ để tự lắp ráp.
                             </p>
-                            <div class="rating justify-between flex items-center">
+                            <div class="pt-3 rating justify-between flex items-center">
                                 <div class="customer-info flex items-center">
-                                    <img src="../assets/img/avatar-customer.png" alt="">
+                                    <span>
+                                        <img class="h-[50px] w-[50px] object-cover rounded-full" src="../assets/img/myphuong.JPG" alt="">
+                                    </span>
                                     <h3 class="text-[20px] font-bold ml-3">
-                                        Janne Cooper
+                                        Mỹ Phương
                                     </h3>
                                 </div>
                                 <div class="point-star flex items-center">
                                     <img srcset="../assets/img/star.png 2x" alt="">
                                     <h3 class="text-[18px] font-bold ml-1">
-                                        4.5
+                                        5
                                     </h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+           
                 <div class="swiper-slide">
                     <div class="rating-item ">
-                        <div class="p-6 bg-gray-100 rounded-lg">
+                        <div class="p-5 bg-white rounded-lg">
                             <div class="mb-5">
-                                <img srcset="../assets/img/quote-up.png 2x" alt="">
+                                <img srcset="../assets/img/quote-up.png 3x  " alt="">
                             </div>
 
-                            <p class="text-desc text-justify">
-                                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat
-                                nisi,
-                                adipiscing mauris non.
+                            <p class="text-desc text-justify line-clamp-2">
+                                Sản phẩm như hình, giao nhanh, đóng gói cẩn thận, đầy đủ dụng cụ để tự lắp ráp.
                             </p>
-                            <div class="rating justify-between flex items-center">
+                            <div class="pt-3 rating justify-between flex items-center">
                                 <div class="customer-info flex items-center">
-                                    <img src="../assets/img/avatar-customer.png" alt="">
+                                    <span>
+                                        <img class="h-[50px] w-[50px] object-cover rounded-full" src="../assets/img/myphuong.JPG" alt="">
+                                    </span>
                                     <h3 class="text-[20px] font-bold ml-3">
-                                        Janne Cooper
+                                        Mỹ Phương
                                     </h3>
                                 </div>
                                 <div class="point-star flex items-center">
                                     <img srcset="../assets/img/star.png 2x" alt="">
                                     <h3 class="text-[18px] font-bold ml-1">
-                                        4.5
+                                        5
                                     </h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+           
+                <div class="swiper-slide">
+                    <div class="rating-item ">
+                        <div class="p-5 bg-white rounded-lg">
+                            <div class="mb-5">
+                                <img srcset="../assets/img/quote-up.png 3x  " alt="">
+                            </div>
+
+                            <p class="text-desc text-justify line-clamp-2">
+                                Sản phẩm như hình, giao nhanh, đóng gói cẩn thận, đầy đủ dụng cụ để tự lắp ráp.
+                            </p>
+                            <div class="pt-3 rating justify-between flex items-center">
+                                <div class="customer-info flex items-center">
+                                    <span>
+                                        <img class="h-[50px] w-[50px] object-cover rounded-full" src="../assets/img/myphuong.JPG" alt="">
+                                    </span>
+                                    <h3 class="text-[20px] font-bold ml-3">
+                                        Mỹ Phương
+                                    </h3>
+                                </div>
+                                <div class="point-star flex items-center">
+                                    <img srcset="../assets/img/star.png 2x" alt="">
+                                    <h3 class="text-[18px] font-bold ml-1">
+                                        5
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="swiper-slide">
+                    <div class="rating-item ">
+                        <div class="p-5 bg-white rounded-lg">
+                            <div class="mb-5">
+                                <img srcset="../assets/img/quote-up.png 3x  " alt="">
+                            </div>
+
+                            <p class="text-desc text-justify line-clamp-2">
+                                Sản phẩm như hình, giao nhanh, đóng gói cẩn thận, đầy đủ dụng cụ để tự lắp ráp.
+                            </p>
+                            <div class="pt-3 rating justify-between flex items-center">
+                                <div class="customer-info flex items-center">
+                                    <span>
+                                        <img class="h-[50px] w-[50px] object-cover rounded-full" src="../assets/img/myphuong.JPG" alt="">
+                                    </span>
+                                    <h3 class="text-[20px] font-bold ml-3">
+                                        Mỹ Phương
+                                    </h3>
+                                </div>
+                                <div class="point-star flex items-center">
+                                    <img srcset="../assets/img/star.png 2x" alt="">
+                                    <h3 class="text-[18px] font-bold ml-1">
+                                        5
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
             </div>
             <div class="my-custom-pagination-div"></div>
         </div>

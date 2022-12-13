@@ -1,0 +1,72 @@
+﻿@model Funiture_Project.Models.RegisterVM
+
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <div>
+        <img src="./assets/img/login-bg.png"
+             alt="login-background"
+             class="object-fill w-full max-h-[860px] relative" />
+        <!-- Đăng ký -->
+        <form asp-action="SignUp" class="form-register" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="fadeUp lg:absolute lg:scale-[0.65] lg:top-0 lg:right-0  top-[20%]  right-[45px] lg:w-[618px] lg:min-h-[550px] bg-white bg-opacity-70 rounded-lg flex justify-center flex-col p-[50px] lg:gap-y-[38px] gap-y-[20px]">
+                <span class="lg:text-[44px] text-xl font-bold text-[#FFB23F]">Đăng ký</span>
+                <input asp-for="HoTen" type="text"
+                       name="HoTen"
+                       placeholder="Họ và Tên"
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
+                <input asp-for="SDT" type="text"
+                       name="Sdt"
+                       placeholder="Số điện thoại"
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
+                <input asp-for="Email" type="text"
+                       name="email"
+                       placeholder="Email"
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
+                <input asp-for="DiaChi" type="text"
+                       name="diachi"
+                       placeholder="Địa chỉ"
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
+                <div class="h-[60px] w-[516px] p-[14px] font-bold text-2xl">
+                    <label class="radio-inline font-bold text-2xl mr-5">
+                        @Html.RadioButtonFor(model => model.GioiTinh, "Nam", new {@name="GioiTinh"})
+                        Nam
+                    </label>
+                    <label class="radio-inline font-bold text-2xl ml-5">
+                        @Html.RadioButtonFor(model => model.GioiTinh, "Nữ", new {@name="GioiTinh"})
+                        Nữ
+                    </label>
+                </div>
+                <input asp-for="Password" type="password"
+                       name="password"
+                       placeholder="Mật khẩu"
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
+                <input asp-for="ConfirmPassword" type="password"
+                       name="confirmPassword"
+                       placeholder="Nhập lại mật khẩu"
+                       class="bg-white rounded-lg shadow lg:h-[60px] h-[50px] lg:w-[516px] w-full p-[14px] font-bold lg:text-2xl text-sm" />
+                <div class="flex items-center justify-end gap-x-[23px]">
+                    <button type="submit"
+                            class="register bg-[#FFB23F] text-white rounded-lg shadow lg:h-[60px] h-[50px] w-[180px] p-[14px] font-bold lg:text-2xl text-sm hover:bg-opacity-60">
+                        Đăng ký
+                    </button>
+                    <button class="change-login bg-white text-[#AFADB5] rounded-lg shadow lg:h-[60px] h-[50px] w-[180px] p-[14px]"
+                            type="button">
+                        <a href="~/Login" class="h-[60px] w-[180px] p-[14px]  font-bold lg:text-2xl text-sm hover:bg-opacity-60">Hủy</a>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</main>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

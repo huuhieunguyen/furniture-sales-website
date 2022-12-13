@@ -1,6 +1,9 @@
-using AspNetCoreHero.ToastNotification;
+﻿using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using AspNetCoreHero.ToastNotification.Extensions;
 using Funiture_Project.Areas.Admin.Models;
 using Funiture_Project.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,9 +33,6 @@ namespace Funiture_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            /*Tao ket noi den Database*/
-            var stringConnectdb = Configuration.GetConnectionString("dbFurniture");
-            services.AddDbContext<FurnitureContext>(options => options.UseSqlServer(stringConnectdb));
 
             /******Tao ket noi den Database******/
 
@@ -44,11 +44,29 @@ namespace Funiture_Project
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             /* Tao popup thong bao */
-            services.AddNotyf(config => { config.DurationInSeconds = 3; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
+            services.AddNotyf(config => { config.DurationInSeconds = 2; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
             
             services.AddTransient<IActionContextAccessor, ActionContextAccessor>();
 
             services.AddTransient<AdminSideBarService>();
+            /*Tao ket noi den Database*/
+            services.AddDbContext<FurnitureContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //Cookie Authentication
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option =>
+                {
+                    option.LoginPath = "/Login/Index";
+                    option.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                });
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,8 +87,11 @@ namespace Funiture_Project
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();
 
+            app.UseAuthorization();
+            app.UseSession();
+            app.UseNotyf();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

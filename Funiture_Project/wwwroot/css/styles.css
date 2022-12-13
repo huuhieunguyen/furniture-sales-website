@@ -8,7 +8,6 @@
     margin: 0;
     padding: 0;
     font: inherit;
-    font-size: 18px;
 }
 
 html {
@@ -23,6 +22,7 @@ html {
 
 body {
     line-height: 1.5;
+    background-color: #f9f9f9;
 }
 
 img,
@@ -50,6 +50,12 @@ h6 {
     overflow-wrap: break-word;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 :root {
     --green-color: #518581;
 }
@@ -62,7 +68,7 @@ h6 {
 }
 
 .text-desc {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     line-height: calc(32.4 / 18);
     color: #afadb5;
@@ -71,6 +77,17 @@ h6 {
     .text-desc.text-desc__yellow {
         color: #ffb23f;
     }
+
+.color-orange {
+    color: #ee4d2d;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 .button-primary {
     color: white;
@@ -90,7 +107,6 @@ h6 {
     padding-left: 100px;
     padding-right: 100px;
 }
-
 
 .fadeUp {
     animation: fadeUp 0.5s ease-in;
@@ -201,7 +217,7 @@ h6 {
 	} */
 }
 
-@media(min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .container {
         padding-left: 40px;
         padding-right: 40px;
@@ -211,3 +227,33 @@ h6 {
         font-size: 38px;
     }
 }
+
+.pagination-container {
+    margin-top: 50px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center
+}
+
+    .pagination li a, .pagination li span {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--green-color);
+        font-size: 20px;
+    }
+
+
+
+    .pagination li {
+        margin: 0 5px;
+    }
+
+        .pagination .active, .pagination li a:hover {
+            background-color: var(--green-color);
+            color: white
+        }

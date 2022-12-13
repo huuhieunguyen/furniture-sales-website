@@ -34,7 +34,7 @@ namespace Funiture_Project.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=34.92.102.132;Database=Furniture;user id=sqlserver ;password=Web123456789;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-V8475QF;Database=Furniture;Trusted_Connection=True");
             }
         }
 
@@ -71,7 +71,9 @@ namespace Funiture_Project.Models
 
             modelBuilder.Entity<GioHang>(entity =>
             {
-                entity.HasKey(e => new { e.MaUser, e.MaSp });
+                entity.HasKey(e => new { e.MaKh, e.MaSp });
+
+                entity.Property(e => e.MaKh).HasColumnName("MaKH");
 
                 entity.Property(e => e.MaSp).HasColumnName("MaSP");
             });
@@ -82,9 +84,7 @@ namespace Funiture_Project.Models
 
                 entity.Property(e => e.MaHd).HasColumnName("MaHD");
 
-                entity.Property(e => e.DiaChi)
-                    .IsRequired()
-                    .HasMaxLength(255);
+                entity.Property(e => e.DiaChi).HasMaxLength(255);
 
                 entity.Property(e => e.MaKh).HasColumnName("MaKH");
 
@@ -100,15 +100,17 @@ namespace Funiture_Project.Models
                     .HasColumnName("NgayHD")
                     .HasColumnType("datetime");
 
+                entity.Property(e => e.Sdt)
+                    .HasColumnName("SDT")
+                    .HasMaxLength(10);
+
                 entity.Property(e => e.ThanhPho).HasMaxLength(255);
 
                 entity.Property(e => e.Ttdh)
-                    .IsRequired()
                     .HasColumnName("TTDH")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.Tttt)
-                    .IsRequired()
                     .HasColumnName("TTTT")
                     .HasMaxLength(255);
             });
