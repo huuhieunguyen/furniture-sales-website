@@ -78,10 +78,13 @@ namespace Funiture_Project.Controllers
                 var r_sp = _context.SanPham.AsNoTracking()
                     .Where(x => x.MaDm == sp.MaDm);
                 int count = r_sp.Count();
+                int n = r_sp.Count();
 
+                if (n > 4)
+                    n = 4;
 
                 List<SanPham> lsSanPham = new List<SanPham>();
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < n; i++)
                 {
                     int index = new Random().Next(count);
                     var randomSanPham = r_sp.Skip(index).FirstOrDefault();
