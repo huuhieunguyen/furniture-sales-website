@@ -31,7 +31,7 @@ const sumCart = () => {
 		if (wannaBuyBtn[i].checked) {
 			sum = sum + parseInt(amountList[i].textContent);
 		}
-		sum = sum + parseInt(amountList[i].textContent);
+		/*sum = sum + parseInt(amountList[i].textContent);*/
 	}
 	sumCartEle.innerHTML = String(sum);
 };
