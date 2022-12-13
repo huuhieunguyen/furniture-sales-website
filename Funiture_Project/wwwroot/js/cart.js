@@ -31,7 +31,7 @@ const sumCart = () => {
 		if (wannaBuyBtn[i].checked) {
 			sum = sum + parseInt(amountList[i].textContent);
 		}
-		sum = sum + parseInt(amountList[i].textContent);
+		// sum = sum + parseInt(amountList[i].textContent);
 	}
 	sumCartEle.innerHTML = String(sum);
 };
@@ -59,7 +59,7 @@ const handleClickSelectAll = function (state, allChecked) {
 	sumCart();
 };
 // Kiểm tra tất cả các checkbox có được check chưa
-const varifyCheckedAll = function () {
+const verifyCheckedAll = function () {
 	for (let i = 0; i < wannaBuyBtn.length; i++) {
 		if (wannaBuyBtn[i].checked == false) {
 			// Nếu có 1 check box là false thì sẽ hủy checkboxAll
@@ -73,7 +73,7 @@ const varifyCheckedAll = function () {
 // Xử lý khi chọn checkbox sản phẩm để mua
 for (let i = 0; i < wannaBuyBtn.length; i++) {
 	wannaBuyBtn[i].onchange = function () {
-		varifyCheckedAll();
+		verifyCheckedAll();
 		sumCart();
 	};
 }
