@@ -53,7 +53,7 @@ namespace Funiture_Project.Controllers
             //var sanpham = _context.SanPham.Include(x => x.MaSp).FirstOrDefault(x => x.MaSp == id);
             string masp = id.ToString();
             HttpContext.Session.SetString("Masp", masp);
-            HttpContext.Session.SetString("Makh", "1");
+            /* HttpContext.Session.SetString("Makh", "1");*/
             var sanpham = _context.SanPham.AsNoTracking()
                 .Where(x => x.MaSp == id)
                 .FirstOrDefault();
