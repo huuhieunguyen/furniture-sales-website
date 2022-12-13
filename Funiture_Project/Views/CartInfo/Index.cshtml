@@ -13,10 +13,10 @@
             <!-- <h1 class="fw-[600] text-center text-[26px] lg:text-[50px] mb-[20px] "> Giỏ hàng</h1> -->
             <!-- Thanh header giỏ hàng -->
             <div class="mb-[12px] px-[20px] shadow text-[14px] h-[55px] shadow items-center hidden lg:flex justify-center bg-[#fff]">
-                @*<div class="min-w-[58px] flex items-center justify-center">
+                <div class="min-w-[60px] flex items-center justify-center">
                 <input name="wanna-buy-all" class="w-[20px] h-[20px]" type="checkbox">
-                </div>*@
-                <div class="w-full lg:w-[50%]">
+                </div>
+                <div class="w-[calc(100%-60px)] lg:w-[calc(50%-60px)]">
                     Sản phẩm
                 </div>
                 <div class="text-center w-[12.5%]">
@@ -39,10 +39,10 @@
                     foreach (var item in lsSanPham)
                     {
                         <div class="border-b lg:px-[20px] border-[rgba(0,0,0,0.09)] lg:py-[15px] pt-[15px]  text-[14px] min-h-[55px] items-center flex  bg-[#fff] flex-wrap">
-                            @* <div class="min-w-[58px] flex items-center justify-center">
+                             <div class="min-w-[60px] flex items-center justify-center">
                     <input name="wannaBuy" class="w-[20px] h-[20px]" type="checkbox">
-                    </div>*@
-                            <div class="w-full lg:w-[50%]">
+                    </div>
+                            <div class="w-[calc(100%-60px)] lg:w-[calc(50%-60px)]">
                                 <a href="" class="hover:cursor-pointer flex">
                                     <div class="ml-[10px] lg:ml-[0] aspect-square min-w-[80px] max-w-[80px] rounded-[3px] ">
                                         <img class="object-cover h-full" src="@item.HinhAnh"
@@ -111,11 +111,11 @@
         </div>
         <div class="sticky bottom-0 bg-[#fff] border-dotted border-[rgba(0,0,0,.09)] lg:border  lg:py-2 lg:pr-6 lg:pl-[40px] pl-[10px] my-4 flex  items-center justify-end ">
             <!-- Thanh toán -->
-            @*<div class="flex  text-[30px] gap-x-2 items-center">
+            <div class="flex  text-[30px] gap-x-2 items-center">
             <input name="wanna-buy-all" class=" aspect-square w-[20px] lg:w-[25px] rounded-[5px]" type="checkbox">
             <div class="hidden md:block text-[16px]">Chọn tất cả</div>
             <div class="lg:hidden block text-[16px]">Tất cả</div>
-            </div>*@
+            </div>
             <div class="result-cart flex items-center ">
                 <div class="flex text-[30px] gap-x-2 items-center">
                     <div class="text-[14px] lg:text-[16px]">Tổng thanh toán: </div>
