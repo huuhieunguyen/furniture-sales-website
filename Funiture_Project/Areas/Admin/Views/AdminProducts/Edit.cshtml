@@ -64,7 +64,9 @@
             <!--*********** Mã danh mục **************-->
             <div class="form-group row mb-4">
                 <label class="col-2 col-form-label" asp-for="MaDm">Mã danh mục</label>
-                <input class="col-4 form-control bg-white text-uppercase" asp-for="MaDm" />
+                <select class="col-4 custom-select form-control bg-white" asp-for="MaDm" asp-items="ViewBag.DanhMuc">
+                    <option value="" disabled selected>Chọn danh mục</option>
+                </select>
                 <span asp-validation-for="MaDm" class="text-danger"></span>
             </div>
 

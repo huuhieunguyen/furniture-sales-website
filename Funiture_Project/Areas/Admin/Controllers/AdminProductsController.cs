@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Funiture_Project.Models;
 using AspNetCoreHero.ToastNotification.Abstractions;
+using System.Collections.Generic;
 
 namespace Funiture_Project.Areas.Admin.Controllers
 {
@@ -49,6 +48,12 @@ namespace Funiture_Project.Areas.Admin.Controllers
         // GET: Admin/AdminProducts/Create
         public IActionResult Create()
         {
+            ViewData["DanhMuc"] = new SelectList(_context.DanhMucSp, "MaDm", "TenDm");
+
+            SelectList NsxList = new SelectList(_context.SanPham.Select(s => s.Nsx).Distinct().ToList(), "MaSp", "Nsx");
+            ViewData["NuocSx"] = NsxList;
+
+
             return View();
         }
 
@@ -66,6 +71,11 @@ namespace Funiture_Project.Areas.Admin.Controllers
                 _notifyService.Success("Thêm thành công");
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DanhMuc"] = new SelectList(_context.DanhMucSp, "MaDm", "TenDm", sanPham.MaDm);
+
+            SelectList NsxList = new SelectList(_context.SanPham.Select(s => s.Nsx).Distinct().ToList(), "MaSp", "Nsx", sanPham.Nsx);
+            ViewData["NuocSx"] = NsxList;
+
             return View(sanPham);
         }
 
@@ -82,6 +92,7 @@ namespace Funiture_Project.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            ViewData["DanhMuc"] = new SelectList(_context.DanhMucSp, "MaDm", "TenDm", sanPham.MaDm);
             return View(sanPham);
         }
 
@@ -119,6 +130,7 @@ namespace Funiture_Project.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DanhMuc"] = new SelectList(_context.DanhMucSp, "MaDm", "TenDm", sanPham.MaDm);
             return View(sanPham);
         }
 
