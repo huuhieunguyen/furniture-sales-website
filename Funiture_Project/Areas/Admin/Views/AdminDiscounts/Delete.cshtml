@@ -1,0 +1,114 @@
+﻿@model Funiture_Project.Models.KhuyenMai
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Sửa khuyến mãi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminDiscounts", "Index", "Admin");
+}
+@{
+    var item = Model;
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">
+            Xóa Khuyến mãi <strong><i>@item.TenKm</i></strong>
+        </h1>
+    </div>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales -->
+    <div class="container gap-3">
+        <dl class="row">
+            <dt class="col-sm-2">
+                <label asp-for="MaKm">Mã khuyến mãi</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MaKm)
+            </dd>
+
+            <dt class="col-sm-2">
+                <label asp-for="TenKm">Tên khuyến mãi</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TenKm)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="NgayBd">Ngày bắt đầu</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NgayBd)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="NgayKt">Ngày kết thúc</label>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NgayKt)
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="PhanTramKm">Tỉ lệ</label>
+            </dt>
+            <dd class="col-sm-10">
+                @*@Html.DisplayFor(model => model.PhanTramKm)*@
+                @{
+                    var phanTram = item.PhanTramKm * 100;
+                }
+                @phanTram
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="DinhMuc">Định mức</label>
+            </dt>
+            <dd class="col-sm-10">
+                @*@Html.DisplayFor(model => model.DinhMuc)*@
+                @{
+                    var dinhMuc = item.DinhMuc;
+                }
+                @dinhMuc.ToString("#,##0") VNĐ
+            </dd>
+            <dt class="col-sm-2">
+                <label asp-for="ToiDa">Tối đa</label>
+            </dt>
+            <dd class="col-sm-10">
+                @*@Html.DisplayFor(model => model.ToiDa)*@
+                @{
+                    var toiDa = item.ToiDa;
+                }
+                @toiDa.Value.ToString("#,##0") VNĐ
+            </dd>
+        </dl>
+
+        <hr class="my-12" />
+
+        <!--------------------Button--------------------------->
+        <form asp-action="Delete" class="d-grid d-flex justify-content-between">
+            <!------ Button Quay Lại ------>
+            <a asp-action="Index" class="form-group btn btn-secondary btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span class="text">Quay lại</span>
+            </a>
+
+            <!------ Button Xóa ------>
+            <a class="form-group btn btn-danger btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-trash"></i>
+                </span>
+                <input type="submit" value="Xóa sản phẩm" class="btn btn-danger" />
+            </a>
+        </form>
+    </div>
+</div>

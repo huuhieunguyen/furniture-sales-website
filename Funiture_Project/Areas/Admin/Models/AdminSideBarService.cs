@@ -96,15 +96,15 @@ namespace Funiture_Project.Areas.Admin.Models
                 Title = "Quản lý danh mục",
                 AwesomeIcon = "fas fa-boxes"
             });
-            /*Items.Add(new SideBarItem()
+            Items.Add(new SideBarItem()
             {
                 Type = SideBarItemType.NavItem,
-                Controller = "KhuyenMai",
+                Controller = "AdminDiscounts",
                 Action = "Index",
                 Area = "Admin",
                 Title = "Quản lý khuyến mãi",
                 AwesomeIcon = "fas fa-percentage"
-            });*/
+            });
 
             /*Items.Add(new SideBarItem() { Type = SideBarItemType.Divider });
             Items.Add(new SideBarItem()

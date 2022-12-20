@@ -9,10 +9,20 @@
     @Html.Raw(_AdminSideBarService.renderHtml())
 }
 @{
-    _AdminSideBarService.setActive("AdminOrders", "Index", "Admin");
+    _AdminSideBarService.setActive("AdminCustomers", "Index", "Admin");
 }
 @{
     var item = Model;
+
+    string optionGioiTinh = Model.GioiTinh;
+    if (item.GioiTinh.Contains("Nữ"))
+    {
+        optionGioiTinh = "Nam";
+    }
+    else
+    {
+        optionGioiTinh = "Nữ";
+    }
 }
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -34,79 +44,47 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MaKh" />
 
-            @*<!--*********** Tình trạng đơn hàng **************-->
-            <div class="form-group row mb-4">
-                <label class="col-2 col-form-label" asp-for="Ttdh">Tình trạng đơn hàng</label>
-                <select class="col-4 input-group form-control bg-white custom-select" asp-for="Ttdh">
-                    <option selected>@item.Ttdh</option>
-                    <option value="1">Đang chờ</option>
-                    <option value="2">Đang giao</option>
-                    <option value="3">Đã giao</option>
-                    <option value="4">Bị hủy</option>
-                </select>
-                <span asp-validation-for="Ttdh" class="text-danger"></span>
-            </div>
-
-            <!--*********** Tình trạng thanh toán **************-->
-            <div class="form-group row mb-4">
-                <label class="col-2 col-form-label" asp-for="Tttt">Tình trạng đơn hàng</label>
-                <select class="col-4 input-group form-control bg-white custom-select" asp-for="Tttt">
-                    <option selected>@item.Tttt</option>
-                    <option value="1">Chưa thanh toán</option>
-                    <option value="2">Đã thanh toán</option>
-                </select>
-                <span asp-validation-for="Tttt" class="text-danger"></span>
-            </div>
-            <!--*********** Mã khách hàng **************-->
-            <div class="form-group row mb-4">
-                <label class="col-2 col-form-label" asp-for="MaKh">Mã khách hàng</label>
-                <input class="col-4 form-control bg-white" asp-for="MaKh" disabled />
-                <span asp-validation-for="MaKh" class="text-danger"></span>
-            </div>*@
-
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MaKh" />
             <div class="form-group">
-                <label asp-for="HoTen" class="control-label"></label>
+                <label asp-for="HoTen" class="control-label">Họ tên</label>
                 <input asp-for="HoTen" class="form-control" />
                 <span asp-validation-for="HoTen" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" type="email"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Sdt" class="control-label"></label>
+                <label asp-for="Sdt" class="control-label">Số điện thoại</label>
                 <input asp-for="Sdt" class="form-control" />
                 <span asp-validation-for="Sdt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DiaChi" class="control-label"></label>
+                <label asp-for="DiaChi" class="control-label">Địa chỉ</label>
                 <input asp-for="DiaChi" class="form-control" />
                 <span asp-validation-for="DiaChi" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ThanhPho" class="control-label"></label>
+                <label asp-for="ThanhPho" class="control-label">Thành phố</label>
                 <input asp-for="ThanhPho" class="form-control" />
                 <span asp-validation-for="ThanhPho" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NgayTao" class="control-label"></label>
+                <label asp-for="NgayTao" class="control-label">Ngày tạo</label>
                 <input asp-for="NgayTao" class="form-control" />
                 <span asp-validation-for="NgayTao" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Quyen" class="control-label"></label>
+            <div class="form-group" hidden>
+                <label asp-for="Quyen" class="control-label">Quyền</label>
                 <input asp-for="Quyen" class="form-control" disabled/>
                 <span asp-validation-for="Quyen" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label class="control-label" asp-for="GioiTinh">Giới tính</label>
                 <select class="form-control custom-select" asp-for="GioiTinh">
                     <option selected>@item.GioiTinh</option>
-                    <option value="1">Nam</option>
-                    <option value="2">Nữ</option>
+                    <option value="@optionGioiTinh">@optionGioiTinh</option>
                 </select>
             </div>
 

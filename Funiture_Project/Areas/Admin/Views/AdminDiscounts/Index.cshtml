@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Funiture_Project.Models.KhuyenMai>
+@inject Funiture_Project.Areas.Admin.Models.AdminSideBarService _AdminSideBarService;
+
+@{
+    ViewData["Title"] = "Quản lý Khuyến mãi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section Sidebar{
+    @Html.Raw(_AdminSideBarService.renderHtml())
+}
+@{
+    _AdminSideBarService.setActive("AdminDiscounts", "Index", "Admin");
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+
+    <div class="d-flex justify-content-between">
+        <h1 class="h3 mb-2 text-gray-800">Thông tin Khuyến mãi</h1>
+        <a asp-action="Create"
+           class="btn btn-primary btn-icon-split float-right">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+
+            <span class="text">Tạo khuyến mãi mới</span>
+        </a>
+    </div>
+
+    <hr class="my-12" />
+
+    <div class="mt-10"></div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="dataTable"
+                       width="100%"
+                       cellspacing="0">
+                    @*Tieu de cot cho bang*@
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Mã KM</th>
+                            <th>Tên KM</th>
+                            <th>Ngày BĐ</th>
+                            <th>Ngày KT</th>
+                            <th>Tỉ lệ (%)</th>
+                            <th>Định mức</th>
+                            <th>Tối đa</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row">@item.MaKm</th>
+                                    <td>@item.TenKm</td>
+                                    <td>@item.NgayBd</td>
+                                    <td>@item.NgayKt</td>
+                                    @{
+                                        var phanTram = item.PhanTramKm * 100;
+                                    }
+                                    <td>@phanTram</td>
+                                    <td>@item.DinhMuc.ToString("#,##0")</td>
+                                    <td>@item.ToiDa.Value.ToString("#,##0")</td>
+                                    <td class="d-flex justify-content-center">
+                                        <a asp-action="Edit" asp-route-id="@item.MaKm">
+                                            <img src="~/admin/img/bi_pencil-square.svg"
+                                         alt="" />
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.MaKm">
+                                            <img src="~/admin/img/ep_delete-filled.svg"
+                                         alt="" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!------------ DataTales Example ------------->
+</div>
