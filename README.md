@@ -60,6 +60,8 @@ Trang web cần đảm bảo được các mục tiêu:
 - Giúp khách hàng mua hàng được nhanh chóng và đúng sản phẩm mình cần.
 - Tiện lợi cho người bán hàng dễ dàng quản lý cửa hàng của mình.
 - Giao diện đơn giản, load nhanh.
+
+[Thiết kế giao diện Figma](https://www.figma.com/file/ZgosPCI7KLuUhJLPzKDNL2/BiSys?type=design&node-id=0%3A1&mode=design&t=XVcunZS9xVtGkfWr-1)
 ## <h2 id="dsthanhvien">Các thành viên tham gia project</h2>
  
 | STT| Họ tên         | MSSV                 | Email                                                |     Nhiệm vụ    |
